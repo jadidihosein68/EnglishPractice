@@ -8,14 +8,17 @@ import { IeltsComponent } from './ielts/ielts.component';
 import { SharedModule } from './shared/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LandingComponent } from './landing/landing.component';
 
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     PteComponent,
     IeltsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

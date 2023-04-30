@@ -1,12 +1,12 @@
 <div class="card" [@cardAnimation]="{ value: 'card', params: { duration: 500, easing: 'ease-out' } }" [ngClass]="{'flipped': isFlipped}" #card *ngIf="isVisible">
   <div class="card-inner">
     <div class="card-content">
-      <h2>{{ vocabularyItem?.term }}</h2>
+      <h2>{{ vocabularyItem?.term | titlecase }}</h2>
 
       <i class="fas fa-sync-alt flip-icon" (click)="flipCard()"></i>
     </div>
     <div class="card-back">
-      <p>{{ vocabularyItem?.meaning }}</p>
+      <p>{{ vocabularyItem?.meaning | titlecase }}</p>
       <i class="fas fa-sync-alt flip-icon" (click)="flipCard()"></i>
     </div>
   </div>

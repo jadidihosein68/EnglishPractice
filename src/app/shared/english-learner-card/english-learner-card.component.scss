@@ -1,16 +1,12 @@
 .card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 350px; /* Adjust the height value as needed */
-  opacity: 1; /* Set the initial opacity */
-  transition: opacity 0.5s ease-in-out; /* Add a transition */
-  position: relative; /* Add position property */
+  height: 350px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  position: relative;
 }
-
 
 .card-inner {
   position: relative;
@@ -41,7 +37,6 @@
 
 .card-back {
   background-color: #f9f9f9;
-  color: black;
   transform: rotateY(180deg);
 }
 
@@ -56,28 +51,24 @@
 
 .card-footer {
   background-color: #f8f8f8;
-  border-top: 1px solid #ccc;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.speaker-pronounce-container {
+.speaker-pronounce-container,
+.speaker-container {
   display: flex;
   align-items: center;
 }
 
 .speaker-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 40px;
   height: 40px;
   border: 1px solid #3b5998;
   border-radius: 50%;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 0 10px;
   background-color: #3b5998;
 }
 
@@ -102,7 +93,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .total-records {
   font-size: 18px;
