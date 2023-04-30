@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { PteComponent } from './pte/pte.component';
 import { IeltsComponent } from './ielts/ielts.component';
 import { SharedModule } from './shared/shared.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PteComponent,
-    IeltsComponent
+    IeltsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
