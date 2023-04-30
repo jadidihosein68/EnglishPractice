@@ -1,6 +1,6 @@
 import { Component, Input, OnInit,Output,EventEmitter,ViewChild,ElementRef  } from '@angular/core';
 import {Vocabulary} from "../../model/vocabulary.model"
-import { trigger, transition, style, animate, AnimationEvent } from '@angular/animations';
+import { trigger, transition, style, animate, AnimationEvent,  state } from '@angular/animations';
 @Component({
   selector: 'app-english-learner-card',
   templateUrl: './english-learner-card.component.html',
@@ -15,6 +15,24 @@ import { trigger, transition, style, animate, AnimationEvent } from '@angular/an
         animate('500ms ease-out', style({ opacity: 0 })),
       ]),
     ]),
+
+
+    trigger('flipAnimation', [
+      state(
+        'default',
+        style({
+          transform: 'rotateY(0)',
+        })
+      ),
+      state(
+        'flipped',
+        style({
+          transform: 'rotateY(180deg)',
+        })
+      ),
+      transition('default <=> flipped', [animate('500ms ease-out')]),
+    ]),
+
   ],
 })
 export class EnglishLearnerCardComponent implements OnInit {
@@ -30,6 +48,7 @@ export class EnglishLearnerCardComponent implements OnInit {
   isVisible = true;
   currentObjectIndex = 0;
   currentObject: any;
+  isFlipped = false;
   @ViewChild('card') card: ElementRef | undefined;
 
   constructor() { }
@@ -40,7 +59,11 @@ export class EnglishLearnerCardComponent implements OnInit {
 
   }
 
-  flipCard(): void {}
+  flipCard(): void {
+
+    this.isFlipped = !this.isFlipped;
+
+  }
 
 
   nextCard(): void {

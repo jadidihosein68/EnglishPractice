@@ -1,13 +1,19 @@
-<div class="card" [@cardAnimation]="{ value: 'card', params: { duration: 500, easing: 'ease-out' } }" #card *ngIf="isVisible">
-  <i class="fas fa-sync-alt close-icon"></i>
-  <div class="card-content">
-    <h2>{{ vocabularyItem?.term }}</h2>
-    <p>{{ vocabularyItem?.meaning }}</p>
+<div class="card" [@cardAnimation]="{ value: 'card', params: { duration: 500, easing: 'ease-out' } }" [ngClass]="{'flipped': isFlipped}" #card *ngIf="isVisible">
+  <div class="card-inner">
+    <div class="card-content">
+      <h2>{{ vocabularyItem?.term }}</h2>
+      <p>{{ vocabularyItem?.meaning }}</p>
+      <i class="fas fa-sync-alt flip-icon" (click)="flipCard()"></i>
+    </div>
+    <div class="card-back">
+      <p>Back of the card content.</p>
+      <i class="fas fa-sync-alt flip-icon" (click)="flipCard()"></i>
+    </div>
   </div>
   <div class="card-footer">
     <div class="speaker-pronounce-container">
       <button class="speaker-container" (click)="speak()">
-        <i class="fas fa-volume-up" ></i>
+        <i class="fas fa-volume-up"></i>
       </button>
       <span class="pronounce">{{ vocabularyItem?.pronounce }}</span>
     </div>

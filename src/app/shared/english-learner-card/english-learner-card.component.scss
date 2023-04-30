@@ -5,22 +5,53 @@
   display: flex;
   flex-direction: column;
   width: 300px;
+  height: 350px; /* Adjust the height value as needed */
   opacity: 1; /* Set the initial opacity */
   transition: opacity 0.5s ease-in-out; /* Add a transition */
   position: relative; /* Add position property */
 }
 
-.close-icon {
-  position: absolute; /* Add position property */
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
-  font-size: 24px;
-  color: #ccc;
-  cursor: pointer;
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-content,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 20px;
 }
 
 .card-content {
-  padding: 20px;
+  z-index: 2;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.card-back {
+  background-color: #f9f9f9;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.flip-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
 }
 
 .card-footer {
@@ -29,7 +60,7 @@
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Add this property */
+  align-items: center;
 }
 
 .speaker-pronounce-container {
@@ -71,15 +102,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.card.ng-enter,
-.card.ng-leave {
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.card.ng-enter.ng-enter-active,
-.card.ng-leave.ng-leave-active {
-  opacity: 0;
-}
-
