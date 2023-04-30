@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 20px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .container {
+      max-width: 1140px;
+    }
+  }

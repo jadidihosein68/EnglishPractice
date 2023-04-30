@@ -1,4 +1,5 @@
-<div>
-    <h1>PTE Component</h1>
-    <p>This is the content of the PTE component.</p>
+<div class="container">
+    <div *ngFor="let item of vocabulary">
+      <app-english-learner-card [term]="item.term" [meaning]="item.meaning" [pronounce]="item.pronounce"></app-english-learner-card>
+    </div>
   </div>
