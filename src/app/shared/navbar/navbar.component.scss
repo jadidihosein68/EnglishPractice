@@ -1,3 +1,12 @@
-.active {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
