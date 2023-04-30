@@ -2,11 +2,11 @@
   <div class="card-inner">
     <div class="card-content">
       <h2>{{ vocabularyItem?.term }}</h2>
-      <p>{{ vocabularyItem?.meaning }}</p>
+
       <i class="fas fa-sync-alt flip-icon" (click)="flipCard()"></i>
     </div>
     <div class="card-back">
-      <p>Back of the card content.</p>
+      <p>{{ vocabularyItem?.meaning }}</p>
       <i class="fas fa-sync-alt flip-icon" (click)="flipCard()"></i>
     </div>
   </div>
@@ -21,4 +21,8 @@
       <i class="fas fa-chevron-right"></i>
     </button>
   </div>
+</div>
+
+<div class="total-records">
+  Total Records: {{totalRecords}}
 </div>

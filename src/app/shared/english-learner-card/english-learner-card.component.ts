@@ -44,6 +44,7 @@ export class EnglishLearnerCardComponent implements OnInit {
   @Input() pronounce?: string;
   @Input() vocabularyItem?: Vocabulary;
   @Output() next = new EventEmitter<void>();
+  @Input() totalRecords: number = 0;
 
   isVisible = true;
   currentObjectIndex = 0;
@@ -81,6 +82,7 @@ export class EnglishLearnerCardComponent implements OnInit {
         }
       ).addEventListener('finish', () => {
         this.isVisible = true;
+        this.isFlipped = false ;
         this.next.emit();
       });
     }
@@ -91,7 +93,7 @@ export class EnglishLearnerCardComponent implements OnInit {
   speak(): void {
     if ('speechSynthesis' in window) {
       const msg = new SpeechSynthesisUtterance();
-      msg.text = this.vocabularyItem?.pronounce || '';
+      msg.text = this.vocabularyItem?.term || '';
       window.speechSynthesis.speak(msg);
     }
   }
