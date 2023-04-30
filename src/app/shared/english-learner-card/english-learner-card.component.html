@@ -1,11 +1,11 @@
 <div class="card">
     <div class="card-content">
-      <h2>{{ term }}</h2>
-      <p>{{ meaning }}</p>
+      <h2>{{ vocabularyItem?.term }}</h2>
+      <p>{{ vocabularyItem?.meaning }}</p>
     </div>
     <div class="card-footer">
-      <span>{{ pronounce }}</span>
-      <button class="next-button" >
+      <span>{{ vocabularyItem?.pronounce }}</span>
+      <button class="next-button" (click)="nextCard()">
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>

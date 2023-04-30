@@ -10,7 +10,7 @@ import { VocabularyService } from '../services/vocabulary.service';
 export class PteComponent implements OnInit {
 
   vocabulary: Vocabulary[] = [];
-  currentIndex = 0;
+  currentCardIndex  = 0;
   currentObject?: Vocabulary;
 
   constructor(private vocabularyService: VocabularyService) { }
@@ -24,8 +24,8 @@ export class PteComponent implements OnInit {
 
   onNext(): void {
     // Increment the current index, and set the current object to the next object in the array
-    this.currentIndex++;
-    this.currentObject = this.vocabulary[this.currentIndex % this.vocabulary.length];
+    this.currentCardIndex ++;
+    this.currentObject = this.vocabulary[this.currentCardIndex  % this.vocabulary.length];
   }
 
 }
