@@ -40,6 +40,8 @@ export class EnglishLearnerCardComponent implements OnInit {
 
   }
 
+  flipCard(): void {}
+
 
   nextCard(): void {
     if (this.card) {

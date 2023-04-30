@@ -1,17 +1,16 @@
 <div class="card" [@cardAnimation]="{ value: 'card', params: { duration: 500, easing: 'ease-out' } }" #card *ngIf="isVisible">
+  <i class="fas fa-sync-alt close-icon"></i>
   <div class="card-content">
     <h2>{{ vocabularyItem?.term }}</h2>
     <p>{{ vocabularyItem?.meaning }}</p>
   </div>
   <div class="card-footer">
-
-    <button class="speaker-container" (click)="speak()">
-      <i class="fas fa-volume-up" ></i>
-      
-    </button>
-
-    <span class="pronounce">{{ vocabularyItem?.pronounce }}</span>
-
+    <div class="speaker-pronounce-container">
+      <button class="speaker-container" (click)="speak()">
+        <i class="fas fa-volume-up" ></i>
+      </button>
+      <span class="pronounce">{{ vocabularyItem?.pronounce }}</span>
+    </div>
     <button class="next-button" (click)="nextCard()">
       <i class="fas fa-chevron-right"></i>
     </button>
