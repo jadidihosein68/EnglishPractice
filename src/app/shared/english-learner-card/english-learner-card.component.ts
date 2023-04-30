@@ -61,6 +61,17 @@ export class EnglishLearnerCardComponent implements OnInit {
     }
   }
 
+
+
+  speak(): void {
+    if ('speechSynthesis' in window) {
+      const msg = new SpeechSynthesisUtterance();
+      msg.text = this.vocabularyItem?.pronounce || '';
+      window.speechSynthesis.speak(msg);
+    }
+  }
+
+
   onAnimationStart(event: AnimationEvent): void {
     console.log(`Animation started: ${event.toState}`);
   }

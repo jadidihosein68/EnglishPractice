@@ -5,10 +5,13 @@
   </div>
   <div class="card-footer">
 
-    <div class="speaker-container">
+    <button class="speaker-container" (click)="speak()">
       <i class="fas fa-volume-up" ></i>
-    </div>
-    <span>{{ vocabularyItem?.pronounce }}</span>
+      
+    </button>
+
+    <span class="pronounce">{{ vocabularyItem?.pronounce }}</span>
+
     <button class="next-button" (click)="nextCard()">
       <i class="fas fa-chevron-right"></i>
     </button>
