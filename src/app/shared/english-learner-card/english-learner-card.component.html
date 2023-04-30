@@ -1,12 +1,12 @@
-<div class="card">
-    <div class="card-content">
-      <h2>{{ vocabularyItem?.term }}</h2>
-      <p>{{ vocabularyItem?.meaning }}</p>
-    </div>
-    <div class="card-footer">
-      <span>{{ vocabularyItem?.pronounce }}</span>
-      <button class="next-button" (click)="nextCard()">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
+<div class="card" [@cardAnimation]="{ value: 'card', params: { duration: 500, easing: 'ease-out' } }" #card *ngIf="isVisible">
+  <div class="card-content">
+    <h2>{{ vocabularyItem?.term }}</h2>
+    <p>{{ vocabularyItem?.meaning }}</p>
   </div>
+  <div class="card-footer">
+    <span>{{ vocabularyItem?.pronounce }}</span>
+    <button class="next-button" (click)="nextCard()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

@@ -7,6 +7,8 @@
     justify-content: space-between;
     height: 200px;
     width: 300px;
+    opacity: 1; /* Set the initial opacity */
+    transition: opacity 0.5s ease-in-out; /* Add a transition */
   }
   
   .card-content {
@@ -42,3 +44,15 @@
 
 
   
+
+  .card.ng-enter,
+  .card.ng-leave {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  
+  .card.ng-enter.ng-enter-active,
+  .card.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
