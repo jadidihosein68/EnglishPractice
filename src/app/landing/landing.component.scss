@@ -20,7 +20,7 @@ body {
   }
   
   a {
-    color: #007bff;
+    //color: #007bff;
   }
   
   .text-center {
@@ -70,6 +70,29 @@ body {
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 30px;
+  }
+
+
+
+  .hero-section {
+    background-image: linear-gradient(to right, #007bff, #0096ff);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-section p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
   }
   
   /* Features section */
@@ -355,3 +378,7 @@ body {
       }
     }}
       
+
+
+
+    
