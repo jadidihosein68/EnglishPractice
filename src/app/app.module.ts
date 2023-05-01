@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -18,7 +20,9 @@ import { RouterModule, Routes } from '@angular/router';
     PteComponent,
     IeltsComponent,
     PageNotFoundComponent,
-    LandingComponent
+    LandingComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
