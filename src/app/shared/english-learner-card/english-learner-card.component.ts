@@ -45,9 +45,9 @@ export class EnglishLearnerCardComponent implements OnInit {
   @Input() vocabularyItem?: Vocabulary;
   @Output() next = new EventEmitter<void>();
   @Input() totalRecords: number = 0;
+  @Input() currentObjectIndex: number = 0;
 
   isVisible = true;
-  currentObjectIndex = 0;
   currentObject: any;
   isFlipped = false;
   @ViewChild('card') card: ElementRef | undefined;
