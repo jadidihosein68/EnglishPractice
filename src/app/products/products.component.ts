@@ -18,7 +18,8 @@ export class ProductsComponent implements OnInit {
       price: 'Free',
       features: [
         'Access to flashcards',
-        'Basic pronunciation'
+        'Basic pronunciation',
+        'Writing Mock Exam'
       ]
     },
     {
@@ -27,7 +28,8 @@ export class ProductsComponent implements OnInit {
       features: [
         'All Free Plan features',
         'Upload custom flashcards',
-        'AI pronunciation for PTE and IELTS'
+        'AI pronunciation for PTE and IELTS',
+        'Advance Mock Exam'
       ]
     },
     {
@@ -36,7 +38,7 @@ export class ProductsComponent implements OnInit {
       features: [
         'All Basic Plan features',
         'Unlimited custom flashcards',
-        'Priority customer support'
+        'Track Progress'
       ]
     }
   ];

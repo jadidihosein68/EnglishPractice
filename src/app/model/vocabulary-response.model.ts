@@ -6,4 +6,5 @@ export interface VocabularyResponse {
     Term: string;
     meaning: string;
     Pronounce: string;
+    SampleSentences: string[];
   }

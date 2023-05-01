@@ -18,7 +18,7 @@ export class VocabularyService {
       .pipe(
         map(response => {
           const vocabularyArray = response.vocabulary;
-          return vocabularyArray.map((item: { Term: string; meaning: string; Pronounce: string; }) => new Vocabulary(item.Term, item.meaning, item.Pronounce));
+          return vocabularyArray.map((item: { Term: string; meaning: string; Pronounce: string;SampleSentences: string[]; }) => new Vocabulary(item.Term, item.meaning, item.Pronounce,item.SampleSentences));
         })
       );
   }
