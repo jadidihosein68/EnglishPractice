@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  title = 'angular-responsive-navbar';
+  isCollapsed = true;
+  
+  toggleNavbar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 
 }
