@@ -17,9 +17,18 @@
       </button>
       <span class="pronounce">{{ vocabularyItem?.pronounce }}</span>
     </div>
+    
+
+    <div class="button-group">
+    <button class="previous-button" (click)="backCard()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    
     <button class="next-button" (click)="nextCard()">
       <i class="fas fa-chevron-right"></i>
     </button>
+  </div>
+    
   </div>
 </div>
 

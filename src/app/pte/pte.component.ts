@@ -28,4 +28,17 @@ export class PteComponent implements OnInit {
     this.currentObject = this.vocabulary[this.currentCardIndex  % this.vocabulary.length];
   }
 
+
+  previousVocabulary() {
+    this.currentCardIndex--;
+    if (this.currentCardIndex >= 0) {
+      this.currentObject = this.vocabulary[this.currentCardIndex];
+    } else {
+      // Handle the case when you have reached the beginning of the list
+      this.currentCardIndex = 0;
+    }
+  }
+  
+  
+
 }

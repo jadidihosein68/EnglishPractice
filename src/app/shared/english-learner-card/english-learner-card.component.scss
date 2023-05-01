@@ -57,6 +57,11 @@
   align-items: center;
 }
 
+
+.button-group {
+  display: flex;
+}
+
 .speaker-pronounce-container,
 .speaker-container {
   display: flex;
@@ -80,6 +85,7 @@
   margin-right: 10px;
 }
 
+.previous-button,
 .next-button {
   background-color: #3b5998;
   border-radius: 50%;

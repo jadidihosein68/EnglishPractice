@@ -44,6 +44,8 @@ export class EnglishLearnerCardComponent implements OnInit {
   @Input() pronounce?: string;
   @Input() vocabularyItem?: Vocabulary;
   @Output() next = new EventEmitter<void>();
+  @Output() back = new EventEmitter<void>();
+
   @Input() totalRecords: number = 0;
   @Input() currentObjectIndex: number = 0;
 
@@ -88,6 +90,27 @@ export class EnglishLearnerCardComponent implements OnInit {
     }
   }
 
+
+  backCard(): void {
+    if (this.card && this.currentObjectIndex > 1) {
+      this.isVisible = false;
+      this.card.nativeElement.animate(
+        [
+          { transform: 'translateY(0)' },
+          { transform: 'translateY(50px)' },
+          { transform: 'translateY(0)' }
+        ],
+        {
+          duration: 500,
+          easing: 'ease-out'
+        }
+      ).addEventListener('finish', () => {
+        this.isVisible = true;
+        this.isFlipped = false;
+        this.back.emit();
+      });
+    }
+  }
 
 
   speak(): void {
