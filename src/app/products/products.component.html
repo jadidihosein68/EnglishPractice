@@ -1,46 +1,23 @@
-<div class="container my-5">
-    <h1 class="text-center mb-4">Our Plans</h1>
+<div class="container mt-5">
     <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Free Plan</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success"></i> Access to cards</li>
-              <li><i class="fas fa-check text-success"></i> Basic pronunciation</li>
+      <div class="col-md-4" *ngFor="let plan of plans">
+        <div class="product-card">
+          <div class="header">
+            <h3>{{ plan.title }}</h3>
+          </div>
+          <div class="body">
+            <div class="price">
+              <h4>{{ plan.price }}</h4>
+            </div>
+            <ul>
+              <li *ngFor="let feature of plan.features">
+                <i class="fas fa-check-circle"></i>
+                {{ feature }}
+              </li>
             </ul>
           </div>
-          <div class="card-footer text-center">
-            <a href="#" class="btn btn-primary">Get Free Plan</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Basic Plan</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success"></i> Upload custom flashcards</li>
-              <li><i class="fas fa-check text-success"></i> AI pronunciation for PTE & IELTS</li>
-            </ul>
-          </div>
-          <div class="card-footer text-center">
-            <a href="#" class="btn btn-primary">Get Basic Plan</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Advance Plan</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-success"></i> All Free and Basic features</li>
-              <li><i class="fas fa-check text-success"></i> Priority support</li>
-              <li><i class="fas fa-check text-success"></i> Advanced AI pronunciation analysis</li>
-            </ul>
-          </div>
-          <div class="card-footer text-center">
-            <a href="#" class="btn btn-primary">Get Advance Plan</a>
+          <div class="footer">
+            <button class="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>
