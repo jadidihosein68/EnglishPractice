@@ -1,17 +1,17 @@
-<p>filter works!</p>
+<div class="filter">
+    <h3>Filter by Rating</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let i of [1, 2, 3, 4, 5]">
 
+        <div class="Rate">
+        <mat-radio-button [value]="i"></mat-radio-button>
+        <div class="stars">
+          <mat-icon *ngFor="let j of [].constructor(i); let index = index">star</mat-icon>
+          <mat-icon *ngFor="let j of [].constructor(5 - i); let index = index">star_border</mat-icon>
+        </div>
+        </div>
 
-
-Autosize sidenav
-
-
-in app.component.html 
-we need a new component call filterbutton 
-filter button show the expand icon. 
-filter button will come on top of both filter-container  and course-list-item-container. 
-
-when user click on filter button the, 
-
-
-
-
+      </mat-list-item>
+    </mat-list>
+  </div>
+  

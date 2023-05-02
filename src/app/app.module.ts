@@ -24,7 +24,7 @@ import { MatListModule } from '@angular/material/list';
 import { FilterComponent } from './filter/filter.component';
 import { CourseListItemComponent } from './course-list-item/course-list-item.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import {MatRadioModule} from '@angular/material/radio'
 
 
 @NgModule({
@@ -56,6 +56,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatCardModule,
     MatListModule,
     MatSidenavModule,
+    MatRadioModule
 
   ],
   providers: [],
