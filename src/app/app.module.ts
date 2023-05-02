@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     NavbarComponent,
     FooterComponent,
     ProductsComponent,
-    RegisterComponent
+    RegisterComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,

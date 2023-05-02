@@ -1,0 +1,30 @@
+.course-card {
+    height: 100%;
+  
+    .img-container {
+      width: 100%;
+      overflow: hidden;
+  
+      .card-img-top {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  
+    .card-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  
+    .card-text {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+  
+    .rating,
+    .price {
+      font-size: 0.8rem;
+    }
+  }
+  
