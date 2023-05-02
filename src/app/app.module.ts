@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { PteComponent } from './pte/pte.component';
 import { IeltsComponent } from './ielts/ielts.component';
@@ -37,7 +40,9 @@ import { CoursesComponent } from './courses/courses.component';
     SharedModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatButtonModule,
 
   ],
   providers: [],
