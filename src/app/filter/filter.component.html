@@ -1,23 +1,23 @@
-<div class="filter">
+
+
+
+  <div class="filter">
     <h3>Filter by Rating</h3>
     <mat-list>
       <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedRating">
-        <mat-radio-button value="1">
-          <mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon>
-        </mat-radio-button>
-        <mat-radio-button value="2">
-          <mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star_border</mat-icon>
-        </mat-radio-button>
-        <mat-radio-button value="3">
-          <mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star_border</mat-icon><mat-icon class="gold">star_border</mat-icon>
-        </mat-radio-button>
-        <mat-radio-button value="4">
-          <mat-icon class="gold"> star</mat-icon><mat-icon class="gold">star</mat-icon><mat-icon class="gold">star_border</mat-icon><mat-icon class="gold">star_border</mat-icon><mat-icon class="gold">star_border</mat-icon>
-        </mat-radio-button>
-        <mat-radio-button value="5">
-          <mat-icon class="gold">star</mat-icon><mat-icon class="gold">star_border</mat-icon><mat-icon class="gold">star_border</mat-icon><mat-icon class="gold">star_border</mat-icon><mat-icon class="gold">star_border</mat-icon>
-        </mat-radio-button>
+        <div class="rating-option" *ngFor="let i of [1, 2, 3, 4, 5]">
+          <mat-radio-button [value]="i"></mat-radio-button>
+         
+          <ng-container *ngFor="let j of [1, 2, 3, 4, 5]">
+        
+            <mat-icon class="gold" *ngIf="j <= i">star</mat-icon>
+            <mat-icon class="gold" *ngIf="j > i">star_border</mat-icon>
+        
+        </ng-container>
+        
+        </div>
       </mat-radio-group>
     </mat-list>
   </div>
   
+  <hr>

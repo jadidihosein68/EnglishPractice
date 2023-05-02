@@ -1,14 +1,25 @@
 <div class="container">
-  <button mat-icon-button (click)="drawer.toggle()">
+  
+  
+  <div class="section1">
+  <button class="button" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>filter_list</mat-icon>
   </button>
 
+</div>
   <mat-drawer-container class="example-container">
     <mat-drawer #drawer mode="side" [opened]="isExpanded">
+      <div class="containersmall">
+
       <app-filter></app-filter>
+    </div>
+    
+
     </mat-drawer>
     <mat-drawer-content>
+      
       <app-course-list-item></app-course-list-item>
+
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
