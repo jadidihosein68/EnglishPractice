@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Course } from '../model/course';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-courses',
@@ -8,7 +10,8 @@ import { Course } from '../model/course';
 })
 export class CoursesComponent implements OnInit {
 
-  showFiller = false;
+  @ViewChild('drawer', { static: false }) drawer!: MatSidenav;
+  isExpanded = true;
 
   courses: Course[] = [
     {
@@ -34,8 +37,16 @@ export class CoursesComponent implements OnInit {
     // ... add more courses as needed
   ];
 
-  constructor() { }
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+    this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .subscribe((state) => {
+        if (state.matches) {
+          this.isExpanded = false;
+        } else {
+          this.isExpanded = true;
+        }
+      });}
 }
