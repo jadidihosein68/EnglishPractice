@@ -19,6 +19,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { CoursesComponent } from './courses/courses.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +47,8 @@ import { CoursesComponent } from './courses/courses.component';
     FormsModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
+    MatListModule
 
   ],
   providers: [],

@@ -1,70 +1,68 @@
 .container {
-    max-width: 960px;
-  }
-  
-  h1 {
-    font-weight: bold;
-  }
-  
-  .bg-primary{
+  max-width: 960px;
+  margin-top: 2rem; // Add this line to add margin to the top of the container
+}
 
-    background-color:   #3b5998 !important;  
-  }
+.text-center {
+  text-align: center;
+}
+
+.benefits-section {
+  margin-bottom: 5rem;
 
   .card {
-    border: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .card-header {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  .card-price {
-    font-weight: bold;
-    font-size: 1.75rem;
     text-align: center;
-  }
-  
-  .list-group-item {
-    font-weight: 500;
-    border: none;
-    background-color: transparent;
-  }
-  
-  button.btn {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  
-  .card-hover:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-  }
 
+    .material-icons.large {
+      font-size: 3rem;
+      color: #333;
+    }
 
-  .benefits-section {
-    margin-bottom: 5rem;
-  
-    .benefit-card {
-      text-align: center;
-  
-      .benefit-icon {
-        font-size: 3rem;
-        color: #3b5998;
-      }
-  
-      h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin: 1rem 0;
-      }
-  
-      p {
-        font-size: 1rem;
-      }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    p {
+      font-size: 1rem;
     }
   }
-  
-  
+}
+
+.card-price {
+  font-weight: bold;
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.card-content {
+  min-height: 240px; // Add this line to set a minimum height for the card content
+}
+
+.collection-item {
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+
+  .material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+}
+
+button.btn {
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.card .card-action {
+  text-align: center;
+}
+
+.plancard{
+
+  min-height: 200px;
+}

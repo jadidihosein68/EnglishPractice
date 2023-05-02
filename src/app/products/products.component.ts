@@ -6,6 +6,16 @@ interface Plan {
   features: string[];
 }
 
+
+
+interface Benefit {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -40,6 +50,25 @@ export class ProductsComponent implements OnInit {
         'Unlimited custom flashcards',
         'Track Progress'
       ]
+    }
+  ];
+
+
+  benefits: Benefit[] = [
+    {
+      icon: 'psychology',
+      title: 'Improve Learning',
+      description: 'Our plans are designed to enhance your learning experience and help you grasp concepts quickly and effectively.'
+    },
+    {
+      icon: 'analytics',
+      title: 'Track Progress',
+      description: 'Monitor your progress with our plans that include detailed statistics and personalized recommendations.'
+    },
+    {
+      icon: 'headset_mic',
+      title: 'Expert Support',
+      description: 'Receive guidance and support from our team of experts to ensure your success throughout the learning journey.'
     }
   ];
 
