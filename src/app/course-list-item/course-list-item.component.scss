@@ -38,3 +38,15 @@
     font-size: 0.875rem;
   }
   
+
+
+
+  @media screen and (max-width: 767px) {
+    .course-image {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        min-width: 64px;
+      }
+  }
+  
