@@ -19,13 +19,27 @@
         align-items: center;
       }
   
-      mat-icon {
-        color: #fdd835;
-      }
+     
     }
   }
   
-  .Rate {
-    display: flex;
+
+
+  .gold{
+color: #fdd835;
+font-size: 20px;
+height: 20px;
+width: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .mat-list-item {
+      flex-direction: column;
+    }
+  
+    .mat-radio-button {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
   }
   
