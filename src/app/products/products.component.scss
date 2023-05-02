@@ -1,6 +1,6 @@
 .container {
   max-width: 960px;
-  margin-top: 2rem; // Add this line to add margin to the top of the container
+  margin-top: 2rem; 
 }
 
 .text-center {
@@ -38,7 +38,7 @@
 }
 
 .card-content {
-  min-height: 240px; // Add this line to set a minimum height for the card content
+  min-height: 240px;
 }
 
 .collection-item {
@@ -65,4 +65,21 @@ button.btn {
 .plancard{
 
   min-height: 200px;
+  
+
+}
+
+
+
+
+.hovereffect{
+
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+
+  &:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); 
+    background-color: rgba(0, 0, 0, 0.02); 
+  }
+
 }
