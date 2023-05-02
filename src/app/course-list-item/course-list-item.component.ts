@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit, Input  } from '@angular/core';
 
 @Component({
   selector: 'app-course-list-item',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./course-list-item.component.scss']
 })
 export class CourseListItemComponent {
+
+  @Input() course: any;
 
 }

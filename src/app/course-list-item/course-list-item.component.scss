@@ -1,5 +1,16 @@
 :host {
     display: block;
-    background-color: red;
     padding: 1rem;
+  }
+
+
+  .course-card {
+    max-width: 400px;
+    margin-bottom: 1rem;
+  }
+  
+  .course-image {
+    background-color: #ccc;
+    width: 40px;
+    height: 40px;
   }

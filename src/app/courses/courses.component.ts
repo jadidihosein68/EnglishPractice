@@ -16,9 +16,9 @@ export class CoursesComponent implements OnInit {
   courses: Course[] = [
     {
       id: 1,
-      title: 'Learn Angular from Scratch',
-      description :"blab blab blab",
-      instructor: 'John Doe',
+      title: 'PTE Exam Flashcard Package',
+      description :"Master PTE with concise flashcards",
+      instructor: 'Dr. John Doe',
       imageUrl: 'https://example.com/course1.jpg',
       rating: 4.5,
       author: "my self",
@@ -26,9 +26,9 @@ export class CoursesComponent implements OnInit {
     },
     {
       id: 2,
-      title: 'Mastering React',
-      description :"blab blab blab",
-      instructor: 'Jane Smith',
+      title: 'IELTS Flashcard Study Set',
+      description :"Achieve IELTS Success with Comprehensive Flashcards Covering All Sections",
+      instructor: 'Ikram Bin Duludin',
       imageUrl: 'https://example.com/course2.jpg',
       rating: 4.7,
       author: "my self",
