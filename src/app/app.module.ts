@@ -21,6 +21,9 @@ import { RegisterComponent } from './register/register.component';
 import { CoursesComponent } from './courses/courses.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { FilterComponent } from './filter/filter.component';
+import { CourseListItemComponent } from './course-list-item/course-list-item.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 
@@ -35,7 +38,10 @@ import { MatListModule } from '@angular/material/list';
     FooterComponent,
     ProductsComponent,
     RegisterComponent,
-    CoursesComponent
+    CoursesComponent,
+    FilterComponent,
+    CourseListItemComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,8 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatSidenavModule,
 
   ],
   providers: [],

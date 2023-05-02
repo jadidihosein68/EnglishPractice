@@ -7,6 +7,9 @@ import { Course } from '../model/course';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
+
+  showFiller = false;
+
   courses: Course[] = [
     {
       id: 1,
