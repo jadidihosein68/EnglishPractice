@@ -18,10 +18,11 @@
     </mat-drawer>
     <mat-drawer-content>
       
+      <div class="cards">
       <div *ngFor="let course of courses">
         <app-course-list-item [course]="course"></app-course-list-item>
       </div>
-
+    </div>
 
     </mat-drawer-content>
   </mat-drawer-container>

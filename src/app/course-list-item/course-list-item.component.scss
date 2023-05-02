@@ -1,16 +1,40 @@
-:host {
-    display: block;
-    padding: 1rem;
-  }
-
-
-  .course-card {
-    max-width: 400px;
-    margin-bottom: 1rem;
+.course-item {
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 1rem; // Add this line to create space between course items
   }
   
   .course-image {
-    background-color: #ccc;
-    width: 40px;
-    height: 40px;
+    width: 260px;
+    height: 146px;
+    object-fit: cover;
+    min-width: 260px;
   }
+  
+  .course-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+  }
+  
+  .course-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-description {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-author {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .course-rating {
+    font-size: 0.875rem;
+  }
+  
