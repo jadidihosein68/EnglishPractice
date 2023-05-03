@@ -7,4 +7,5 @@ export interface Course {
     author:string;
     rating: number;
     price: number;
+
   }

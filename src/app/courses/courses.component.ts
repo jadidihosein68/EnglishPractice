@@ -19,17 +19,17 @@ export class CoursesComponent implements OnInit {
       title: 'PTE Exam Flashcard Package',
       description :"Master PTE with concise flashcards",
       instructor: 'Dr. John Doe',
-      imageUrl: 'https://example.com/course1.jpg',
+      imageUrl: '/assets/image/pte.png',
       rating: 4.5,
       author: "my self",
-      price: 49.99
+      price: 49.99,
     },
     {
       id: 2,
       title: 'IELTS Flashcard Study Set',
       description :"Achieve IELTS Success with Comprehensive Flashcards Covering All Sections",
       instructor: 'Ikram Bin Duludin',
-      imageUrl: 'https://example.com/course2.jpg',
+      imageUrl: '/assets/image/Ielts.png',
       rating: 4.7,
       author: "my self",
       price: 39.99
