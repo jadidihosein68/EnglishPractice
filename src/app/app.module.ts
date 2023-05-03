@@ -25,7 +25,8 @@ import { FilterComponent } from './filter/filter.component';
 import { CourseListItemComponent } from './course-list-item/course-list-item.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatRadioModule} from '@angular/material/radio'
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,9 @@ import {MatRadioModule} from '@angular/material/radio'
     MatCardModule,
     MatListModule,
     MatSidenavModule,
-    MatRadioModule
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
 
   ],
   providers: [],

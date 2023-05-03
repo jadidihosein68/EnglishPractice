@@ -44,13 +44,42 @@ padding: 0 10px;
 
   .section1 {
     padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
   }
+
+  mat-form-field {
+    width: 250px;
+    margin-left: 1rem;
+  }
+
 
   .containersmall{
     padding: 0 24px;
   }
 }
 
+
+@media (max-width: 767px) {
+  
+  
+.container{
+
+  padding-top:  1rem;
+}
+
+  mat-form-field {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+.section1{
+  width: 100%;
+}
+
+}
 
 .divider {
   height: 1px;
