@@ -18,9 +18,11 @@
   </div>
   <div class="card-footer">
     <div class="speaker-pronounce-container">
-      <button class="speaker-container" (click)="speak()">
-        <i class="fas fa-volume-up"></i>
+      <button class=" speaker-container btn-floating waves-effect waves-light" (click)="speak()">
+        <i class="material-icons">volume_up</i>
       </button>
+
+      
       <span class="pronounce">{{ vocabularyItem?.pronounce }}</span>
     </div>
     
