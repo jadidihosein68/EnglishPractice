@@ -1,13 +1,14 @@
 .course-item {
     display: flex;
     background-color: #fff;
-    margin-bottom: 1rem; // Add this line to create space between course items
+    margin-bottom: 1rem; 
+    position: relative; // Add this line to align the button vertically
   }
   
   .course-image {
     width: 260px;
     height: 146px;
-    object-fit: cover;
+    
     min-width: 260px;
   }
   
@@ -16,6 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-left: 1rem;
+    flex-grow: 1; 
   }
   
   .course-title {
@@ -39,7 +41,13 @@
   }
   
 
-
+.subscribe-button {
+  
+  position: absolute; // Add this line to position the button independently
+  bottom: 0px; // Add this line to move the button to the bottom of the course item
+  right: 1rem; // Add this line to move the button to the right side of the course item
+  min-width: 105px;
+}
 
   @media screen and (max-width: 767px) {
     .course-image {
@@ -49,4 +57,3 @@
         min-width: 64px;
       }
   }
-  
