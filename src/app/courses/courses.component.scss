@@ -26,16 +26,30 @@ button {
   background-color: #fff;
 }
 
-
 button {
   background-color: black;
   color: white;
+
+}
+
+
+.mybtn {
+
+padding: 10px 0 0 20px;
 }
 
 .cards{
-padding: 0 10px;
-
+  padding: 0 10px;
 }
+
+.section1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+
 
 @media screen and (max-width: 767px) {
   .mat-drawer {
@@ -43,16 +57,16 @@ padding: 0 10px;
   }
 
   .section1 {
-    padding: 0 24px;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
 
   }
 
   mat-form-field {
     width: 250px;
-    margin-left: 1rem;
+    margin-left: 0;
   }
 
 
@@ -60,6 +74,17 @@ padding: 0 10px;
     padding: 0 24px;
   }
 }
+
+
+
+
+.divider {
+  height: 1px;
+  background-color: #cccccc;
+  width: 100%;
+  margin: 1rem 0;
+}
+
 
 
 @media (max-width: 767px) {
@@ -80,11 +105,3 @@ padding: 0 10px;
 }
 
 }
-
-.divider {
-  height: 1px;
-  background-color: #cccccc;
-  width: 100%;
-  margin: 1rem 0;
-}
-
