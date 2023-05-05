@@ -1,5 +1,15 @@
 <div class="container">
+  <div class="card-container">
+    <div class="header">
+      <app-english-learner-card-header></app-english-learner-card-header>     
     <div class="card-wrapper">
-      <app-english-learner-card [totalRecords]="vocabulary.length " [currentObjectIndex]="currentCardIndex + 1"  [vocabularyItem]="vocabulary[currentCardIndex]" (next)="currentCardIndex = (currentCardIndex + 1) % vocabulary.length"   (back)="previousVocabulary()" ></app-english-learner-card>
+      <app-english-learner-card
+        [totalRecords]="vocabulary.length"
+        [currentObjectIndex]="currentCardIndex + 1"
+        [vocabularyItem]="vocabulary[currentCardIndex]"
+        (next)="currentCardIndex = (currentCardIndex + 1) % vocabulary.length"
+        (back)="previousVocabulary()"
+      ></app-english-learner-card>
     </div>
   </div>
+</div>
