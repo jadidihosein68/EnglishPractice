@@ -7,6 +7,7 @@
       <li><a routerLink="/ielts" routerLinkActive="active-link">IELTS</a></li>
       <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
       <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Profile</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Signup</a></li>
     </ul>
   </div>
 </nav>
@@ -15,5 +16,7 @@
   <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close" >PTE</a></li>
   <li><a routerLink="/ielts" routerLinkActive="active-link" class="sidenav-close">IELTS</a></li>
   <li><a routerLink="/products" routerLinkActive="active-link" class="sidenav-close">Products</a></li>
-  <li><a routerLink="/products" routerLinkActive="active-link" class="sidenav-close" *ngIf="authService.isLoggedIn()">Profile</a></li>
+  <li><a routerLink="/profile" routerLinkActive="active-link" class="sidenav-close" *ngIf="authService.isLoggedIn()">Profile</a></li>
+  <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Signup</a></li>
+
 </ul>
