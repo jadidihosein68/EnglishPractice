@@ -24,6 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { loginComponent } from '../app/login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductPlanService } from '../app/services/product-plan.service';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FormsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [ProductPlanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

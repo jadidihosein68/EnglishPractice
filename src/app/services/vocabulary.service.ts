@@ -14,7 +14,7 @@ export class VocabularyService {
   constructor(private http: HttpClient) { }
 
   getVocabulary(): Observable<Vocabulary[]> {
-    return this.http.get<VocabularyResponse>(environment.apiUrl)
+    return this.http.get<VocabularyResponse>(environment.apiUrl+"/vocabulary.json")
       .pipe(
         map(response => {
           const vocabularyArray = response.vocabulary;

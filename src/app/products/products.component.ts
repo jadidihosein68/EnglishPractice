@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Plan} from '../model/Plan';
 import {Benefit} from '../model/benefit';
+import { ProductPlanService } from '../services/product-plan.service';
+import {  ProductPlan } from '../model/ProductPlan';
 
 
 @Component({
@@ -10,39 +12,7 @@ import {Benefit} from '../model/benefit';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  plans: Plan[] = [
-    {
-      id:"1",
-      title: 'Free Plan',
-      price: 'Free',
-      features: [
-        'Access to flashcards',
-        'Basic pronunciation',
-        'Writing Mock Exam'
-      ]
-    },
-    {
-      id:"2",
-      title: 'Basic Plan',
-      price: '$9.99/mo',
-      features: [
-        'All Free Plan features',
-        'Upload custom flashcards',
-        'AI pronunciation for PTE and IELTS',
-        'Advance Mock Exam'
-      ]
-    },
-    {
-      id:"3",
-      title: 'Advanced Plan',
-      price: '$19.99/mo',
-      features: [
-        'All Basic Plan features',
-        'Unlimited custom flashcards',
-        'Track Progress'
-      ]
-    }
-  ];
+  plans?: ProductPlan[] ;
 
 
   benefits: Benefit[] = [
@@ -63,9 +33,13 @@ export class ProductsComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router , private productPlanService: ProductPlanService) { }
 
   ngOnInit(): void {
+
+    this.productPlanService.getProductPlans().subscribe((plan) => {
+      this.plans = plan;
+    });
   }
 
   selectPlan(plan: any) {
