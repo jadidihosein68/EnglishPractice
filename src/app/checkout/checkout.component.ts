@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit {
       );
     } else {
 
-      this.router.navigate(['/']);
+      this.router.navigate(['/products']);
     }
   }
 
