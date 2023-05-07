@@ -27,6 +27,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatRadioModule} from '@angular/material/radio'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatInputModule } from '@angular/material/input';
     CoursesComponent,
     FilterComponent,
     CourseListItemComponent,
+    ProfileComponent,
     
   ],
   imports: [
