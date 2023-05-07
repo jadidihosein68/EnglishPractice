@@ -30,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ProfileComponent } from './profile/profile.component';
 import { loginComponent } from '../app/login/login.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PaymentComponent } from './payment/payment.component';
     CourseListItemComponent,
     ProfileComponent,
     loginComponent,
-    PaymentComponent
+    PaymentComponent,
+    CheckoutComponent
     
   ],
   imports: [
