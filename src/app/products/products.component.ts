@@ -1,19 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Plan {
-  title: string;
-  price: string;
-  features: string[];
-}
-
-
-
-interface Benefit {
-  icon: string;
-  title: string;
-  description: string;
-}
-
+import { Router } from '@angular/router';
+import {Plan} from '../model/Plan';
+import {Benefit} from '../model/benefit';
 
 
 @Component({
@@ -24,6 +12,7 @@ interface Benefit {
 export class ProductsComponent implements OnInit {
   plans: Plan[] = [
     {
+      id:"1",
       title: 'Free Plan',
       price: 'Free',
       features: [
@@ -33,6 +22,7 @@ export class ProductsComponent implements OnInit {
       ]
     },
     {
+      id:"2",
       title: 'Basic Plan',
       price: '$9.99/mo',
       features: [
@@ -43,6 +33,7 @@ export class ProductsComponent implements OnInit {
       ]
     },
     {
+      id:"3",
       title: 'Advanced Plan',
       price: '$19.99/mo',
       features: [
@@ -72,8 +63,13 @@ export class ProductsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  selectPlan(plan: any) {
+    console.log({"planid":plan.id});
+    this.router.navigate(['/checkout', plan.id]);
   }
 }

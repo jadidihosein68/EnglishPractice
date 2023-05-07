@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]  },  
+  { path: 'checkout/:planId', component: CheckoutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
