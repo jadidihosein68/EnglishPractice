@@ -8,6 +8,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatRadioModule} from '@angular/material/radio'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
     MatRadioModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
+    MatMenuModule,
 
   ],
   exports: [
@@ -31,7 +35,8 @@ import { MatInputModule } from '@angular/material/input';
     MatRadioModule,
     MatFormFieldModule,
     MatInputModule,
-
+    MatToolbarModule,
+    MatMenuModule
   ]    
 })
 
