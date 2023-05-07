@@ -9,7 +9,7 @@ import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AuthGuard } from './services/guard/auth.guard';
 
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'courses', component: CoursesComponent },
-  { path: 'profile', component: ProfileComponent  },
+  { path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]  },
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
 ];
