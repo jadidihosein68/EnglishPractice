@@ -2,19 +2,13 @@
     <div class="checkout-container">
       <h2>Checkout</h2>
       <div class="plan-details">
-        <h3>Selected Plan</h3>
-        <p>
+        <h3>{{selectedPlan?.title}}</h3>
+        <ng-container *ngIf="selectedPlan?.features">
+          <p *ngFor="let feature of selectedPlan?.features">
             <i class="material-icons green-text">check_circle</i>
-          Feature 1
-        </p>
-        <p>
-            <i class="material-icons green-text">check_circle</i>
-          Feature 2
-        </p>
-        <p>
-            <i class="material-icons green-text">check_circle</i>
-          Feature 3
-        </p>
+            {{ feature }}
+          </p>
+        </ng-container>
       </div>
       <div class="guarantees">
         <div class="guarantee-item">
@@ -28,7 +22,6 @@
       </div>
       <div class="button-container">
         <button class="btn" routerLink="/payment" mat-raised-button color="primary">Proceed to Payment</button>
-
       </div>
     </div>
   </div>

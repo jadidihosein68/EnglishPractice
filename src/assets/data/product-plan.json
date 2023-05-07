@@ -1,0 +1,12 @@
+{
+    "ProductPlan": {
+        "id": 1,
+        "title": "Free Plan",
+        "price": "Free",
+        "features": [
+            "Access to flashcards",
+            "Basic pronunciation",
+            "Writing Mock Exam"
+        ]
+    }
+}

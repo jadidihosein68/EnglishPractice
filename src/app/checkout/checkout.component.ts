@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductPlanService } from '../services/product-plan.service';
+import { ProductPlan } from '../model/ProductPlan';
 
 
 @Component({
@@ -8,25 +10,29 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
-  selectedPlan: any;
+  selectedPlan: ProductPlan | null = null;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private productPlanService: ProductPlanService) { }
 
   ngOnInit(): void {
-
-
-
-
-    this.selectedPlan = {
-      name: 'Premium Plan',
-      price: 49.99,
-      features: ['Feature 1', 'Feature 2', 'Feature 3'],
-    };
 
     const planId = this.route.snapshot.paramMap.get('planId') || '';
     this.selectedPlan = this.getPlanById(planId);
 
-    
+
+
+    if (planId) {
+      this.productPlanService.getProductPlanById(Number(planId)).subscribe(
+        (plan) => {
+          this.selectedPlan = plan;
+        },
+        (error) => {
+          console.error('Error fetching plan:', error);
+        }
+      );}
+
+
+
 
   }
 

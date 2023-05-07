@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class ProductPlanService {
   private readonly apiUrl = environment.apiUrl + '/product-plans.json';
+  private readonly apiUrlByID = environment.apiUrl + '/product-plan.json';
 
   constructor(private http: HttpClient) {}
 
@@ -18,4 +19,13 @@ export class ProductPlanService {
       map((response) => response.ProductPlan)
     );
   }
+
+
+  getProductPlanById(id: number): Observable<ProductPlan> {
+    //return this.http.get<{ ProductPlan: ProductPlan }>(`${this.apiUrl}/${id}`).pipe(
+      return this.http.get<{ ProductPlan: ProductPlan }>(`${this.apiUrlByID}`).pipe(
+      map((response) => response.ProductPlan)
+    );
+  }
+
 }
