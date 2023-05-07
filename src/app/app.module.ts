@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { PteComponent } from './pte/pte.component';
@@ -15,18 +13,13 @@ import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { CoursesComponent } from './courses/courses.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
 import { FilterComponent } from './filter/filter.component';
 import { CourseListItemComponent } from './course-list-item/course-list-item.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatRadioModule} from '@angular/material/radio'
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { ProfileComponent } from './profile/profile.component';
 import { loginComponent } from '../app/login/login.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -60,15 +53,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatListModule,
-    MatSidenavModule,
-    MatRadioModule,
-    MatFormFieldModule,
-    MatInputModule,
-
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
