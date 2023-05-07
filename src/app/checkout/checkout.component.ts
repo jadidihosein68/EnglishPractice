@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductPlanService } from '../services/product-plan.service';
 import { ProductPlan } from '../model/ProductPlan';
 
@@ -12,7 +12,11 @@ import { ProductPlan } from '../model/ProductPlan';
 export class CheckoutComponent implements OnInit {
   selectedPlan: ProductPlan | null = null;
 
-  constructor(private route: ActivatedRoute, private productPlanService: ProductPlanService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private productPlanService: ProductPlanService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
@@ -20,20 +24,20 @@ export class CheckoutComponent implements OnInit {
     this.selectedPlan = this.getPlanById(planId);
 
 
-
+    console.log({ "planId": planId });
     if (planId) {
       this.productPlanService.getProductPlanById(Number(planId)).subscribe(
         (plan) => {
           this.selectedPlan = plan;
         },
         (error) => {
-          console.error('Error fetching plan:', error);
+          this.router.navigate(['/dashboard']);
         }
-      );}
+      );
+    } else {
 
-
-
-
+      this.router.navigate(['/']);
+    }
   }
 
 
