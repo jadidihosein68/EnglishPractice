@@ -6,6 +6,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { ProductsComponent } from './products/products.component';
+import { PaymentComponent } from './payment/payment.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'courses', component: CoursesComponent },
-  { path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]  },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]  },  
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
 ];

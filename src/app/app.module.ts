@@ -29,6 +29,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProfileComponent } from './profile/profile.component';
 import { loginComponent } from '../app/login/login.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { loginComponent } from '../app/login/login.component';
     FilterComponent,
     CourseListItemComponent,
     ProfileComponent,
-    loginComponent
+    loginComponent,
+    PaymentComponent
     
   ],
   imports: [
