@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environments';
 
 @Component({
   selector: 'app-register',
@@ -8,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
   email?: string;
   password?: string;
+  canShowLogin?: boolean;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
+    this.canShowLogin = !environment.production;
   }
 
   onSubmit(): void {
