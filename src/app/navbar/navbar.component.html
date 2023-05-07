@@ -1,4 +1,4 @@
-<nav class="nav-wrapper" >
+<nav class="nav-wrapper">
   <div class="container">
     <a routerLink="/" class="">English Learning Center</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -6,6 +6,7 @@
       <li><a routerLink="/pte" routerLinkActive="active-link">PTE</a></li>
       <li><a routerLink="/ielts" routerLinkActive="active-link">IELTS</a></li>
       <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
+      <li><a routerLink="/checkout" routerLinkActive="active-link"><i class="material-icons">shopping_cart</i></a></li>
       <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Profile</a></li>
       <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Sign-up</a></li>
     </ul>
@@ -13,10 +14,10 @@
 </nav>
 
 <ul class="sidenav right-aligned" id="mobile-demo">
-  <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close" >PTE</a></li>
+  <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close">PTE</a></li>
   <li><a routerLink="/ielts" routerLinkActive="active-link" class="sidenav-close">IELTS</a></li>
   <li><a routerLink="/products" routerLinkActive="active-link" class="sidenav-close">Products</a></li>
+  <li><a routerLink="/checkout" routerLinkActive="active-link" class="sidenav-close"> Checkout</a></li>
   <li><a routerLink="/profile" routerLinkActive="active-link" class="sidenav-close" *ngIf="authService.isLoggedIn()">Profile</a></li>
   <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Signup</a></li>
-
 </ul>
