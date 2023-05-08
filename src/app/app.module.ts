@@ -17,14 +17,19 @@ import { MaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
+import { GoogleLoginComponent } from './register/google-login/google-login.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FilterComponent } from './filter/filter.component';
 import { CourseListItemComponent } from './course-list-item/course-list-item.component';
 import { ProfileComponent } from './profile/profile.component';
-import { loginComponent } from '../app/login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductPlanService } from '../app/services/product-plan.service';
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider,FacebookLoginProvider } from '@abacritt/angularx-social-login';
+import {  GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import {  LocalStorageService } from './services/localstorage.service';
+
 
 
 @NgModule({
@@ -38,11 +43,11 @@ import { ProductPlanService } from '../app/services/product-plan.service';
     FooterComponent,
     ProductsComponent,
     RegisterComponent,
+    GoogleLoginComponent,
     CoursesComponent,
     FilterComponent,
     CourseListItemComponent,
     ProfileComponent,
-    loginComponent,
     PaymentComponent,
     CheckoutComponent
     
@@ -56,8 +61,33 @@ import { ProductPlanService } from '../app/services/product-plan.service';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule
   ],
-  providers: [ProductPlanService],
+  providers: [ProductPlanService
+  ,{
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '484860199419-k6m26l1ol971kbjhg2cr3f53hteljtlt.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }, LocalStorageService
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

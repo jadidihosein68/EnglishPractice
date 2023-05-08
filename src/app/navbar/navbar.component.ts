@@ -30,4 +30,8 @@ export class NavbarComponent {
     this.isCollapsed = !this.isCollapsed;
   }
 
+  logout(){
+    this.authService.logout();
+  }
+
 }

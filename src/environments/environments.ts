@@ -1,6 +1,7 @@
 export const environment = {
     production: false,
     //apiUrl: 'http://localhost:3000/getvocabulary',
-    apiUrl:'/assets/data'
+    //apiUrl:'/assets/data'
+    apiUrl: 'http://localhost:3000'
 
   };

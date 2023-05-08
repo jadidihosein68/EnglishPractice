@@ -1,95 +1,57 @@
-
-
-.container {
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    height: 100vh;
-    margin: 0 auto;
-    max-width: 960px;
-    padding-top : 2rem;
-    .card-wrapper {
-        display: flex;
-      //  justify-content: center;
-       // align-items: center;
-        //height: 100%;
-        width: 100%;
-      }
+/* layout-container */
+.layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
 }
 
+/* signup-container */
+.signup-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-.register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+.social-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .social-login {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-  
-  .social-login a {
-    display: flex;
-    //align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
-    
-  }
-  
-  .social-login i {
-    margin-right: 10px;
-  }
-  
-  .social-login a.facebook {
-    background-color: #1877f2;
-  }
-  
-  .social-login a.facebook:hover {
-    background-color: #125dbf;
-  }
-  
-  .social-login a.google {
-    background-color: #db4437;
-  }
-  
-  .social-login a.google:hover {
-    background-color: #b0352a;
-  }
-  
-  .social-login a.hotmail {
-    background-color: #00a1f1;
-  }
-  
-  .social-login a.hotmail:hover {
-    background-color: #0081c7;
-  }
-  
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* google-signin button */
+.google-signin {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #555;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.google-signin:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.google-signin img {
+  width: 32px;
+  margin-right: 0.5rem;
+}
