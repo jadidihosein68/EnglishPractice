@@ -16,7 +16,6 @@ export class UserService {
   constructor(private http: HttpClient, private myLocalStorage : LocalStorageService) {}
 
   getMyUserProfile(): Observable<UserProfile> {
-    console.log(this.myLocalStorage.getItem('token'));
     return this.http.get<any>(`${this.apiUrl}`, makeHeader(this.myLocalStorage.getItem('token'))).pipe();
   }
 }
