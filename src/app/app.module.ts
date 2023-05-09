@@ -25,6 +25,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductPlanService } from '../app/services/product-plan.service';
+import { UserService } from '../app/services/user.service';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider,FacebookLoginProvider } from '@abacritt/angularx-social-login';
 import {  GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
@@ -64,7 +65,9 @@ import {  LocalStorageService } from './services/localstorage.service';
     SocialLoginModule,
     GoogleSigninButtonModule
   ],
-  providers: [ProductPlanService
+  providers: [
+    ProductPlanService,
+    UserService
   ,{
       provide: 'SocialAuthServiceConfig',
       useValue: {

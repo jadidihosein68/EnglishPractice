@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {  UserService } from '../services/user.service'; // import the UserService and UserProfile
+import {  UserProfile } from '../model/userProfile'; // import the UserService and UserProfile
+
+
 
 @Component({
   selector: 'app-profile',
@@ -7,17 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  // Add static data
-  profileData = {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    imageUrl: 'https://via.placeholder.com/150',
-    bio: 'User Bio',
-  };
+  profileData: UserProfile | null = null;
+  imageUrl = 'https://via.placeholder.com/150';
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getMyUserProfile().subscribe(
+      (data) => {
+        this.profileData = data;
+      },
+      (error) => {
+        console.error('Error fetching user profile:', error);
+      }
+    );
   }
 
 }

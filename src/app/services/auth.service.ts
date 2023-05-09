@@ -36,13 +36,11 @@ loginwithGoogle(TokenID : string) :  Observable<any>{
      "credential": TokenID
   };
 
-  console.log(`${environment.apiUrl}/api/auth/LoginWithGoogle`);
   return this.httpClient.post(`${environment.apiUrl}/api/auth/LoginWithGoogle`, requestObject, requestOptions)
   .pipe(map(res => {
     let result = res;
     if (result) {
-
-      this.myLocalStorage.setItem('token', result.toString());
+      this.myLocalStorage.setItem('token', JSON.parse(result.toString()).token);
       return true;
     }
     return false;
