@@ -1,6 +1,4 @@
 export const environment = {
     production: true,
-    //apiUrl: 'http://localhost:3000/getvocabulary',
-    apiUrl:'/assets/data'
-
+    apiUrl:'https://serene-inlet-67621.herokuapp.com'
   };
