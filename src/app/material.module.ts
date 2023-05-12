@@ -10,7 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [ 
@@ -24,6 +25,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     MatToolbarModule,
     MatMenuModule,
+    MatTabsModule,
+    MatProgressBarModule,
 
   ],
   exports: [
@@ -36,7 +39,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatProgressBarModule,
   ]    
 })
 

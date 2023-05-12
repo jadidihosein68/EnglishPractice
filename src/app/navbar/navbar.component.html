@@ -4,9 +4,9 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a routerLink="/pte" routerLinkActive="active-link">PTE</a></li>
-      <li><a routerLink="/ielts" routerLinkActive="active-link">IELTS</a></li>
+      <li><a routerLink="/courses" routerLinkActive="active-link">FlashCards</a></li>
       <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
-      <li><a routerLink="/checkout" routerLinkActive="active-link"><i class="material-icons">shopping_cart</i></a></li>
+      <li><a routerLink="/checkout" routerLinkActive="active-link" *ngIf="authService.isInRole('Learner')" ><i class="material-icons">shopping_cart</i></a></li>
       <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Profile</a></li>
       <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Sign-up</a></li>
       <li><a  (click)="logout()" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Logout</a></li>

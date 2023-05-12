@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { GoogleLoginComponent } from './register/google-login/google-login.component';
 import { CoursesComponent } from './courses/courses.component';
@@ -50,7 +51,8 @@ import {  LocalStorageService } from './services/localstorage.service';
     CourseListItemComponent,
     ProfileComponent,
     PaymentComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    HomeComponent
     
   ],
   imports: [
