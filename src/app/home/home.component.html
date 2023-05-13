@@ -9,48 +9,26 @@
     <mat-tab label="All cards">
       <ng-template matTabContent>
        
-        
-        
-
-
-        <div class="card-container">
-          <div class="card" *ngFor="let person of people">
-            <div class="img-container">
-              <img class="card-img" [src]="person.imageUrl" alt="Person image">
-
-              <button mat-mini-fab color="primary"  class="proceed-button-always" aria-label="Example icon button with a delete icon">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-
-              
-            </div>
-            <div class="card-body">
-              <p class="card-caption">{{ person.caption }}</p>c
-              <p class="card-name">{{ person.name }}</p>
-              <mat-progress-bar mode="determinate" [value]="person.progress"></mat-progress-bar>
-              <div class="rating">
-                <span>Rating : </span>
-                <span *ngFor="let r of [].constructor(5); let i = index">
-                  <i class="fa" [ngClass]="{'fa-star': i < person.rating, 'fa-star-o': i >= person.rating}"></i>
-                </span>
-              </div>
-            </div>
-          </div>
+ 
+        <div class="card-container" >
+          <app-course-card-minimal *ngFor="let thecard of cardinfo" [cardInfo]="thecard"></app-course-card-minimal>
         </div>
+
+      </ng-template>
+    </mat-tab>
+
+   
+    <mat-tab label="Archive">
+      <ng-template matTabContent>
         
-
-
-
+        <div class="card-container" >
+          <app-course-card-minimal *ngFor="let thecard of cardinfo" [cardInfo]="thecard"></app-course-card-minimal>
+        </div>
 
       </ng-template>
     </mat-tab>
 
     <!--
-    <mat-tab label="Archive">
-      <ng-template matTabContent>
-        Content 2 - Loaded: {{getTimeLoaded(2) | date:'medium'}}
-      </ng-template>
-    </mat-tab>
     <mat-tab label="Wishllist">
       <ng-template matTabContent>
         Content 3 - Loaded: {{getTimeLoaded(3) | date:'medium'}}

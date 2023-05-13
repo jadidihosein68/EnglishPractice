@@ -12,6 +12,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 @NgModule({
   imports: [ 
@@ -27,6 +30,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatMenuModule,
     MatTabsModule,
     MatProgressBarModule,
+    MatSelectModule,
+    MatStepperModule,
 
   ],
   exports: [
@@ -42,6 +47,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatMenuModule,
     MatTabsModule,
     MatProgressBarModule,
+    MatSelectModule,
+    MatStepperModule,
   ]    
 })
 

@@ -24,7 +24,7 @@ export class HomeComponent {
     return this.tabLoadTimes[index];
   }
 
-  people = [
+  cardinfo = [
     { 
       name: 'John Doe', 
       bio: 'Lorem ipsum dolor sit amet.',
@@ -40,43 +40,10 @@ export class HomeComponent {
       caption: 'Caption for image 2',
       progress: 40,      
       rating: 2
-    },
-    { 
-      name: 'John Doe', 
-      bio: 'Lorem ipsum dolor sit amet.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 1',
-      progress: 70,      
-      rating: 3
-    },
-    { 
-      name: 'John Doe', 
-      bio: 'Lorem ipsum dolor sit amet.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 1',
-      progress: 70,      
-      rating: 1
-    },
+    }
     // add more people here
   ];
 
-  cards = [
-    {
-      title: 'Card 1',
-      image: 'url-to-image-1',
-      description: 'This is card 1',
-      rating: 4.5,
-      author: 'Author 1',
-    },
-    {
-      title: 'Card 2',
-      image: 'url-to-image-2',
-      description: 'This is card 2',
-      rating: 5,
-      author: 'Author 2',
-    },
-    //...more cards
-  ];
 
   /*
   cols?: number;

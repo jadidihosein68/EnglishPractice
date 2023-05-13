@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="img-container">
+      <img class="card-img" [src]="cardInfo.imageUrl" alt="Card image">
+      <button mat-mini-fab color="primary"  class="proceed-button-always" aria-label="Example icon button with a delete icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+    <div class="card-body">
+      <p class="card-caption">{{ cardInfo.caption }}</p>
+      <p class="card-name">{{ cardInfo.name }}</p>
+      <mat-progress-bar mode="determinate" [value]="cardInfo.progress"></mat-progress-bar>
+      <div class="rating">
+        <span>Rating : </span>
+        <span *ngFor="let r of [].constructor(5); let i = index">
+            <i class="fa" [ngClass]="{'fa-star': i < cardInfo.rating, 'fa-star-o': i >= cardInfo.rating}"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  

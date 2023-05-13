@@ -24,6 +24,7 @@ import { FilterComponent } from './filter/filter.component';
 import { CourseListItemComponent } from './course-list-item/course-list-item.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
+import { FlashcardFormComponent } from './flash-card-form/flash-card-form.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductPlanService } from '../app/services/product-plan.service';
 import { UserService } from '../app/services/user.service';
@@ -31,8 +32,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import { GoogleLoginProvider,FacebookLoginProvider } from '@abacritt/angularx-social-login';
 import {  GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import {  LocalStorageService } from './services/localstorage.service';
-
-
+import { ReactiveFormsModule } from '@angular/forms'; // import ReactiveFormsModule
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import {  LocalStorageService } from './services/localstorage.service';
     ProfileComponent,
     PaymentComponent,
     CheckoutComponent,
-    HomeComponent
+    HomeComponent,
+    FlashcardFormComponent
     
   ],
   imports: [
@@ -65,7 +66,8 @@ import {  LocalStorageService } from './services/localstorage.service';
     FormsModule,
     MaterialModule,
     SocialLoginModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    ReactiveFormsModule // add ReactiveFormsModule to the NgModule imports
   ],
   providers: [
     ProductPlanService,

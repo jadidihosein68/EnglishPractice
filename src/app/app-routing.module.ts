@@ -11,6 +11,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './landing/landing.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FlashcardFormComponent } from './flash-card-form/flash-card-form.component';
+
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './services/guard/auth.guard';
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]  },  
+  { path: 'createflashcard', component: FlashcardFormComponent },
   { path: 'checkout/:planId', component: CheckoutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: '', component : LandingComponent },
