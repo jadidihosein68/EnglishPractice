@@ -17,10 +17,15 @@
           <div class="card" *ngFor="let person of people">
             <div class="img-container">
               <img class="card-img" [src]="person.imageUrl" alt="Person image">
-              <button class="proceed-button">Proceed</button>
+
+              <button mat-mini-fab color="primary"  class="proceed-button-always" aria-label="Example icon button with a delete icon">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+
+              
             </div>
             <div class="card-body">
-              <p class="card-caption">{{ person.caption }}</p>
+              <p class="card-caption">{{ person.caption }}</p>c
               <p class="card-name">{{ person.name }}</p>
               <mat-progress-bar mode="determinate" [value]="person.progress"></mat-progress-bar>
               <div class="rating">
