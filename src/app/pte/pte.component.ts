@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vocabulary } from '../model/vocabulary.model';
-import { VocabularyService } from '../services/vocabulary.service';
+import { FlashCardService } from '../services/vocabulary.service';
 
 @Component({
   selector: 'app-pte',
@@ -13,7 +13,7 @@ export class PteComponent implements OnInit {
   currentCardIndex  = 0;
   currentObject?: Vocabulary;
 
-  constructor(private vocabularyService: VocabularyService) { }
+  constructor(private vocabularyService: FlashCardService) { }
 
   ngOnInit(): void {
     this.vocabularyService.getVocabulary().subscribe(vocabulary => {
