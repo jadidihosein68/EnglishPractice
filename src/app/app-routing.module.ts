@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PteComponent } from './pte/pte.component';
-import { HomeComponent } from './home/home.component';
+import { LearnComponent } from './learn/learn.component';
 import { IeltsComponent } from './ielts/ielts.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,7 +22,7 @@ import { AuthGuard } from './services/guard/auth.guard';
 const routes: Routes = [
   
   { path: 'pte', component: PteComponent },
-  { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
+  { path: 'learn', component: LearnComponent , canActivate: [AuthGuard]},
   { path: 'ielts', component: PageNotFoundComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'register', component: RegisterComponent },

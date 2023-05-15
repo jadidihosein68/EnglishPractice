@@ -3,8 +3,8 @@
     <a routerLink="/" class="">English Learning Center</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/workshop" routerLinkActive="active-link">Workshop</a></li>
-      <li><a routerLink="/pte" routerLinkActive="active-link">PTE</a></li>
+      <li><a routerLink="/workshop" routerLinkActive="active-link">Create</a></li>
+      <li><a routerLink="/learn" routerLinkActive="active-link">Learn</a></li>
       <li><a routerLink="/courses" routerLinkActive="active-link">FlashCards</a></li>
       <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
       <li><a routerLink="/checkout" routerLinkActive="active-link" *ngIf="authService.isInRole('Learner')" ><i class="material-icons">shopping_cart</i></a></li>
@@ -18,9 +18,8 @@
 </nav>
 
 <ul class="sidenav right-aligned" id="mobile-demo">
-  <li><a routerLink="/workshop" routerLinkActive="active-link" class="sidenav-close">Workshop</a></li>
-  <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close">PTE</a></li>
-  <li><a routerLink="/ielts" routerLinkActive="active-link" class="sidenav-close">IELTS</a></li>
+  <li><a routerLink="/workshop" routerLinkActive="active-link" class="sidenav-close">Create</a></li>
+  <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close">Learn</a></li>
   <li><a routerLink="/products" routerLinkActive="active-link" class="sidenav-close">Products</a></li>
   <li><a routerLink="/checkout" routerLinkActive="active-link" class="sidenav-close"> Checkout</a></li>
   <li><a routerLink="/profile" routerLinkActive="active-link" class="sidenav-close" *ngIf="authService.isLoggedIn()">Profile</a></li>

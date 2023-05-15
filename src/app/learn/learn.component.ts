@@ -4,11 +4,11 @@ import {ThemePalette} from '@angular/material/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'learn-home',
+  templateUrl: './learn.component.html',
+  styleUrls: ['./learn.component.scss']
 })
-export class HomeComponent {
+export class LearnComponent {
   tabLoadTimes: Date[] = [];
 
   longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
