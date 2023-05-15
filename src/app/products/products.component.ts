@@ -33,6 +33,29 @@ export class ProductsComponent implements OnInit {
     }
   ];
 
+
+
+  testimonials = [
+    {
+      name: "John Doe",
+      message: "This service is amazing. I've learned so much since I've started using it. I highly recommend it!",
+      role: "Student"
+    },
+    {
+      name: "Jane Smith",
+      message: "I love the user-friendly interface and the wide array of flashcards available. This platform makes learning fun!",
+      role: "Teacher"
+    },
+    {
+      name: "Alice Johnson",
+      message: "I appreciate the ability to customize my learning experience. The progress tracking is also very helpful.",
+      role: "Parent"
+    }
+  ];
+
+  
+  
+
   constructor(private router: Router , private productPlanService: ProductPlanService) { }
 
   ngOnInit(): void {

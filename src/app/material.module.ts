@@ -14,7 +14,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   imports: [ 
@@ -32,6 +35,10 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatProgressBarModule,
     MatSelectModule,
     MatStepperModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+    MatTableModule,
+    MatPaginatorModule,
 
   ],
   exports: [
@@ -49,6 +56,10 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatProgressBarModule,
     MatSelectModule,
     MatStepperModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+    MatTableModule,
+    MatPaginatorModule,
   ]    
 })
 

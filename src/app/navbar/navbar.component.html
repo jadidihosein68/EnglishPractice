@@ -3,6 +3,7 @@
     <a routerLink="/" class="">English Learning Center</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/workshop" routerLinkActive="active-link">Workshop</a></li>
       <li><a routerLink="/pte" routerLinkActive="active-link">PTE</a></li>
       <li><a routerLink="/courses" routerLinkActive="active-link">FlashCards</a></li>
       <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
@@ -11,10 +12,13 @@
       <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Sign-up</a></li>
       <li><a  (click)="logout()" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Logout</a></li>
     </ul>
+
+    
   </div>
 </nav>
 
 <ul class="sidenav right-aligned" id="mobile-demo">
+  <li><a routerLink="/workshop" routerLinkActive="active-link" class="sidenav-close">Workshop</a></li>
   <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close">PTE</a></li>
   <li><a routerLink="/ielts" routerLinkActive="active-link" class="sidenav-close">IELTS</a></li>
   <li><a routerLink="/products" routerLinkActive="active-link" class="sidenav-close">Products</a></li>
@@ -23,3 +27,6 @@
   <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Signup</a></li>
   <li><a  (click)="logout()" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Logout</a></li>
 </ul>
+
+
+

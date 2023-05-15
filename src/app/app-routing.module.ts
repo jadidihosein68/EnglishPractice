@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './landing/landing.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FlashcardFormComponent } from './flash-card-form/flash-card-form.component';
+import { WorkshopComponent } from './workshop/workshop.component';
 
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'createflashcard', component: FlashcardFormComponent },
   { path: 'checkout/:planId', component: CheckoutComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'workshop', component: WorkshopComponent },
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
 ];

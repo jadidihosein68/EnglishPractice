@@ -1,7 +1,7 @@
 .container {
   max-width: 960px;
   margin-top: 2rem; 
-  height: 100vh;
+  //height: 100vh;
 }
 
 .text-center {
@@ -84,3 +84,29 @@ button.btn {
   }
 
 }
+
+
+
+
+
+/* ... existing styles ... */
+
+.testimonials-section {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  .card {
+    text-align: center;
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* ... existing styles ... */

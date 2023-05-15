@@ -9,7 +9,7 @@ import { environment } from '../../environments/environments';
 @Injectable({
   providedIn: 'root'
 })
-export class VocabularyService {
+export class FlashCardService {
 
   constructor(private http: HttpClient) { }
 
@@ -22,4 +22,22 @@ export class VocabularyService {
         })
       );
   }
+
+  addFlashcard(flashcard: Vocabulary): Observable<Vocabulary> {
+    return this.http.post<Vocabulary>(`${environment.apiUrl+"/api/postvocabulary"}`, flashcard);
+  }
+
+  updateFlashcard(id: string, flashcard: Vocabulary): Observable<Vocabulary> {
+    return this.http.put<Vocabulary>(`${environment.apiUrl+"/api/putvocabulary"}/${id}`, flashcard);
+  }
+
+  deleteFlashcard(id: string): Observable<any> {
+    return this.http.delete(`${environment.apiUrl+"/api/deletevocabulary"}/${id}`);
+  }
+
+  getFlashcardsBySetName(setName: string): Observable<Vocabulary[]> {
+    return this.http.get<Vocabulary[]>(`${environment.apiUrl+"/api/getvocabulary"}/set/${setName}`);
+  }
+
+
 }

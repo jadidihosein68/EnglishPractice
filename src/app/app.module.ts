@@ -33,6 +33,9 @@ import { GoogleLoginProvider,FacebookLoginProvider } from '@abacritt/angularx-so
 import {  GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import {  LocalStorageService } from './services/localstorage.service';
 import { ReactiveFormsModule } from '@angular/forms'; // import ReactiveFormsModule
+import { CreateFlashCardComponent } from './flash-card-form/create-flash-card/create-flash-card.component';
+import { FlashCardTableComponent } from './flash-card-form/flash-card-table/flash-card-table.component';
+import { WorkshopComponent } from './workshop/workshop.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { ReactiveFormsModule } from '@angular/forms'; // import ReactiveFormsMod
     PaymentComponent,
     CheckoutComponent,
     HomeComponent,
-    FlashcardFormComponent
+    FlashcardFormComponent,
+    CreateFlashCardComponent,
+    FlashCardTableComponent,
+    WorkshopComponent
     
   ],
   imports: [

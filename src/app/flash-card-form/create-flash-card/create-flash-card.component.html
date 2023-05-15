@@ -1,0 +1,37 @@
+
+
+<form [formGroup]="cardForm">
+
+<mat-form-field appearance="fill">
+  <mat-label>Caption</mat-label>
+  <input matInput placeholder="Keep it short !" formControlName="caption" required>
+  <mat-icon matSuffix>drive_file_rename_outline</mat-icon>
+  <mat-hint>Flash Card Name</mat-hint>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Image URL</mat-label>
+  <input matInput placeholder="https://via.placeholder.com/150" formControlName="imageUrl" required>
+  <mat-icon matSuffix>link</mat-icon>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Author</mat-label>
+  <input matInput formControlName="author" required>
+  <mat-icon matSuffix>description</mat-icon>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Tags</mat-label>
+  <input matInput formControlName="tags" placeholder="e.g., Math, English">
+  <mat-icon matSuffix>tag</mat-icon>
+</mat-form-field>
+
+<label  id="example-radio-group-label">Visibility</label>
+<mat-radio-group aria-labelledby="example-radio-group-label" aria-label="Select an option">
+  <mat-radio-button value="1">Public</mat-radio-button>
+  <mat-radio-button value="2">Private</mat-radio-button>
+</mat-radio-group>
+
+
+
+</form>
