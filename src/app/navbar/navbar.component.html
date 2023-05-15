@@ -5,7 +5,7 @@
     <ul class="right hide-on-med-and-down">
       <li><a routerLink="/workshop" routerLinkActive="active-link">Create</a></li>
       <li><a routerLink="/learn" routerLinkActive="active-link">Learn</a></li>
-      <li><a routerLink="/courses" routerLinkActive="active-link">FlashCards</a></li>
+      <li><a routerLink="/courses" routerLinkActive="active-link">Search FlashCards</a></li>
       <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
       <li><a routerLink="/checkout" routerLinkActive="active-link" *ngIf="authService.isInRole('Learner')" ><i class="material-icons">shopping_cart</i></a></li>
       <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Profile</a></li>
