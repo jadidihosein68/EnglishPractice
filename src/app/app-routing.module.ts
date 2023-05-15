@@ -13,7 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FlashcardFormComponent } from './flash-card-form/flash-card-form.component';
 import { WorkshopComponent } from './workshop/workshop.component';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './services/guard/auth.guard';
@@ -33,6 +33,8 @@ const routes: Routes = [
   { path: 'checkout/:planId', component: CheckoutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'workshop', component: WorkshopComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
 ];

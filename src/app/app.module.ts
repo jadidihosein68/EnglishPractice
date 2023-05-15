@@ -36,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms'; // import ReactiveFormsMod
 import { CreateFlashCardComponent } from './flash-card-form/create-flash-card/create-flash-card.component';
 import { FlashCardTableComponent } from './flash-card-form/flash-card-table/flash-card-table.component';
 import { WorkshopComponent } from './workshop/workshop.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { WorkshopComponent } from './workshop/workshop.component';
     FlashcardFormComponent,
     CreateFlashCardComponent,
     FlashCardTableComponent,
-    WorkshopComponent
+    WorkshopComponent,
+    DashboardComponent
     
   ],
   imports: [

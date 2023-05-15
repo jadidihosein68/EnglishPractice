@@ -18,7 +18,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   imports: [ 
     MatButtonModule, 
@@ -39,6 +39,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatChipsModule,
     MatTableModule,
     MatPaginatorModule,
+    MatGridListModule,
 
   ],
   exports: [
@@ -60,6 +61,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatChipsModule,
     MatTableModule,
     MatPaginatorModule,
+    MatGridListModule,
   ]    
 })
 
