@@ -1,27 +1,22 @@
-<div class="container">
-  <div class="section1">
-    <button class="button" mat-icon-button (click)="drawer.toggle()">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon>filter_list</mat-icon>
     </button>
-    <mat-form-field class="mybtn" appearance="outline">
+    <mat-form-field class="search-field" appearance="outline">
       <mat-label>Search</mat-label>
       <input matInput placeholder="Search courses" />
     </mat-form-field>
-  </div>
-  <mat-drawer-container class="example-container">
-    <mat-drawer #drawer mode="side" [opened]="isExpanded">
-      <div class="containersmall">
-        <app-filter></app-filter>
-      </div>
-    </mat-drawer>
-    <mat-drawer-content>
-      <div class="cards">
-        <ng-container *ngFor="let course of courses; let i = index">
-          <app-course-list-item [course]="course"></app-course-list-item>
-          <!-- Add the divider element, except for the last item -->
-          <div *ngIf="i < courses.length - 1" class="divider"></div>
-        </ng-container>
-      </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
-</div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="drawer-container">
+  <mat-drawer #drawer mode="side" [opened]="isExpanded">
+    <app-filter></app-filter>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-card class="course-card" *ngFor="let course of courses">
+      <app-course-list-item [course]="course"></app-course-list-item>
+    </mat-card>
+  </mat-drawer-content>
+</mat-drawer-container>
