@@ -1,28 +1,27 @@
+::ng-deep .toolbar {
+  display: flex;
+  justify-content: space-between;
+width: 80%;
+
+}
+
+::ng-deep .toolbar-buttons {
+  display: flex;
+}
 
 
 
-.brand-logo {
-    color: #fff;
-    height:30px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-  }
-  
-  nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  
+mat-sidenav{
 
-  .profile-picture {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-    vertical-align: middle;
-  }
+  width: 80%;
+  overflow: hidden;
+}
 
-  nav ul li i.material-icons {
-    line-height: inherit;
-  }
 
+.sidenavopen{
+  height: 100vh;
+}
+
+.body-no-scroll {
+  overflow: hidden ;
+}
