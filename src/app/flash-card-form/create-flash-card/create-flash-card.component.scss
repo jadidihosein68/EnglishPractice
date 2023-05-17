@@ -6,7 +6,10 @@ form {
     margin: 0 auto;
   
     @media (max-width: 768px) {
-      padding: 0 20px;
+      //padding: 0 20px;
+
+
+      
     }
   
     mat-form-field {
@@ -22,6 +25,14 @@ form {
       align-self: flex-end;
       margin-top: 20px;
     }
+  }
+  
+
+  .action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
 
