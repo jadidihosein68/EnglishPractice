@@ -1,1 +1,50 @@
-<p>workshop works!</p>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened></mat-drawer>
+    <mat-drawer-content>
+        <div class="grid-container">
+            <h1 class="mat-h1">Workshop</h1>
+            <mat-grid-list cols="2" rowHeight="550px">
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-card class="dashboard-card">
+                        <mat-card-header>
+                            <mat-card-title>
+                                My Collection
+                                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu" xPosition="before">
+                                    <button mat-menu-item>Expand</button>
+                                    <button mat-menu-item>Remove</button>
+                                </mat-menu>
+                            </mat-card-title>
+                        </mat-card-header>
+                      
+                       
+                        <mat-card-content class="dashboard-card-content">
+                           <!----> 
+                        <div>
+                            <div class="card-container">
+                                <app-course-card-minimal *ngFor="let thecard of cardinfo" [cardInfo]="thecard"></app-course-card-minimal>
+                            </div>
+                            <div class="btnonbutton">
+                                <button mat-raised-button color="primary" routerLink="/createflashcard">Create new set</button>
+                            </div>
+                        </div>
+
+                       
+                        </mat-card-content>
+
+
+
+                        
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+
+
+            
+
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

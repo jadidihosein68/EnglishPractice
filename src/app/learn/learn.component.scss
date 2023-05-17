@@ -13,8 +13,8 @@
 }
 
 app-course-card-minimal {
-  flex: 1 1 calc(25% - 40px); /* 40px is twice the gap to account for left and right */
-  max-width: calc(25% - 40px); /* 40px is twice the gap to account for left and right */
+  flex: 1 1 calc(20% - 20px); /* 40px is twice the gap to account for left and right */
+  max-width: calc(20% - 20px); /* 40px is twice the gap to account for left and right */
   box-sizing: border-box;
 }
 

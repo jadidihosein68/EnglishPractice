@@ -13,7 +13,7 @@
   "dependencies": {
     "@abacritt/angularx-social-login": "^2.0.0",
     "@angular/animations": "^16.0.0",
-    "@angular/cdk": "^15.2.8",
+    "@angular/cdk": "^15.2.9",
     "@angular/common": "^16.0.0",
     "@angular/compiler": "^16.0.0",
     "@angular/core": "^16.0.0",
@@ -26,7 +26,6 @@
     "@auth0/angular-jwt": "^5.1.2",
     "@fortawesome/fontawesome-free": "^6.4.0",
     "jquery": "^3.6.4",
-    "materialize-css": "^1.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

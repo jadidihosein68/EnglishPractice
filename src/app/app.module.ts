@@ -75,7 +75,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MaterialModule,
     SocialLoginModule,
     GoogleSigninButtonModule,
-    ReactiveFormsModule // add ReactiveFormsModule to the NgModule imports
+    ReactiveFormsModule, // add ReactiveFormsModule to the NgModule imports
+    FlexLayoutModule,
   ],
   providers: [
     ProductPlanService,

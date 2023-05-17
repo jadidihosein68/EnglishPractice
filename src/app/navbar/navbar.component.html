@@ -1,31 +1,47 @@
-<nav class="nav-wrapper">
-  <div class="container">
-    <a routerLink="/" class="">English Learning Center</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/workshop" routerLinkActive="active-link">Create</a></li>
-      <li><a routerLink="/learn" routerLinkActive="active-link">Learn</a></li>
-      <li><a routerLink="/courses" routerLinkActive="active-link">Search FlashCards</a></li>
-      <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
-      <li><a routerLink="/checkout" routerLinkActive="active-link" *ngIf="authService.isInRole('Learner')" ><i class="material-icons">shopping_cart</i></a></li>
-      <li><a routerLink="/profile" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Profile</a></li>
-      <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Sign-up</a></li>
-      <li><a  (click)="logout()" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Logout</a></li>
-    </ul>
 
-    
-  </div>
-</nav>
 
-<ul class="sidenav right-aligned" id="mobile-demo">
-  <li><a routerLink="/workshop" routerLinkActive="active-link" class="sidenav-close">Create</a></li>
-  <li><a routerLink="/pte" routerLinkActive="active-link" class="sidenav-close">Learn</a></li>
-  <li><a routerLink="/products" routerLinkActive="active-link" class="sidenav-close">Products</a></li>
-  <li><a routerLink="/checkout" routerLinkActive="active-link" class="sidenav-close"> Checkout</a></li>
-  <li><a routerLink="/profile" routerLinkActive="active-link" class="sidenav-close" *ngIf="authService.isLoggedIn()">Profile</a></li>
-  <li><a routerLink="/register" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Login/Signup</a></li>
-  <li><a  (click)="logout()" routerLinkActive="active-link" *ngIf="authService.isLoggedIn()">Logout</a></li>
-</ul>
+<mat-sidenav-container *ngIf="(isSmallScreen | async)"  class="sidenav-container" [class.sidenavopen]="isCollapsed">
+  <mat-sidenav #sidenav mode="over"  class="sidenav" (closedStart)="clossidenavbar()">
+    <mat-nav-list>
+      
+      <!--
+      <a mat-list-item routerLink="/dashboard">Home</a>
+      <a mat-list-item routerLink="/learn">Learn</a>
+      <a mat-list-item routerLink="/create">Create</a>
+      <a mat-list-item routerLink="/community">Community</a>
+      -->
 
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/workshop">Workshop</a>
+      <a mat-list-item routerLink="/courses">Learn</a>
+      <a mat-list-item routerLink="/products">Product</a>
+      <a mat-list-item routerLink="/account">Account</a>
+      <a mat-list-item routerLink="/admin">Admin</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="toggleNavbar(sidenav)" >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>English Learning Center</span>
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar color="primary"  *ngIf="!(isSmallScreen | async)" class="toolbar">
+  <span>English Learning Center</span>
+  <span class="spacer"></span>
+  <div class="toolbar-buttons">
+  <button mat-button routerLink="/dashboard">Dashboard</button>
+  <button mat-button routerLink="/workshop">Workshop</button>
+  <button mat-button routerLink="/courses">Learn</button>
+  <button mat-button routerLink="/products">Product</button>
+  <button mat-button routerLink="/profile">Account</button>
+  <button mat-button routerLink="/admin">Admin</button>
+</div>
+</mat-toolbar>
 
 
