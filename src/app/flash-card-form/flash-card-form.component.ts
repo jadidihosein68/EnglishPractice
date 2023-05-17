@@ -60,6 +60,9 @@ export class FlashcardFormComponent implements OnInit {
       console.log({"this.thecard":this.thecard});
       this.thecard = updatedCard;
     }
-    
+    showobject(){
+
+      console.log({"this.flashcardForm.value":this.thecard} );
+    }
 
 }

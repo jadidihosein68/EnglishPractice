@@ -56,7 +56,7 @@ const NAMES: string[] = [
 })
 
 export class FlashCardTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'action'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -83,6 +83,12 @@ export class FlashCardTableComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+
+  addRecord(){}
+  bulkUpload(){}
+
+  deleteRecord(row:any){}
 }
 
 /** Builds and returns a new User. */
@@ -99,4 +105,10 @@ function createNewUser(id: number): UserData {
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
+
+
+
+  
+
+
 }
