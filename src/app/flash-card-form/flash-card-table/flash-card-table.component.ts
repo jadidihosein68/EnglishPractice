@@ -3,7 +3,10 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {AddFlashCardDialogComponent} from '../add-flash-card-dialog/add-flash-card-dialog.component';
+import {BulkUploadFlashCardDialogComponent} from '../bulk-upload-flash-card-dialog/bulk-upload-flash-card-dialog.component';
 
+import { MatDialog } from '@angular/material/dialog';
 
 
 export interface UserData {
@@ -62,7 +65,7 @@ export class FlashCardTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -85,8 +88,36 @@ export class FlashCardTableComponent implements AfterViewInit {
   }
 
 
-  addRecord(){}
-  bulkUpload(){}
+  addRecord(): void {
+    const dialogRef = this.dialog.open(AddFlashCardDialogComponent, {
+      width: '80%',
+      maxWidth: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Add the new record to the dataSource
+        // You might need to create a new array, or use a Subject or BehaviorSubject if dataSource is an Observable
+       // this.dataSource.push(result);
+       console.log({result:result});
+      }
+    });
+  }
+
+
+  bulkUpload(): void {
+    const dialogRef = this.dialog.open(BulkUploadFlashCardDialogComponent, {
+      width: '80%',
+      maxWidth: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Handle the uploaded file
+        // You may need to use a FileReader to read the file, or send it to a server
+      }
+    });
+  }
 
   deleteRecord(row:any){}
 }

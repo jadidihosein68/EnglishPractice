@@ -20,6 +20,8 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   imports: [ 
     MatButtonModule, 
@@ -42,6 +44,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MatPaginatorModule,
     MatGridListModule,
     MatTreeModule,
+    MatDialogModule,
 
   ],
   exports: [
@@ -65,6 +68,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MatPaginatorModule,
     MatGridListModule,
     MatTreeModule,
+    MatDialogModule,
   ]    
 })
 

@@ -37,6 +37,10 @@ import { CreateFlashCardComponent } from './flash-card-form/create-flash-card/cr
 import { FlashCardTableComponent } from './flash-card-form/flash-card-table/flash-card-table.component';
 import { WorkshopComponent } from './workshop/workshop.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddFlashCardDialogComponent } from './flash-card-form/add-flash-card-dialog/add-flash-card-dialog.component';
+import { BulkUploadFlashCardDialogComponent } from './flash-card-form/bulk-upload-flash-card-dialog/bulk-upload-flash-card-dialog.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +65,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CreateFlashCardComponent,
     FlashCardTableComponent,
     WorkshopComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddFlashCardDialogComponent,
+    BulkUploadFlashCardDialogComponent,
     
   ],
   imports: [
@@ -77,6 +83,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     GoogleSigninButtonModule,
     ReactiveFormsModule, // add ReactiveFormsModule to the NgModule imports
     FlexLayoutModule,
+    DragDropModule,
   ],
   providers: [
     ProductPlanService,
