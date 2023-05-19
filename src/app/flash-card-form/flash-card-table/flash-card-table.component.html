@@ -17,32 +17,32 @@
   <table mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="Front">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Front </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.Front}} </td>
     </ng-container>
 
     <!-- Progress Column -->
-    <ng-container matColumnDef="progress">
+    <ng-container matColumnDef="Hint">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Hint </th>
-      <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+      <td mat-cell *matCellDef="let row"> {{row.Hint}}% </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="Back">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Back </th>
-      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.Back}} </td>
     </ng-container>
 
     <!-- Fruit Column -->
-    <ng-container matColumnDef="fruit">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Visibility </th>
-      <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+    <ng-container matColumnDef="SoundIsActive">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sound-enabled </th>
+      <td mat-cell *matCellDef="let row"> {{row.SoundIsActive}} </td>
     </ng-container>
 
 
 
-    <ng-container matColumnDef="action" class="action-header">
+    <ng-container matColumnDef="Action" class="action-header">
       <th mat-header-cell *matHeaderCellDef class="action-header"> Action </th>
       <td mat-cell *matCellDef="let row" class="action-cell">
         <div class="button-container">

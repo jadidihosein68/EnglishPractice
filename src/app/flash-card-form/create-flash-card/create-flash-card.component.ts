@@ -21,11 +21,11 @@ export class CreateFlashCardComponent {
 
 
   cardForm = new FormGroup({
-    caption: new FormControl('', Validators.required),
+    title: new FormControl('', Validators.required),
     imageUrl: new FormControl('https://via.placeholder.com/150', Validators.required),
-    author: new FormControl('', Validators.required),
-    tags: new FormControl(''),
-    visibility: new FormControl('', Validators.required)
+    //author: new FormControl('', Validators.required),
+    //tags: new FormControl(''),
+    ispublic: new FormControl('', Validators.required)
   });
 
 

@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FlashCardService } from '../services/vocabulary.service';
 import { Vocabulary } from '../model/vocabulary.model';
+import { FlashCardSetService } from '../services/FlashCardSetService';
+import { FlashCardSet } from '../model/flashcardset';
 
 
 @Component({
@@ -21,7 +23,7 @@ export class FlashcardFormComponent implements OnInit {
   isLinear = false;
 
 
-  constructor(private fb: FormBuilder, private flashcardService: FlashCardService , private _formBuilder: FormBuilder) {
+  constructor(private fb: FormBuilder, private flashcardService: FlashCardService , private _formBuilder: FormBuilder, private flashCardSetService:FlashCardSetService) {
 
 
     this.flashcardForm = this.fb.group({
@@ -45,14 +47,14 @@ export class FlashcardFormComponent implements OnInit {
   }
 
 
+
   thecard = 
     { 
-      name: 'John Doe', 
-      bio: 'Lorem ipsum dolor sit amet.',
+      id:0,
+      name: '', 
+      bio: '',
       imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 1',
-      progress: 70,
-      rating: 4
+
     }
 
 
@@ -62,7 +64,24 @@ export class FlashcardFormComponent implements OnInit {
     }
     showobject(){
 
-      console.log({"this.flashcardForm.value":this.thecard} );
     }
+
+
+
+    next() {
+
+
+      console.log({valid:this.flashcardForm.valid})
+      //if (this.flashcardForm.valid) {
+        this.flashCardSetService.createFlashCardSet(this.thecard).subscribe(response  => {
+          console.log("Updated successfully", response);
+          // Proceed to next step or any other action
+        }, error  => {
+          console.error("Update failed", error);
+          // Handle error
+        });
+      //}
+    }
+    
 
 }

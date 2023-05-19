@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component,Inject, Optional } from '@angular/core';
+import { MatDialogRef,MAT_DIALOG_DATA  } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FlashCard } from '../../model/flashcard';
 
 
 @Component({
@@ -11,17 +12,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddFlashCardDialogComponent {
 
   form: FormGroup;
-
+  action: string;
   constructor(
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<AddFlashCardDialogComponent>
+    public dialogRef: MatDialogRef<AddFlashCardDialogComponent>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: FlashCard
   ) {
     this.form = this.fb.group({
       id: ['', Validators.required],
-      progress: ['', Validators.required],
-      name: ['', Validators.required],
-      fruit: ['', Validators.required],
+      Front: ['', Validators.required],
+      Hint: ['', Validators.required],
+      Back: ['', Validators.required],
     });
+
+
+    if (data) {  // If data exists, it means the dialog is for editing
+      this.form.patchValue(data);
+    }
+    this.action = (data) ? 'Edit' : 'Add'; 
   }
 
   close(): void {

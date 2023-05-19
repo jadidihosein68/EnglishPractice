@@ -1,25 +1,25 @@
-<h2 mat-dialog-title>Add New Record</h2>
+<h2 mat-dialog-title>{{ action }} FlashCard</h2>
 <div mat-dialog-content>
   <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Front</mat-label>
-      <input matInput formControlName="id">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Back</mat-label>
-      <input matInput formControlName="progress">
+      <input matInput formControlName="Front">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Hint</mat-label>
-      <input matInput formControlName="name">
+      <input matInput formControlName="Back">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Hint</mat-label>
+      <input matInput formControlName="Back">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Enable Voice</mat-label>
-      <input matInput formControlName="fruit">
+      <input matInput formControlName="SoundIsActive">
     </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions align="end">
   <button mat-button (click)="close()">Close</button>
-  <button mat-raised-button color="primary" (click)="save()">Add</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
 </div>
