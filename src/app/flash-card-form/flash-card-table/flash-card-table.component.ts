@@ -96,9 +96,6 @@ export class FlashCardTableComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Add the new record to the dataSource
-        // You might need to create a new array, or use a Subject or BehaviorSubject if dataSource is an Observable
-       // this.dataSource.push(result);
        console.log({result:result});
       }
     });
@@ -113,13 +110,18 @@ export class FlashCardTableComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Handle the uploaded file
-        // You may need to use a FileReader to read the file, or send it to a server
       }
     });
   }
 
   deleteRecord(row:any){}
+
+
+  editRecord(row:any){
+    
+  }
+  
+
 }
 
 /** Builds and returns a new User. */
@@ -139,7 +141,6 @@ function createNewUser(id: number): UserData {
 
 
 
-  
 
 
 }
