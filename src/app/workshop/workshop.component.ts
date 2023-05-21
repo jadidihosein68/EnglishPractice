@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FlashCardSetService } from '../services/FlashCardSetService';
 
 @Component({
   selector: 'app-workshop',
@@ -8,47 +9,21 @@ import { Component } from '@angular/core';
 export class WorkshopComponent {
 
 
-  cardinfo = [
-    { 
-      name: 'John Doe', 
-      bio: 'Lorem ipsum dolor sit amet.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 1',
-      progress: 70,
-      rating: 4
-    },
-    { 
-      name: 'Jane Doe', 
-      bio: 'Consectetur adipiscing elit.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 2',
-      progress: 40,      
-      rating: 2
-    },
-    { 
-      name: 'Jane Doe', 
-      bio: 'Consectetur adipiscing elit.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 2',
-      progress: 40,      
-      rating: 2
-    },
-    { 
-      name: 'Jane Doe', 
-      bio: 'Consectetur adipiscing elit.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 2',
-      progress: 40,      
-      rating: 2
-    },{ 
-      name: 'Jane Doe', 
-      bio: 'Consectetur adipiscing elit.',
-      imageUrl: 'https://via.placeholder.com/150',
-      caption: 'Caption for image 2',
-      progress: 40,      
-      rating: 2
-    }
-    // add more people here
-  ];
+  constructor(private flashCardSetService: FlashCardSetService) {}
+
+
+   ngOnInit() {
+    
+    this.flashCardSetService.getFlashCardSets().subscribe(
+      data => {
+        this.cardinfo = data;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );    
+  }
+
+  cardinfo = [];
   
 }
