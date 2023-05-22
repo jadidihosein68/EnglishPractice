@@ -1,91 +1,73 @@
 
-<!--
 <mat-drawer-container>
     <mat-drawer mode="side" opened></mat-drawer>
     <mat-drawer-content>
-        <div class="grid-container">
-            <h1 class="mat-h1">Workshop</h1>
-            <mat-grid-list cols="2" rowHeight="550px">
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
-                    <mat-card class="dashboard-card">
-                        <mat-card-header>
-                            <mat-card-title>
-                                My Collection
-                                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu">
-                                    <mat-icon>more_vert</mat-icon>
-                                </button>
-                                <mat-menu #menu="matMenu" xPosition="before">
-                                    <button mat-menu-item>Expand</button>
-                                    <button mat-menu-item>Remove</button>
-                                </mat-menu>
-                            </mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content class="dashboard-card-content">
+      <div class="grid-container">
+        <h1 class="mat-h1">Workshop</h1>
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              My Collection
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expand</button>
+                <button mat-menu-item>Remove</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="container">
 
-                            <div>
-                                <div class="card-container">
-                                    <app-course-card-minimal *ngFor="let thecard of cardinfo"
-                                        [cardInfo]="thecard"></app-course-card-minimal>
-                                </div>
-                                <div class="btnonbutton">
-                                    <button mat-raised-button color="primary" routerLink="/createflashcard">Create new
-                                        set</button>
-                                </div>
-                            </div>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start start" >
+                <div fxFlex.gt-sm="20" fxFlex.md="50" fxFlex.sm="100" *ngFor="let card of paginatedFlashcards">
+                  <mat-card-content>
+                    <app-course-card-minimal [cardInfo]="card"></app-course-card-minimal>
+                  </mat-card-content>
+                </div>
+              </div>
+            
+              <mat-paginator
+                [length]="cardinfo.length"
+                [pageSizeOptions]="pageSizeOptions"
+                [pageSize]="pageSize"
+                (page)="onPageChange($event)"
+                showFirstLastButtons>
+              </mat-paginator>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </mat-drawer-content>
-</mat-drawer-container>
+  </mat-drawer-container>
+
+
+<!--
+
+<div class="container">
+              
+    <mat-label>Cards per page</mat-label>
+    <select matNativeControl [(ngModel)]="pageSize" (change)="pageIndex = 0">
+      <option *ngFor="let size of pageSizeOptions" [value]="size">{{size}}</option>
+    </select>
+  
+
+  <div fxLayout="row wrap" fxLayoutAlign="start start" >
+    <div fxFlex.gt-sm="20" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let card of paginatedFlashcards"  style="min-width: 0">
+      <mat-card-content>
+        <app-course-card-minimal [cardInfo]="card"></app-course-card-minimal>
+      </mat-card-content>
+    </div>
+  </div>
+
+  <mat-paginator
+    [length]="cardinfo.length"
+    [pageSizeOptions]="pageSizeOptions"
+    [pageSize]="pageSize"
+    (page)="onPageChange($event)"
+    showFirstLastButtons>
+  </mat-paginator>
+</div>
 
 -->
-
-
-
-
-
-        <div class="container">
-            <mat-form-field>
-              <mat-label>Cards per page</mat-label>
-              <select matNativeControl [(ngModel)]="pageSize" (change)="pageIndex = 0">
-                <option *ngFor="let size of pageSizeOptions" [value]="size">{{size}}</option>
-              </select>
-            </mat-form-field>
-          
-            <mat-grid-list [cols]="cols" rowHeight="1:1" gutterSize="10px" (window:resize)="onResize()">
-              <mat-grid-tile *ngFor="let card of paginatedFlashcards">
-                
-                 
-          
-                    <mat-card-content>
-                        <!-- replace 'cardContent' with appropriate properties from your data -->
-                        
-        
-        
-                        <app-course-card-minimal [cardInfo]="card"></app-course-card-minimal>
-        
-        
-                      </mat-card-content>
-                    
-                  </mat-grid-tile>
-                </mat-grid-list>
-              
-                <mat-paginator
-                  [length]="cardinfo.length"
-                  [pageSizeOptions]="pageSizeOptions"
-                  [pageSize]="pageSize"
-                  (page)="onPageChange($event)"
-                  showFirstLastButtons>
-                </mat-paginator>
-              </div>
-              
-       
-
-
-
-
-
-
-

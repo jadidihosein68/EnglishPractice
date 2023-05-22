@@ -11,7 +11,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class WorkshopComponent {
 
-  cols: number;
+  //cols: number;
   pageSizeOptions: number[] = [5, 10, 20, 50];
   pageSize: number = this.pageSizeOptions[0];
   pageIndex: number = 0;
@@ -27,9 +27,9 @@ export class WorkshopComponent {
       Breakpoints.HandsetPortrait
     ]).subscribe(result => {
       if (result.matches) {
-        this.cols = 1;  // use one column on small screens
+       // this.cols = 1;  // use one column on small screens
       } else {
-        this.cols = 5;  // use three columns on larger screens
+       // this.cols = 5;  // use three columns on larger screens
       }
     });
 
@@ -61,7 +61,7 @@ export class WorkshopComponent {
   
   
   onResize(event?:Event) {
-    this.cols = (window.innerWidth < 600) ? 1 : 5;
+   // this.cols = (window.innerWidth < 600) ? 1 : 5;
   }
 
 
