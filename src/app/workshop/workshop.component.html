@@ -43,89 +43,48 @@
 -->
 
 
-<div class="container">
-    <mat-form-field>
-      <mat-label>Cards per page</mat-label>
-      <select matNativeControl [(ngModel)]="pageSize" (change)="pageIndex = 0">
-        <option *ngFor="let size of pageSizeOptions" [value]="size">{{size}}</option>
-      </select>
-    </mat-form-field>
-  
-    <mat-grid-list [cols]="cols" rowHeight="1:1" gutterSize="10px" (window:resize)="onResize()">
-      <mat-grid-tile *ngFor="let card of paginatedFlashcards">
-        
-         
-  
-            <mat-card-content>
-                <!-- replace 'cardContent' with appropriate properties from your data -->
+
+
+
+        <div class="container">
+            <mat-form-field>
+              <mat-label>Cards per page</mat-label>
+              <select matNativeControl [(ngModel)]="pageSize" (change)="pageIndex = 0">
+                <option *ngFor="let size of pageSizeOptions" [value]="size">{{size}}</option>
+              </select>
+            </mat-form-field>
+          
+            <mat-grid-list [cols]="cols" rowHeight="1:1" gutterSize="10px" (window:resize)="onResize()">
+              <mat-grid-tile *ngFor="let card of paginatedFlashcards">
                 
-
-
-                <app-course-card-minimal [cardInfo]="card"></app-course-card-minimal>
-
-
-              </mat-card-content>
-            
-          </mat-grid-tile>
-        </mat-grid-list>
-      
-        <mat-paginator
-          [length]="cardinfo.length"
-          [pageSizeOptions]="pageSizeOptions"
-          [pageSize]="pageSize"
-          (page)="onPageChange($event)"
-          showFirstLastButtons>
-        </mat-paginator>
-      </div>
-      
-
-
-
-
-
-
-
-
-
-<!--
-
-
-
-<diV class="container">
-
-<mat-drawer-container>
-    <mat-drawer mode="side" opened></mat-drawer>
-    <mat-drawer-content>
-        <div class="grid-container">
-            <h1 class="mat-h1">Workshop</h1>
+                 
+          
+                    <mat-card-content>
+                        <!-- replace 'cardContent' with appropriate properties from your data -->
+                        
         
         
+                        <app-course-card-minimal [cardInfo]="card"></app-course-card-minimal>
         
-
-
-            <div class="container">
-                <mat-card class="card-container">
-                  <mat-grid-list [cols]="cols" rowHeight="1:1" gutterSize="15px">
-                    <mat-grid-tile *ngFor="let thecard of cardinfo">
-                      <app-course-card-minimal [cardInfo]="thecard"></app-course-card-minimal>
-                    </mat-grid-tile>
-                  </mat-grid-list>
-                </mat-card>
+        
+                      </mat-card-content>
+                    
+                  </mat-grid-tile>
+                </mat-grid-list>
+              
+                <mat-paginator
+                  [length]="cardinfo.length"
+                  [pageSizeOptions]="pageSizeOptions"
+                  [pageSize]="pageSize"
+                  (page)="onPageChange($event)"
+                  showFirstLastButtons>
+                </mat-paginator>
               </div>
+              
+       
 
 
-        
-        
-        </div>
-        </mat-drawer-content>
-        </mat-drawer-container>
 
-    </diV>
-
--->
-
-
-  
 
 
 
