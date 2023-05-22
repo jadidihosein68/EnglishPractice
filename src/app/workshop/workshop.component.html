@@ -1,3 +1,5 @@
+
+<!--
 <mat-drawer-container>
     <mat-drawer mode="side" opened></mat-drawer>
     <mat-drawer-content>
@@ -18,33 +20,69 @@
                                 </mat-menu>
                             </mat-card-title>
                         </mat-card-header>
-                      
-                       
                         <mat-card-content class="dashboard-card-content">
-                           <!----> 
-                        <div>
-                            <div class="card-container">
-                                <app-course-card-minimal *ngFor="let thecard of cardinfo" [cardInfo]="thecard"></app-course-card-minimal>
-                            </div>
-                            <div class="btnonbutton">
-                                <button mat-raised-button color="primary" routerLink="/createflashcard">Create new set</button>
-                            </div>
-                        </div>
 
-                       
+                            <div>
+                                <div class="card-container">
+                                    <app-course-card-minimal *ngFor="let thecard of cardinfo"
+                                        [cardInfo]="thecard"></app-course-card-minimal>
+                                </div>
+                                <div class="btnonbutton">
+                                    <button mat-raised-button color="primary" routerLink="/createflashcard">Create new
+                                        set</button>
+                                </div>
+                            </div>
                         </mat-card-content>
-
-
-
-                        
                     </mat-card>
                 </mat-grid-tile>
             </mat-grid-list>
-
-
-
-            
-
         </div>
     </mat-drawer-content>
 </mat-drawer-container>
+
+-->
+
+
+
+
+
+
+<diV class="container">
+
+<mat-drawer-container>
+    <mat-drawer mode="side" opened></mat-drawer>
+    <mat-drawer-content>
+        <div class="grid-container">
+            <h1 class="mat-h1">Workshop</h1>
+        
+        
+        
+
+
+            <div class="container">
+                <mat-card class="card-container">
+                  <mat-grid-list [cols]="cols" rowHeight="1:1" gutterSize="15px">
+                    <mat-grid-tile *ngFor="let thecard of cardinfo">
+                      <app-course-card-minimal [cardInfo]="thecard"></app-course-card-minimal>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+                </mat-card>
+              </div>
+
+
+        
+        
+        </div>
+        </mat-drawer-content>
+        </mat-drawer-container>
+
+    </diV>
+
+
+
+
+  
+
+
+
+
