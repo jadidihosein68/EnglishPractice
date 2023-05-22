@@ -13,11 +13,15 @@ import { SocialAuthService } from "@abacritt/angularx-social-login";
 })
 export class AuthService {
   private isAuthenticated = false;
+  private roles: string[] = [];
   constructor(
     private httpClient: HttpClient,
     private myLocalStorage:LocalStorageService,
     private socialAuthService: SocialAuthService
   ) {
+    let token = this.myLocalStorage.getItem('token');
+    if (token)
+    this.roles = this.jwtHelper.decodeToken(token).roles || [];
   }
 
   login(): void {
@@ -40,7 +44,11 @@ loginwithGoogle(TokenID : string) :  Observable<any>{
   .pipe(map(res => {
     let result = res;
     if (result) {
-      this.myLocalStorage.setItem('token', JSON.parse(result.toString()).token);
+
+      var token = JSON.parse(result.toString()).token;
+      this.myLocalStorage.setItem('token', token);
+      this.roles = this.jwtHelper.decodeToken(token).roles || [];
+      //      console.log(`decoded :${JSON.stringify(lolo)} `);
       return true;
     }
     return false;
@@ -66,5 +74,9 @@ get currentUser() {
     if (!token)
       return false;
     return !this.jwtHelper.isTokenExpired(token);
+  }
+
+  isInRole(roleName:string){
+    return this.roles.indexOf(roleName) > -1;
   }
 }
