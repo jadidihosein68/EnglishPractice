@@ -6,17 +6,15 @@
       </button>
 
       <mat-menu #menu="matMenu">
-        <button mat-menu-item disabled>
+        <button mat-menu-item  (click)="editCard()">
           <mat-icon>edit</mat-icon>
           <span>Edit Card Set</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item disabled>
           <mat-icon>share</mat-icon>
           <span>Share card set</span>
         </button>
       </mat-menu>
-
-
 
   </div>
   <mat-card-content class="card-body">
@@ -30,4 +28,4 @@
           </span>
       </div>
   </mat-card-content>
-</mat-card>
+</mat-card> 

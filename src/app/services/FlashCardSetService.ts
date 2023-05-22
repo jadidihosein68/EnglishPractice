@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environments';
+import { FlashCardSet } from '../model/flashcardset';
 
 
 @Injectable({
@@ -17,11 +18,11 @@ export class FlashCardSetService {
     return this.http.get<any>(this.apiUrl);
   }
 
-  getFlashCardSet(id: number): Observable<any> {
+  getFlashCardSet(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  createFlashCardSet(flashCardSet: any): Observable<any> {
+  createFlashCardSet(flashCardSet: FlashCardSet): Observable<FlashCardSet> {
     return this.http.post<any>(this.apiUrl, flashCardSet);
   }
 

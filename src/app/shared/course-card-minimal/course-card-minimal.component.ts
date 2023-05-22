@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FlashCardSet } from '../../model/flashcardset';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,11 +12,17 @@ import { FlashCardSet } from '../../model/flashcardset';
 export class CourseCardMinimalComponent {
   @Input() cardInfo: FlashCardSet;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnChanges() {
-
   }
+
+  editCard() {
+
+    console.log({id:this.cardInfo._id});
+    this.router.navigate(['/createflashcard', this.cardInfo._id]);
+  }
+
 
 }

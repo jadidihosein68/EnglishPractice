@@ -1,10 +1,10 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FlashCardService } from '../services/vocabulary.service';
-import { Vocabulary } from '../model/vocabulary.model';
 import { FlashCardSetService } from '../services/FlashCardSetService';
 import { FlashCardSet } from '../model/flashcardset';
 
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-flash-card-form',
@@ -23,7 +23,13 @@ export class FlashcardFormComponent implements OnInit {
   isLinear = false;
 
 
-  constructor(private fb: FormBuilder, private flashcardService: FlashCardService , private _formBuilder: FormBuilder, private flashCardSetService:FlashCardSetService) {
+  constructor(
+    private fb: FormBuilder,
+    private flashcardService: FlashCardService,
+    private _formBuilder: FormBuilder,
+    private flashCardSetService: FlashCardSetService,
+    private router: ActivatedRoute
+    ) {
 
 
     this.flashcardForm = this.fb.group({
@@ -37,56 +43,66 @@ export class FlashcardFormComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
-
-  onSubmit() {
-    if (this.flashcardForm.valid) {
-      this.flashcardService.addFlashcard(this.flashcardForm.value).subscribe(/* handle response */);
+  ngOnInit() { 
+    const cardId = this.router.snapshot.paramMap.get('id'); 
+  
+    if (cardId) {
+      // If cardId is not null, fetch the existing record
+      this.flashCardSetService.getFlashCardSet(cardId).subscribe(response => {
+        console.log("Card Retrieved successfully", response);
+        // Assuming response is the data you need, assign it to 'thecard'
+        this.thecard = response;
+      }, error => {
+        console.error("Failed to retrieve card", error);
+      });
+    } else {
+      // If cardId is null, proceed with creation
+      console.log("No cardId provided. Proceeding with creation.");
     }
   }
+  
 
 
 
-  thecard :FlashCardSet  = 
-    { 
-      id:'',
-      title: '', 
+  thecard: FlashCardSet =
+    {
+      _id: '',
+      title: '',
       author: '',
       imageUrl: 'https://via.placeholder.com/150',
-      progress : 0,
-      public:true,
-      rating:1,
-      flashcards:[],
-      subject:""
+      progress: 0,
+      public: true,
+      rating: 1,
+      flashcards: [],
+      subject: ""
 
     }
 
 
-    updateCard(updatedCard: any) {
-      console.log({"this.thecard":this.thecard});
-      this.thecard = updatedCard;
-    }
-    showobject(){
+  updateCard(updatedCard: any) {
+    console.log({ "this.thecard": this.thecard });
+    this.thecard = updatedCard;
+  }
+  showobject() {
 
-    }
-
-
-
-    next() {
+  }
 
 
-      console.log({valid:this.flashcardForm.valid})
-      //if (this.flashcardForm.valid) {
-        this.flashCardSetService.createFlashCardSet(this.thecard).subscribe(response  => {
-          console.log("Updated successfully", response);
-          // Proceed to next step or any other action
-        }, error  => {
-          console.error("Update failed", error);
-          // Handle error
-        });
-      //}
-    }
-    
+
+  next() {
+
+
+    console.log({ valid: this.flashcardForm.valid })
+
+    this.flashCardSetService.createFlashCardSet(this.thecard).subscribe(response => {
+      console.log("Updated successfully", response);
+
+    }, error => {
+      console.error("Update failed", error);
+
+    });
+
+  }
+
 
 }

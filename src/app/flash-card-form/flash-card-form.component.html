@@ -18,7 +18,7 @@
           <div class="section section-left">
             
             <!---->
-            <app-create-flash-card (cardUpdated)="updateCard($event)" >           
+            <app-create-flash-card [cardInfo]="thecard" (cardUpdated)="updateCard($event)" >           
               </app-create-flash-card>           
             <div>
             <button mat-raised-button type="submit">Save</button>
