@@ -12,16 +12,17 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 export class WorkshopComponent {
 
   cols: number;
+  pageSizeOptions: number[] = [5, 10, 20, 50];
+  pageSize: number = this.pageSizeOptions[0];
+  pageIndex: number = 0;
+
+  cardinfo = [];
+
 
   constructor(private flashCardSetService: FlashCardSetService , private breakpointObserver: BreakpointObserver) {}
 
 
    ngOnInit() {
-
-
-
-
-
     this.breakpointObserver.observe([
       Breakpoints.HandsetPortrait
     ]).subscribe(result => {
@@ -33,9 +34,6 @@ export class WorkshopComponent {
     });
 
 
-
-
-    
     this.flashCardSetService.getFlashCardSets().subscribe(
       data => {
         this.cardinfo = data;
@@ -44,8 +42,34 @@ export class WorkshopComponent {
         console.error('Error:', error);
       }
     );    
+
+
+    //this.onResize();
+
   }
 
-  cardinfo = [];
+
+
+
+
+
+  get paginatedFlashcards() {
+    const start = this.pageIndex * this.pageSize;
+    const end = start + this.pageSize;
+    return this.cardinfo.slice(start, end);
+  }
   
+  
+  onResize(event?:Event) {
+    this.cols = (window.innerWidth < 600) ? 1 : 5;
+  }
+
+
+  
+  onPageChange(event: any) {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+  }
+
+
 }

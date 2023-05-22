@@ -5,6 +5,9 @@ export interface FlashCardSet {
     title: string;
     subject:string;
     public:Boolean
-    author:boolean;
-    flashcards:FlashCard[];
+    author:string;
+    imageUrl:string;
+    rating:number ;
+    progress:number ;
+    flashcards?:FlashCard[];
   }

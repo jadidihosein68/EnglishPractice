@@ -48,12 +48,17 @@ export class FlashcardFormComponent implements OnInit {
 
 
 
-  thecard = 
+  thecard :FlashCardSet  = 
     { 
-      id:0,
-      name: '', 
-      bio: '',
+      id:'',
+      title: '', 
+      author: '',
       imageUrl: 'https://via.placeholder.com/150',
+      progress : 0,
+      public:true,
+      rating:1,
+      flashcards:[],
+      subject:""
 
     }
 

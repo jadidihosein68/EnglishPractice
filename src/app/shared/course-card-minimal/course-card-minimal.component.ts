@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { FlashCardSet } from '../../model/flashcardset';
+
 
 @Component({
   selector: 'app-course-card-minimal',
@@ -6,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./course-card-minimal.component.scss']
 })
 export class CourseCardMinimalComponent {
-  @Input() cardInfo: any;
+  @Input() cardInfo: FlashCardSet;
 
   constructor() {
   }
