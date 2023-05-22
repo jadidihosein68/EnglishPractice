@@ -1,9 +1,23 @@
 <mat-card class="card">
   <div class="img-container">
       <img mat-card-image class="card-img" [src]="cardInfo.imageUrl" alt="Card image">
-      <button mat-mini-fab color="primary" class="proceed-button-always" aria-label="Example icon button with a delete icon">
+      <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu"  class="proceed-button-always" aria-label="Example icon button with a delete icon">
           <mat-icon>more_vert</mat-icon>
       </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item disabled>
+          <mat-icon>edit</mat-icon>
+          <span>Edit Card Set</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>share</mat-icon>
+          <span>Share card set</span>
+        </button>
+      </mat-menu>
+
+
+
   </div>
   <mat-card-content class="card-body">
       <p class="card-caption">{{ cardInfo.title }}</p>
