@@ -22,7 +22,7 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Flash Card</ng-template>
-        <app-flash-card-table></app-flash-card-table>
+        <app-flash-card-table  [cardInfo]="thecard"></app-flash-card-table>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>

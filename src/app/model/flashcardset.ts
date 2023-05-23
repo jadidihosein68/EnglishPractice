@@ -1,6 +1,12 @@
 import {FlashCard} from "./flashcard";
 
 export class FlashCardSet {
+
+constructor() {
+  
+  this.flashcards = [];
+}
+
   _id: string;
   title: string;
   subject:string;

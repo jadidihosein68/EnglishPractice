@@ -1,5 +1,5 @@
 
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild, Input , OnInit } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -8,7 +8,7 @@ import {BulkUploadFlashCardDialogComponent} from '../bulk-upload-flash-card-dial
 
 import { MatDialog } from '@angular/material/dialog';
 import { FlashCard } from '../../model/flashcard';
-
+import { FlashCardSet } from '../../model/flashcardset';
 
 
 
@@ -18,7 +18,10 @@ import { FlashCard } from '../../model/flashcard';
   styleUrls: ['./flash-card-table.component.scss']
 })
 
-export class FlashCardTableComponent implements AfterViewInit {
+export class FlashCardTableComponent implements AfterViewInit, OnInit  {
+
+  @Input() cardInfo: FlashCardSet;
+
   displayedColumns: string[] = ['Front', 'Hint', 'Back', 'SoundIsActive', 'Action'];
   dataSource: MatTableDataSource<FlashCard>;
 
@@ -33,8 +36,11 @@ export class FlashCardTableComponent implements AfterViewInit {
 
 
 
-  constructor(public dialog: MatDialog) {
-    this.dataSource = new MatTableDataSource(this.flashcards);
+  constructor(public dialog: MatDialog) {   
+  }
+
+  ngOnInit() {
+    this.dataSource = new MatTableDataSource(this.cardInfo.flashcards);
   }
 
   ngAfterViewInit() {
@@ -97,46 +103,6 @@ export class FlashCardTableComponent implements AfterViewInit {
       }
     });
   }
-
-
-
-/*
-
-  addRecord(): void {
-    const dialogRef = this.dialog.open(AddFlashCardDialogComponent, {
-      width: '80%',
-      maxWidth: '500px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-       console.log({result:result});
-      }
-    });
-  }
-
-
-
-  
-  editRecord(row: FlashCard): void {
-
-
-    const dialogRef = this.dialog.open(AddFlashCardDialogComponent, {
-      width: '80%',
-      maxWidth: '500px',
-      data: row  // Pass the selected FlashCard to the dialog
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // Handle result here
-        console.log({result:result});
-      }
-    });
-  }
-*/
-
-
 
 
 }
