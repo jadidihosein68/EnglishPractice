@@ -15,8 +15,7 @@ export class CourseCardMinimalComponent {
   constructor(private router: Router) {
   }
 
-  ngOnChanges() {
-  }
+
 
   editCard() {
 

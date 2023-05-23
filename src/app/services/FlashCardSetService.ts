@@ -22,7 +22,7 @@ export class FlashCardSetService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  createFlashCardSet(flashCardSet: FlashCardSet): Observable<FlashCardSet> {
+  createFlashCardSet(flashCardSet: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, flashCardSet);
   }
 

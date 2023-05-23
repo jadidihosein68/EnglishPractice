@@ -1,4 +1,4 @@
-export interface FlashCard {
+export interface FlashCardDTO {
     id: string;
     Front: string;
     Hint:string;

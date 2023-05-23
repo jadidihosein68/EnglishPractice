@@ -1,32 +1,17 @@
-
-
 <mat-drawer-container class="example-container">
-<div class="container">
-  
-  
-  <!--
-  <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
--->
-
-  <mat-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
+  <div class="container">
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step>
         <ng-template matStepLabel>Flash Card Set</ng-template>
         <div class="step-content">
           <div class="section section-left">
-            
-            <!---->
-            <app-create-flash-card [cardInfo]="thecard" (cardUpdated)="updateCard($event)" >           
-              </app-create-flash-card>           
+            <app-create-flash-card [cardInfo]="thecard" (cardUpdated)="updateCard($event)"></app-create-flash-card>           
             <div>
-            <button mat-raised-button type="submit">Save</button>
-            <button mat-button  (click)="next()">Next d</button> 
+              <button mat-raised-button (click)="saveFlashCardSet()">Save</button>
+              <button mat-raised-button (click)="stepper.next()">Next</button> 
             </div>
           </div>
           <div class="section section-right">
-
             <div class="abul">
               <div class="thecard">
                 <app-course-card-minimal [cardInfo]="thecard"></app-course-card-minimal>
@@ -34,27 +19,23 @@
             </div>
           </div>
         </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Flash Card">
-      <form [formGroup]="secondFormGroup">
-      <app-flash-card-table></app-flash-card-table>
-        
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Flash Card</ng-template>
+        <app-flash-card-table></app-flash-card-table>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Review and Save !</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-        <button mat-button (click)="showobject()">Show object</button>
-      </div>
-    </mat-step>
-  </mat-stepper>
-</div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Review and Save !</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
 </mat-drawer-container>

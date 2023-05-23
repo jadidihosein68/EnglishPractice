@@ -1,13 +1,14 @@
 import {FlashCard} from "./flashcard";
 
-export interface FlashCardSet {
+export class FlashCardSet {
   _id: string;
-    title: string;
-    subject:string;
-    public:Boolean
-    author:string;
-    imageUrl:string;
-    rating:number ;
-    progress:number ;
-    flashcards?:FlashCard[];
+  title: string;
+  subject:string;
+  ispublic:Boolean
+  author:string;
+  imageUrl:string;
+  rating:number ;
+  status:string;
+  progress:number ;
+  flashcards?:FlashCard[];
   }

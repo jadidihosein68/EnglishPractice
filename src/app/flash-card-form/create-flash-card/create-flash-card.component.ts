@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input, OnChanges  } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit  } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FlashCardSet } from '../../model/flashcardset';
 
@@ -7,7 +7,7 @@ import { FlashCardSet } from '../../model/flashcardset';
   templateUrl: './create-flash-card.component.html',
   styleUrls: ['./create-flash-card.component.scss']
 })
-export class CreateFlashCardComponent implements OnChanges  {
+export class CreateFlashCardComponent implements OnInit  {
 
   @Output() cardUpdated = new EventEmitter<any>();
   @Input() cardInfo: FlashCardSet;
@@ -32,23 +32,20 @@ export class CreateFlashCardComponent implements OnChanges  {
   });
 
   constructor() {
+    
+    /*
     this.cardForm.valueChanges.subscribe(data => {
       const cardData = this.cardForm.value;
       cardData.ispublic = cardData.ispublic == true ? true : false;
       this.cardUpdated.emit(cardData);
     });
+*/
+
   }
 
 
 
-
-
-
-  
-
-
-
-  ngOnChanges() {
+  ngOnInit() {
 
 
     console.log({cardInfo :this.cardInfo })
@@ -57,7 +54,7 @@ export class CreateFlashCardComponent implements OnChanges  {
       this.cardForm.patchValue({
         title: this.cardInfo.title,
         imageUrl: this.cardInfo.imageUrl,
-        ispublic: this.cardInfo.public == true  ? true : false,
+        ispublic: this.cardInfo.ispublic == true  ? true : false,
       });
   //  }
   }

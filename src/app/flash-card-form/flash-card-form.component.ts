@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FlashCardService } from '../services/vocabulary.service';
 import { FlashCardSetService } from '../services/FlashCardSetService';
 import { FlashCardSet } from '../model/flashcardset';
+import { CreateFlashCardSetDTO } from '../model/DTO/flashcardsetDTO';
+import { ActivatedRoute, Router  } from '@angular/router';
+import { MatStepper } from '@angular/material/stepper';
 
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-flash-card-form',
@@ -12,97 +14,75 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./flash-card-form.component.scss']
 })
 export class FlashcardFormComponent implements OnInit {
-  flashcardForm: FormGroup;
-
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+  @ViewChild('stepper') stepper: MatStepper;
   isLinear = false;
-
-
+  cardId : any ;
   constructor(
-    private fb: FormBuilder,
     private flashcardService: FlashCardService,
-    private _formBuilder: FormBuilder,
     private flashCardSetService: FlashCardSetService,
-    private router: ActivatedRoute
-    ) {
-
-
-    this.flashcardForm = this.fb.group({
-      setName: ['', Validators.required],
-      question: ['', Validators.required],
-      answer: ['', Validators.required],
-      tags: [''],
-      visibility: ['private', Validators.required],
-    });
-
-
-  }
+    private router: ActivatedRoute,
+    private thRouter :Router  
+  ) {}
 
   ngOnInit() { 
-    const cardId = this.router.snapshot.paramMap.get('id'); 
+    this.cardId = this.router.snapshot.paramMap.get('id'); 
   
-    if (cardId) {
-      // If cardId is not null, fetch the existing record
-      this.flashCardSetService.getFlashCardSet(cardId).subscribe(response => {
+    if (this.cardId) {
+      this.flashCardSetService.getFlashCardSet(this.cardId).subscribe(response => {
         console.log("Card Retrieved successfully", response);
-        // Assuming response is the data you need, assign it to 'thecard'
         this.thecard = response;
       }, error => {
         console.error("Failed to retrieve card", error);
       });
     } else {
-      // If cardId is null, proceed with creation
       console.log("No cardId provided. Proceeding with creation.");
     }
   }
-  
 
-
-
-  thecard: FlashCardSet =
-    {
-      _id: '',
-      title: '',
-      author: '',
-      imageUrl: 'https://via.placeholder.com/150',
-      progress: 0,
-      public: true,
-      rating: 1,
-      flashcards: [],
-      subject: ""
-
-    }
-
+  thecard: FlashCardSet = {
+    _id: '',
+    title: '',
+    author: '',
+    imageUrl: 'https://via.placeholder.com/150',
+    progress: 0,
+    ispublic: true,
+    rating: 1,
+    flashcards: [],
+    subject: "",
+    status:''
+  }
 
   updateCard(updatedCard: any) {
     console.log({ "this.thecard": this.thecard });
     this.thecard = updatedCard;
   }
-  showobject() {
 
-  }
+  saveFlashCardSet() {
+
+    if (this.cardId){
+      this.flashCardSetService.updateFlashCardSet(this.cardId , new CreateFlashCardSetDTO (this.thecard)).subscribe(response => {
+        console.log("Updated successfully", response);
+      }, error => {
+        console.error("Update failed", error);
+      });
+    }
+    
+    else{
+
+    this.flashCardSetService.createFlashCardSet(new CreateFlashCardSetDTO (this.thecard)).subscribe(response => {
+      
+      console.log("created successfully", response);
+      this.thRouter.navigate(['/createflashcard', response._id])
+      .then(() => {
+        this.stepper.next()})
 
 
 
-  next() {
-
-
-    console.log({ valid: this.flashcardForm.valid })
-
-    this.flashCardSetService.createFlashCardSet(this.thecard).subscribe(response => {
-      console.log("Updated successfully", response);
 
     }, error => {
       console.error("Update failed", error);
-
     });
-
   }
-
-
+  
+  }
 }
