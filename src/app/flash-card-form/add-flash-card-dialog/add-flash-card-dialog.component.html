@@ -3,23 +3,33 @@
   <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Front</mat-label>
-      <input matInput formControlName="Front">
+      <input matInput formControlName="front">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Back</mat-label>
+      <input matInput formControlName="back">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Hint</mat-label>
-      <input matInput formControlName="Back">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Hint</mat-label>
-      <input matInput formControlName="Back">
+      <input matInput formControlName="hints">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Enable Voice</mat-label>
-      <input matInput formControlName="SoundIsActive">
+      <input matInput formControlName="soundIsActive">
     </mat-form-field>
+
+
+
+
+    
   </form>
 </div>
 <div mat-dialog-actions align="end">
   <button mat-button (click)="close()">Close</button>
   <button mat-raised-button color="primary" (click)="save()">Save</button>
 </div>
+
+
+
+
+<div *ngIf="errorMessage" class="error-message" [innerHtml]="errorMessage"></div>

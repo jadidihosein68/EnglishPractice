@@ -1,5 +1,5 @@
 
-import {AfterViewInit, Component, ViewChild, Input , OnInit } from '@angular/core';
+import {AfterViewInit, Component, ViewChild, Input , OnInit,  OnChanges, SimpleChanges  } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -28,11 +28,6 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  flashcards: FlashCard[] = [
-    {id: '1', Front: 'Front1', Hint:"Some Hint1", Back: 'Back1', SoundIsActive: true},
-    {id: '2', Front: 'Front2', Hint:"Some Hint2", Back: 'Back2', SoundIsActive: false},
-    // Add more FlashCard objects here
-  ];
 
 
 
@@ -40,8 +35,29 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
   }
 
   ngOnInit() {
+
     this.dataSource = new MatTableDataSource(this.cardInfo.flashcards);
+    console.log({expectedTable:this.cardInfo})
+
+
   }
+
+
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['cardInfo'] && !changes['cardInfo'].firstChange) {
+      // Call a method or update the necessary data for your table
+      //this.updateTable();
+    //  this.dataSource.data = this.cardInfo.flashcards;
+    console.log({expectedTable:this.cardInfo})
+    this.dataSource = new MatTableDataSource(this.cardInfo.flashcards);
+
+
+    }
+  }
+
+
+
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -74,26 +90,29 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
 
   deleteRecord(row: FlashCard): void {
     // For now, we're just removing the FlashCard from the list
-    this.flashcards = this.flashcards.filter(flashcard => flashcard.id !== row.id);
+    //this.flashcards = this.flashcards.filter(flashcard => flashcard.id !== row.id);
 
     // Update the table's data source
-    this.dataSource = new MatTableDataSource(this.flashcards);
+    //this.dataSource = new MatTableDataSource(this.flashcards);
   }
 
 
   addRecord(): void {
-    this.openDialog();
+    this.openDialog( this.cardInfo._id);
+
+    this.dataSource.data = this.cardInfo.flashcards || [];
+
   }
 
-  editRecord(row: FlashCard): void {
-    this.openDialog(row);
+  editRecord(row?: FlashCard ): void {
+    this.openDialog(this.cardInfo._id, row);
   }
 
-  openDialog(data?: FlashCard): void {
+  openDialog(flashcardsetid?: string , data?: FlashCard , ): void {
     const dialogRef = this.dialog.open(AddFlashCardDialogComponent, {
       width: '80%',
       maxWidth: '500px',
-      data: data  // Pass data if it exists (for editing)
+      data: {flashcardsetid , FlashCard:data}  // Pass data if it exists (for editing)
     });
 
     dialogRef.afterClosed().subscribe(result => {

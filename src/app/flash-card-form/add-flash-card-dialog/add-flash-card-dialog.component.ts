@@ -1,7 +1,8 @@
-import { Component,Inject, Optional } from '@angular/core';
-import { MatDialogRef,MAT_DIALOG_DATA  } from '@angular/material/dialog';
+import { Component, Inject, Optional } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FlashCard } from '../../model/flashcard';
+import { FlashCardService } from '../../services/FlashCardService';
 
 
 @Component({
@@ -13,23 +14,25 @@ export class AddFlashCardDialogComponent {
 
   form: FormGroup;
   action: string;
+  errorMessage: string;
   constructor(
     private fb: FormBuilder,
+    private flashCardService: FlashCardService,
     public dialogRef: MatDialogRef<AddFlashCardDialogComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: FlashCard
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: {flashcardsetid: string, flashCard: FlashCard}
   ) {
     this.form = this.fb.group({
-      id: ['', Validators.required],
-      Front: ['', Validators.required],
-      Hint: ['', Validators.required],
-      Back: ['', Validators.required],
+      front: ['', Validators.required],
+      hints: ['', Validators.required],
+      back: ['', Validators.required],
+      soundIsActive: [true, Validators.required],
     });
 
 
-    if (data) {  // If data exists, it means the dialog is for editing
+    if (data) {
       this.form.patchValue(data);
     }
-    this.action = (data) ? 'Edit' : 'Add'; 
+    this.action = (data && data.flashCard) ? 'Edit' : 'Add';
   }
 
   close(): void {
@@ -38,7 +41,43 @@ export class AddFlashCardDialogComponent {
 
   save(): void {
     if (this.form.valid) {
-      this.dialogRef.close(this.form.value);
+
+      if (this.action === 'Add') {
+
+        this.form.value.flashcardSetId = this.data.flashcardsetid;
+        this.flashCardService.createFlashCard(  this.data.flashcardsetid , this.form.value).subscribe(result => {
+          console.log('Flash card added', result);
+          this.dialogRef.close();
+        });
+      
+
+        console.log("add Operation");
+        console.log({data:this.data});
+
+      }
+
+      else {
+
+        console.log("Edit Operation");
+        console.log({data:this.data});
+
+        /*
+        this.flashCardService.updateFlashCard(this.data.id, this.form.value).subscribe(result => {
+          console.log('Flash card updated', result);
+          this.dialogRef.close();
+        });
+        */
+      }
+
+    }
+    else {
+      this.errorMessage = 'Please correct the form before submitting:';
+      for (const field in this.form.controls) {
+        if (this.form.controls[field].invalid) {
+          this.errorMessage += `\n ${field} is invalid.`;
+        }
+      }
+      console.log(this.errorMessage);
     }
   }
 }
