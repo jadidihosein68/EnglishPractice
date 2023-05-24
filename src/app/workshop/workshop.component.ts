@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FlashCardSetService } from '../services/FlashCardSetService';
+import { FlashCardSet } from '../model/flashcardset';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 
@@ -16,7 +17,7 @@ export class WorkshopComponent {
   pageSize: number = this.pageSizeOptions[0];
   pageIndex: number = 0;
 
-  cardinfo = [];
+  cardinfo :FlashCardSet[] = []; 
 
 
   constructor(private flashCardSetService: FlashCardSetService , private breakpointObserver: BreakpointObserver) {}
@@ -50,7 +51,13 @@ export class WorkshopComponent {
 
 
 
+  handleCardDeletion(deletedCardId: string) {
 
+    console.log({deletedCardId:deletedCardId})
+    console.log({cardinfo:this.cardinfo});
+    this.cardinfo = this.cardinfo.filter(card => card._id !== deletedCardId);
+  
+  }
 
 
   get paginatedFlashcards() {

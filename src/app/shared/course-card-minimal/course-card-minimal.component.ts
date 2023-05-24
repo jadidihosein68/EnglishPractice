@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter  } from '@angular/core';
 import { FlashCardSet } from '../../model/flashcardset';
 import { FlashCardSetService } from '../../services/FlashCardSetService';
 import { Router } from '@angular/router';
@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class CourseCardMinimalComponent {
   @Input() cardInfo: FlashCardSet;
+  @Output() onDelete: EventEmitter<string> = new EventEmitter();
+
 
   constructor(private router: Router , private flashCardSetService:FlashCardSetService) {
   }
@@ -30,7 +32,8 @@ export class CourseCardMinimalComponent {
     this.flashCardSetService.deleteFlashCardSet(this.cardInfo._id)  // Call the delete method from the service
     .subscribe(res => {
       console.log('Card deleted', res);
-      this.cardInfo;
+      //this.cardInfo;
+      this.onDelete.emit(this.cardInfo._id);
       // You might want to refresh the card list or navigate to another page
     }, err => {
       console.log('Error deleting card', err);
