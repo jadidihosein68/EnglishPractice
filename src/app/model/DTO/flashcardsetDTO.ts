@@ -13,7 +13,7 @@ this.imageUrl=flashCardSet.imageUrl;
 //this.rating= flashCardSet.rating;
 //this.status= flashCardSet.status;
 //this.progress= flashCardSet.progress;
-this.flashcards= flashCardSet.flashcards;
+this.flashcards= flashCardSet.flashcards?.map(fc => new FlashCardDTO(fc));;
 }
 
   //_id: string;

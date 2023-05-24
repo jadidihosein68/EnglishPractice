@@ -1,7 +1,7 @@
 export interface FlashCard {
     id: string;
-    Front: string;
-    Hint:string;
-    Back:string
-    SoundIsActive:boolean;
+    front: string;
+    hints:string;
+    back:string
+    soundIsActive:boolean;
   }
