@@ -23,8 +23,8 @@ export class FlashCardService {
   }
 
 
-  updateFlashCard(id: string, flashCard: FlashCard): Observable<FlashCard> {
-    return this.http.put<FlashCard>(`${this.apiUrl}/${id}`, flashCard);
+  updateFlashCard(setId: string,flashcardId:string, flashCard: FlashCard): Observable<FlashCard> {
+    return this.http.put<FlashCard>(`${this.apiUrl}/flashcardset/${setId}/${flashcardId}`, flashCard);
   }
 
   deleteFlashCard(id: string): Observable<void> {

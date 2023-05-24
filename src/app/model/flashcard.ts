@@ -1,5 +1,5 @@
 export interface FlashCard {
-    id: string;
+    _id: string;
     front: string;
     hints:string;
     back:string

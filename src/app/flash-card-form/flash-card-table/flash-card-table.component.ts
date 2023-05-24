@@ -114,15 +114,14 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
 
   addRecord(): void {
     this.openDialog( this.cardInfo._id);
-
-    console.log({dataSource:this.dataSource.data});
-    console.log({flashcards:this.cardInfo.flashcards});
     this.dataSource.data = [...(this.cardInfo.flashcards || [])];
 
   }
 
   editRecord(row?: FlashCard ): void {
     this.openDialog(this.cardInfo._id, row);
+    this.dataSource.data = this.cardInfo.flashcards|| [];
+    
   }
 
   openDialog(flashcardsetid?: string , data?: FlashCard , ): void {
@@ -133,9 +132,6 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
       maxWidth: '500px',
       data: {flashcardsetid , FlashCard:data}  // Pass data if it exists (for editing)
     });
-
-
-    console.log("rid !")
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
