@@ -47,20 +47,11 @@ export class AddFlashCardDialogComponent {
         this.form.value.flashcardSetId = this.data.flashcardsetid;
         this.flashCardService.createFlashCard(  this.data.flashcardsetid , this.form.value).subscribe(result => {
           console.log('Flash card added', result);
-          this.dialogRef.close();
+          this.dialogRef.close(result.flashcards[result.flashcards.length - 1] );
         });
-      
-
-        console.log("add Operation");
-        console.log({data:this.data});
-
       }
-
       else {
-
         console.log("Edit Operation");
-        console.log({data:this.data});
-
         /*
         this.flashCardService.updateFlashCard(this.data.id, this.form.value).subscribe(result => {
           console.log('Flash card updated', result);

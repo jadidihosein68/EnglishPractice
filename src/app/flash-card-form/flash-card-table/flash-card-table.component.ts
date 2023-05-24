@@ -43,18 +43,33 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
   }
 
 
-
+/*
   ngOnChanges(changes: SimpleChanges) {
     if (changes['cardInfo'] && !changes['cardInfo'].firstChange) {
       // Call a method or update the necessary data for your table
       //this.updateTable();
     //  this.dataSource.data = this.cardInfo.flashcards;
-    console.log({expectedTable:this.cardInfo})
+    //console.log({expectedTable:this.cardInfo})
     this.dataSource = new MatTableDataSource(this.cardInfo.flashcards);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
 
     }
   }
+
+*/
+
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['cardInfo']) {
+      // Make a new MatTableDataSource so Angular picks up the changes
+      this.dataSource = new MatTableDataSource(this.cardInfo.flashcards);
+      // Apply paginator and sort after data changes
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
+}
 
 
 
@@ -100,7 +115,9 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
   addRecord(): void {
     this.openDialog( this.cardInfo._id);
 
-    this.dataSource.data = this.cardInfo.flashcards || [];
+    console.log({dataSource:this.dataSource.data});
+    console.log({flashcards:this.cardInfo.flashcards});
+    this.dataSource.data = [...(this.cardInfo.flashcards || [])];
 
   }
 
@@ -109,16 +126,27 @@ export class FlashCardTableComponent implements AfterViewInit, OnInit  {
   }
 
   openDialog(flashcardsetid?: string , data?: FlashCard , ): void {
+  
+  
     const dialogRef = this.dialog.open(AddFlashCardDialogComponent, {
       width: '80%',
       maxWidth: '500px',
       data: {flashcardsetid , FlashCard:data}  // Pass data if it exists (for editing)
     });
 
+
+    console.log("rid !")
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         // Handle result here
-        console.log({result:result});
+        //console.log({result:result});
+        //this.dataSource.data = [...(this.cardInfo.flashcards || [])];
+        this.cardInfo.flashcards = this.cardInfo.flashcards ? [...this.cardInfo.flashcards, result] : [result];
+        this.dataSource.data = [...(this.cardInfo.flashcards || [])];
+        console.log('Updated cardInfo:', this.cardInfo);
+        console.log('Table data:', this.dataSource.data);
+
       }
     });
   }
