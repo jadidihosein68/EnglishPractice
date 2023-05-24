@@ -30,7 +30,7 @@ export class FlashCardSetService {
     return this.http.put<any>(`${this.apiUrl}/${id}`, flashCardSet);
   }
 
-  deleteFlashCardSet(id: number): Observable<any> {
+  deleteFlashCardSet(id: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }

@@ -46,7 +46,7 @@ export class FlashcardFormComponent implements OnInit {
     imageUrl: 'https://via.placeholder.com/150',
     progress: 0,
     ispublic: true,
-    rating: 1,
+    rating: 5,
     flashcards: [],
     subject: "",
     status:''
