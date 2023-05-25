@@ -1,9 +1,9 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FlashCardService } from '../services/vocabulary.service';
 import { FlashCardSetService } from '../services/FlashCardSetService';
 import { FlashCardSet } from '../model/flashcardset';
 import { CreateFlashCardSetDTO } from '../model/DTO/flashcardsetDTO';
-import { ActivatedRoute, Router  } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatStepper } from '@angular/material/stepper';
 
 
@@ -16,17 +16,17 @@ import { MatStepper } from '@angular/material/stepper';
 export class FlashcardFormComponent implements OnInit {
   @ViewChild('stepper') stepper: MatStepper;
   isLinear = false;
-  cardId : any ;
+  cardId: any;
   constructor(
     private flashcardService: FlashCardService,
     private flashCardSetService: FlashCardSetService,
     private router: ActivatedRoute,
-    private thRouter :Router  
-  ) {}
+    private thRouter: Router
+  ) { }
 
-  ngOnInit() { 
-    this.cardId = this.router.snapshot.paramMap.get('id'); 
-  
+  ngOnInit() {
+    this.cardId = this.router.snapshot.paramMap.get('id');
+
     if (this.cardId) {
       this.flashCardSetService.getFlashCardSet(this.cardId).subscribe(response => {
         console.log("Card Retrieved successfully", response);
@@ -49,7 +49,7 @@ export class FlashcardFormComponent implements OnInit {
     rating: 5,
     flashcards: [],
     subject: "",
-    status:''
+    status: ''
   }
 
   updateCard(updatedCard: any) {
@@ -59,30 +59,33 @@ export class FlashcardFormComponent implements OnInit {
 
   saveFlashCardSet() {
 
-    if (this.cardId){
-      this.flashCardSetService.updateFlashCardSet(this.cardId , new CreateFlashCardSetDTO (this.thecard)).subscribe(response => {
+    if (this.cardId) {
+      this.flashCardSetService.updateFlashCardSet(this.cardId, new CreateFlashCardSetDTO(this.thecard)).subscribe(response => {
         console.log("Updated successfully", response);
       }, error => {
         console.error("Update failed", error);
       });
     }
-    
-    else{
 
-    this.flashCardSetService.createFlashCardSet(new CreateFlashCardSetDTO (this.thecard)).subscribe(response => {
-      
-      console.log("created successfully", response);
-      this.thRouter.navigate(['/createflashcard', response._id])
-      .then(() => {
-        this.stepper.next()})
+    else {
 
+      this.flashCardSetService.createFlashCardSet(new CreateFlashCardSetDTO(this.thecard)).subscribe(response => {
 
-
-
-    }, error => {
-      console.error("Update failed", error);
-    });
+        console.log("created successfully", response);
+        this.thRouter.navigate(['/createflashcard', response._id])
+          .then(() => {
+            this.stepper.next()
+          })
+      }, error => {
+        console.error("Update failed", error);
+      });
+    }
   }
-  
-  }
+
+onCloseBtn(){
+  this.thRouter.navigate(['/workshop'])
+
+}
+
+
 }

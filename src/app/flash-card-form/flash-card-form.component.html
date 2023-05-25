@@ -5,10 +5,10 @@
         <ng-template matStepLabel>Flash Card Set</ng-template>
         <div class="step-content">
           <div class="section section-left">
-            <app-create-flash-card [cardInfo]="thecard" (cardUpdated)="updateCard($event)"></app-create-flash-card>           
+            <app-create-flash-card [cardInfo]="thecard" (cardUpdated)="updateCard($event)"></app-create-flash-card>
             <div>
               <button mat-raised-button (click)="saveFlashCardSet()">Save</button>
-              <button mat-raised-button (click)="stepper.next()">Next</button> 
+              <button mat-raised-button (click)="stepper.next()">Next</button>
             </div>
           </div>
           <div class="section section-right">
@@ -22,7 +22,7 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Flash Card</ng-template>
-        <app-flash-card-table  [cardInfo]="thecard"></app-flash-card-table>
+        <app-flash-card-table [cardInfo]="thecard"></app-flash-card-table>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
@@ -30,10 +30,78 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Review and Save !</ng-template>
-        <p>You are now done.</p>
+        <p>Ready to publish ?</p>
+
+
+
+
+
+
+
+
+
+
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+          <div fxFlex="25%" fxFlex.xs="100%">
+
+            <mat-list>
+              <mat-list-item> Title:  {{thecard.title}}</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Author: {{thecard.author}}</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Is Public? {{thecard.ispublic}}</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Status: {{thecard.status}}</mat-list-item>
+            </mat-list>
+
+
+
+
+          </div>
+
+
+          <div fxFlex="25%" fxFlex.xs="100%">
+
+            <div class="thecard">
+              <app-course-card-minimal [cardInfo]="thecard"></app-course-card-minimal>
+            </div>
+
+
+          </div>
+
+
+          <div fxFlex="50%" fxFlex.xs="100%">
+            <!-- Your content here -->
+
+
+            <mat-card>
+              <mat-card-content>Total No. of flash cards " {{thecard.flashcards?.length}}"</mat-card-content>
+            
+              <mat-card-actions align="end">
+              <button mat-raised-button  color="primary">Publish !</button>
+            </mat-card-actions>
+            <mat-card-footer>
+              
+              <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </mat-card-footer>
+            </mat-card>
+            
+
+
+          </div>
+        </div>
+
+
+
+
+
+
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button matStepperPrevious (click)="onCloseBtn()">Close</button>
+          <!--<button mat-button (click)="stepper.reset()">Reset</button>-->
+
+
         </div>
       </mat-step>
     </mat-stepper>
