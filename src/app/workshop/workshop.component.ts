@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FlashCardSetService } from '../services/FlashCardSetService';
 import { FlashCardSet } from '../model/flashcardset';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class WorkshopComponent {
   cardinfo :FlashCardSet[] = []; 
 
 
-  constructor(private flashCardSetService: FlashCardSetService , private breakpointObserver: BreakpointObserver) {}
+  constructor(private flashCardSetService: FlashCardSetService , private breakpointObserver: BreakpointObserver, private router: Router) {}
 
 
    ngOnInit() {
@@ -77,6 +77,14 @@ export class WorkshopComponent {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
   }
+
+
+  onAddRecord(){
+
+    this.router.navigate(['/createflashcard']);
+
+  }
+
 
 
 }

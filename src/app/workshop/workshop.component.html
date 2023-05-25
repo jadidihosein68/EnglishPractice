@@ -12,9 +12,8 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
+                <button mat-menu-item (click)="onAddRecord()">Add a new card</button>
+              </mat-menu> 
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content">
@@ -41,33 +40,3 @@
       </div>
     </mat-drawer-content>
   </mat-drawer-container>
-
-
-<!--
-
-<div class="container">
-              
-    <mat-label>Cards per page</mat-label>
-    <select matNativeControl [(ngModel)]="pageSize" (change)="pageIndex = 0">
-      <option *ngFor="let size of pageSizeOptions" [value]="size">{{size}}</option>
-    </select>
-  
-
-  <div fxLayout="row wrap" fxLayoutAlign="start start" >
-    <div fxFlex.gt-sm="20" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let card of paginatedFlashcards"  style="min-width: 0">
-      <mat-card-content>
-        <app-course-card-minimal [cardInfo]="card"></app-course-card-minimal>
-      </mat-card-content>
-    </div>
-  </div>
-
-  <mat-paginator
-    [length]="cardinfo.length"
-    [pageSizeOptions]="pageSizeOptions"
-    [pageSize]="pageSize"
-    (page)="onPageChange($event)"
-    showFirstLastButtons>
-  </mat-paginator>
-</div>
-
--->
