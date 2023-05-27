@@ -12,25 +12,22 @@ import { Router } from '@angular/router';
 })
 export class WorkshopComponent {
 
-  //cols: number;
-  pageSizeOptions: number[] = [5, 10, 20, 50];
-  pageSize: number = this.pageSizeOptions[0];
-  pageIndex: number = 0;
 
-  cardinfo :FlashCardSet[] = []; 
+  cardinfo: FlashCardSet[] = [];
+  activeFlashCardSets: FlashCardSet[] = [];
+  draftFlashCardSets: FlashCardSet[] = [];
 
-
-  constructor(private flashCardSetService: FlashCardSetService , private breakpointObserver: BreakpointObserver, private router: Router) {}
+  constructor(private flashCardSetService: FlashCardSetService, private breakpointObserver: BreakpointObserver, private router: Router) { }
 
 
-   ngOnInit() {
+  ngOnInit() {
     this.breakpointObserver.observe([
       Breakpoints.HandsetPortrait
     ]).subscribe(result => {
       if (result.matches) {
-       // this.cols = 1;  // use one column on small screens
+        // this.cols = 1;  // use one column on small screens
       } else {
-       // this.cols = 5;  // use three columns on larger screens
+        // this.cols = 5;  // use three columns on larger screens
       }
     });
 
@@ -42,47 +39,36 @@ export class WorkshopComponent {
       error => {
         console.error('Error:', error);
       }
-    );    
-
-
-    //this.onResize();
+    );
 
   }
 
 
 
   handleCardDeletion(deletedCardId: string) {
-
-    console.log({deletedCardId:deletedCardId})
-    console.log({cardinfo:this.cardinfo});
     this.cardinfo = this.cardinfo.filter(card => card._id !== deletedCardId);
-  
   }
 
 
-  get paginatedFlashcards() {
-    const start = this.pageIndex * this.pageSize;
-    const end = start + this.pageSize;
-    return this.cardinfo.slice(start, end);
+  get draftPaginatedFlashcards() {
+    return this.cardinfo.filter(set => set.status === 'Draft');
   }
-  
-  
-  onResize(event?:Event) {
-   // this.cols = (window.innerWidth < 600) ? 1 : 5;
+
+  get actiePaginatedFlashcards() {
+    return this.cardinfo.filter(set => set.status === 'Publish');
   }
 
 
-  
-  onPageChange(event: any) {
-    this.pageIndex = event.pageIndex;
-    this.pageSize = event.pageSize;
+
+
+
+  onResize(event?: Event) {
+    // this.cols = (window.innerWidth < 600) ? 1 : 5;
   }
 
 
-  onAddRecord(){
-
+  onAddRecord() {
     this.router.navigate(['/createflashcard']);
-
   }
 
 

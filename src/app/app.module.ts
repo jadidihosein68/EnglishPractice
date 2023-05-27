@@ -38,6 +38,7 @@ import { FlashCardTableComponent } from './flash-card-form/flash-card-table/flas
 import { WorkshopComponent } from './workshop/workshop.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddFlashCardDialogComponent } from './flash-card-form/add-flash-card-dialog/add-flash-card-dialog.component';
+import { WorkshopCollectionComponent } from './workshop/workshop-collection/workshop-collection.component';
 import { BulkUploadFlashCardDialogComponent } from './flash-card-form/bulk-upload-flash-card-dialog/bulk-upload-flash-card-dialog.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -68,6 +69,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DashboardComponent,
     AddFlashCardDialogComponent,
     BulkUploadFlashCardDialogComponent,
+    WorkshopCollectionComponent,
     
   ],
   imports: [
