@@ -34,18 +34,11 @@
 
 
 
-
-
-
-
-
-
-
         <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
           <div fxFlex="25%" fxFlex.xs="100%">
 
             <mat-list>
-              <mat-list-item> Title:  {{thecard.title}}</mat-list-item>
+              <mat-list-item> Title: {{thecard.title}}</mat-list-item>
               <mat-divider></mat-divider>
               <mat-list-item>Author: {{thecard.author}}</mat-list-item>
               <mat-divider></mat-divider>
@@ -76,25 +69,18 @@
 
             <mat-card>
               <mat-card-content>Total No. of flash cards " {{thecard.flashcards?.length}}"</mat-card-content>
-            
-              <mat-card-actions align="end">
-              <button mat-raised-button  color="primary">Publish !</button>
-            </mat-card-actions>
-            <mat-card-footer>
-              
-              <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
-            </mat-card-footer>
-            </mat-card>
-            
 
+              <mat-card-actions align="end">
+                <button mat-raised-button color="primary" (click)="onPublish()">Publish !</button>
+              </mat-card-actions>
+              <mat-card-footer>
+
+                <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+              </mat-card-footer>
+            </mat-card>
 
           </div>
         </div>
-
-
-
-
-
 
         <div>
           <button mat-button matStepperPrevious>Back</button>

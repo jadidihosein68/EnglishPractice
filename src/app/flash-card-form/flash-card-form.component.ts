@@ -88,4 +88,16 @@ onCloseBtn(){
 }
 
 
+onPublish(){
+
+
+
+this.flashCardSetService.publishFlashCardSet(this.thecard._id).subscribe(response => {
+        //console.log("Updated successfully", response);
+        this.thRouter.navigate(['/workshop'])
+      }, error => {
+        console.error("Update failed", error);
+      });;
+}
+
 }

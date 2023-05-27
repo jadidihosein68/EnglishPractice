@@ -55,7 +55,7 @@ export class WorkshopComponent {
   }
 
   get actiePaginatedFlashcards() {
-    return this.cardinfo.filter(set => set.status === 'Publish');
+    return this.cardinfo.filter(set => set.status === 'Published');
   }
 
 
@@ -70,7 +70,4 @@ export class WorkshopComponent {
   onAddRecord() {
     this.router.navigate(['/createflashcard']);
   }
-
-
-
 }
