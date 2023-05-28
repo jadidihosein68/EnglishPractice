@@ -1,11 +1,23 @@
 
-<mat-drawer-container></mat-drawer-container>
 
 <div class="container">
   <div class="card-container">
     <div class="header">
     
-      <app-english-learner-card-header></app-english-learner-card-header>     
+
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field class="example-full-width">
+          <input matInput  placeholder="Search...">
+        </mat-form-field>
+        <button mat-icon-button >
+          <mat-icon>share</mat-icon>
+        </button>
+        <button mat-icon-button >
+          <mat-icon>download</mat-icon>
+        </button>
+      </div>
+      
     </div>
     <div class="card-wrapper">
       <app-english-learner-card
@@ -18,3 +30,12 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,14 @@ export class FlashCardSetService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
+
+  getListOfPublishedFlashCardSet(): Observable<any> {
+    return this.http.get<any>(this.apiUrl+"/publishedlist");
+  }
+
+
+
+
   createFlashCardSet(flashCardSet: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, flashCardSet);
   }
