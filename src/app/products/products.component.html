@@ -11,7 +11,10 @@
           <div class="col" *ngFor="let benefit of benefits">
             <mat-card class="cardbenefit">
               <mat-card-content>
-                <mat-icon class="iconbenefit" aria-hidden="false" aria-label="Example home icon" fontIcon="{{ benefit.icon }}"></mat-icon>
+                <!--<mat-icon class="iconbenefit" aria-hidden="false" aria-label="Example home icon" fontIcon="{{ benefit.icon }}"></mat-icon>-->
+
+                <img [src]="benefit.imgurl" class="iconbenefit" alt="benefit icon">
+
                 <mat-card-title class="card-title">{{ benefit.title }}</mat-card-title>
                 <mat-card-content>{{ benefit.description }}</mat-card-content>
               </mat-card-content>

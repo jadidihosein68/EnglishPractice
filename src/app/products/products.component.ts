@@ -15,21 +15,24 @@ export class ProductsComponent implements OnInit {
   plans?: ProductPlan[] ;
 
 
-  benefits: Benefit[] = [
+  benefits: any[] = [
     {
       icon: 'psychology',
       title: 'Improve Learning',
-      description: 'Our plans are designed to enhance your learning experience and help you grasp concepts quickly and effectively.'
+      description: 'Our plans are designed to enhance your learning experience and help you grasp concepts quickly and effectively.',
+      imgurl:'https://th.bing.com/th/id/OIG.WTEWro0PUPSzbCIrpyXi?pid=ImgGn'
     },
     {
       icon: 'analytics',
       title: 'Track Progress',
-      description: 'Monitor your progress with our plans that include detailed statistics and personalized recommendations.'
+      description: 'Monitor your progress with our plans that include detailed statistics and personalized recommendations.',
+      imgurl:'https://th.bing.com/th/id/OIG.3P3X7PSQtOamspE.2NWo?pid=ImgGn'
     },
     {
       icon: 'headset_mic',
       title: 'Expert Support',
-      description: 'Receive guidance and support from our team of experts to ensure your success throughout the learning journey.'
+      description: 'Receive guidance and support from our team of experts to ensure your success throughout the learning journey.',
+      imgurl:'https://th.bing.com/th/id/OIG.8aJLlbKNk4bgwk4jNXk2?pid=ImgGn'
     }
   ];
 
