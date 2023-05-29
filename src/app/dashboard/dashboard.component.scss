@@ -19,7 +19,9 @@
   font-size: 24px; // Increase the font size
   font-weight: bold; // Make it bold
   color: #3f51b5; // Change the color
-  margin-top: -5px; // Adjust the positioning if needed
+  margin-top: 10px; // Adjust the positioning if needed
+  text-align: center;
+
 }
 
 
@@ -37,7 +39,7 @@
     }
 
     h2 {
-      margin: 0;
+      //margin: 0;
       line-height: 1.2;
     }
 
