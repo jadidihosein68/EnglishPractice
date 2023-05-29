@@ -39,10 +39,6 @@ export class CourseCardMinimalComponent {
       console.log('Error deleting card', err);
       // Handle the error here
     });
-
-
-
-
   }
 
 

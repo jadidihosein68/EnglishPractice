@@ -1,45 +1,7 @@
-
-
-.grid-container {
-  margin: 20px;
-}
-
 .dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
+  margin: 15px;
 }
 
 .more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
-}
-
-
-
-.example-tree-invisible {
-  display: none;
-}
-
-.example-tree ul,
-.example-tree li {
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style-type: none;
-}
-
-.example-tree .mat-nested-tree-node div[role=group] {
-  padding-left: 40px;
-}
-
-
-.example-tree div[role=group]>.mat-tree-node {
-  padding-left: 40px;
+  margin-left: auto;
 }
