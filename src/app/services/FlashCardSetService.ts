@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environments';
 import { FlashCardSet } from '../model/flashcardset';
+import { makeHeader } from '../utility/commonFunction';
+import { LocalStorageService } from './localstorage.service';
 
 
 @Injectable({
@@ -12,10 +14,10 @@ export class FlashCardSetService {
 
   //private apiUrl = 'http://api.yourwebsite.com/flashcardset'; // replace with your actual API endpoint
   private readonly apiUrl = environment.apiUrl + '/api/flashcardSet';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private myLocalStorage : LocalStorageService) { }
 
-  getFlashCardSets(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  getWorkShopFlashCardSets(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/workshop`,makeHeader(this.myLocalStorage.getItem('token')));
   }
 
   getFlashCardSet(id: string): Observable<any> {
@@ -31,7 +33,7 @@ export class FlashCardSetService {
 
 
   createFlashCardSet(flashCardSet: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, flashCardSet);
+    return this.http.post<any>(this.apiUrl, flashCardSet, makeHeader(this.myLocalStorage.getItem('token')));
   }
 
   updateFlashCardSet(id: number, flashCardSet: any): Observable<any> {

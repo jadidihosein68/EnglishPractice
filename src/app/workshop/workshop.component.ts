@@ -32,7 +32,7 @@ export class WorkshopComponent {
     });
 
 
-    this.flashCardSetService.getFlashCardSets().subscribe(
+    this.flashCardSetService.getWorkShopFlashCardSets().subscribe(
       data => {
         this.cardinfo = data;
       },
