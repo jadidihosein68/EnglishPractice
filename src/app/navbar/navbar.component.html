@@ -14,9 +14,9 @@
       <a mat-list-item routerLink="/dashboard" *ngIf="authService.isLoggedIn()">Dashboard</a>
       <a mat-list-item routerLink="/workshop" *ngIf="authService.isLoggedIn()">Workshop</a>
       <a mat-list-item routerLink="/courses">Learn</a>
-      <a mat-list-item routerLink="/products">Product</a>
+      <a mat-list-item routerLink="/products" >Product</a>
       <a mat-list-item routerLink="/account" *ngIf="authService.isLoggedIn()">Account</a>
-      <a mat-list-item routerLink="/admin" *ngIf="authService.isLoggedIn()" >Admin</a>
+      <a mat-list-item routerLink="/admin" *ngIf="authService.isInRole('Admin')" >Admin</a>
       <a mat-list-item routerLink="/register" *ngIf="!authService.isLoggedIn()" >Login</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -39,9 +39,9 @@
   <button mat-button routerLink="/dashboard" *ngIf="authService.isLoggedIn()"  >Dashboard</button>
   <button mat-button routerLink="/workshop" *ngIf="authService.isLoggedIn()">Workshop</button>
   <button mat-button routerLink="/courses">Learn</button>
-  <button mat-button routerLink="/products">Product</button>
+  <button mat-button routerLink="/products"  >Product</button>
   <button mat-button routerLink="/profile" *ngIf="authService.isLoggedIn()">Account</button>
-  <button mat-button routerLink="/admin" *ngIf="authService.isLoggedIn()">Admin</button>
+  <button mat-button routerLink="/admin" *ngIf="authService.isInRole('Admin')">Admin</button>
   <button mat-button routerLink="/register" *ngIf="!authService.isLoggedIn()">Login</button>
 </div>
 </mat-toolbar>
