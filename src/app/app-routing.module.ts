@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'checkout/:planId', component: CheckoutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'workshop', component: WorkshopComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]  },
   
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
