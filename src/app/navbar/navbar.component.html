@@ -26,14 +26,14 @@
       <button mat-icon-button (click)="toggleNavbar(sidenav)" >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>English Learning Center</span>
+      <span>AI Learning Center</span>
     </mat-toolbar>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <mat-toolbar color="primary"  *ngIf="!(isSmallScreen | async)" class="toolbar">
-  <span>English Learning Center</span>
+  <span>AI Learning Center</span>
   <span class="spacer"></span>
   <div class="toolbar-buttons">
   <button mat-button routerLink="/dashboard" *ngIf="authService.isLoggedIn()"  >Dashboard</button>

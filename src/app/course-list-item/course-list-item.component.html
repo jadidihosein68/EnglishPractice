@@ -8,5 +8,9 @@
     <div class="course-author">Author: {{ course.instructor }}</div>
     <div class="course-rating">Rating: 4.5/5</div>
   </div>
-  <button mat-raised-button color="primary" routerLink="/register" class="subscribe-button">Subscribe</button>
+  <button mat-raised-button color="primary" (click)="onSubscribe();" class="subscribe-button">Subscribe</button>
+  
 </div>
+<!--
+<button mat-raised-button color="primary" (click)="onunSubscribe();" class="subscribe-button">unSubscribe</button>
+-->

@@ -32,6 +32,13 @@ export class FlashCardSetService {
 
 
 
+  subscribeToFlashCard(courseID: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/subscribe/${courseID}`, null ,makeHeader(this.myLocalStorage.getItem('token')));
+  }
+
+  unsubscribeToFlashCard(courseID: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/unsubscribe/${courseID}`, null ,makeHeader(this.myLocalStorage.getItem('token')));
+  }
   createFlashCardSet(flashCardSet: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, flashCardSet, makeHeader(this.myLocalStorage.getItem('token')));
   }

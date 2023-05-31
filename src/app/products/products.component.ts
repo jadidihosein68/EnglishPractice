@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
       icon: 'psychology',
       title: 'Improve Learning',
       description: 'Our plans are designed to enhance your learning experience and help you grasp concepts quickly and effectively.',
-      imgurl:'https://th.bing.com/th/id/OIG.WTEWro0PUPSzbCIrpyXi?pid=ImgGn'
+      imgurl:'https://th.bing.com/th/id/OIG._AxarW_9jbjKpDucE2WN?pid=ImgGn'
     },
     {
       icon: 'analytics',
@@ -32,7 +32,7 @@ export class ProductsComponent implements OnInit {
       icon: 'headset_mic',
       title: 'Expert Support',
       description: 'Receive guidance and support from our team of experts to ensure your success throughout the learning journey.',
-      imgurl:'https://th.bing.com/th/id/OIG.8aJLlbKNk4bgwk4jNXk2?pid=ImgGn'
+      imgurl:'https://th.bing.com/th/id/OIG.ln6Tqx9.1kBeYkKDo9lh?pid=ImgGn'
     }
   ];
 
