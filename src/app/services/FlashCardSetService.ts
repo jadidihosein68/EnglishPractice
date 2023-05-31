@@ -31,6 +31,12 @@ export class FlashCardSetService {
 
 
 
+  getListOfSubscribedFlashCardSet(): Observable<any> {
+    return this.http.get<any>(this.apiUrl+"/subscribedFlashCardSets",makeHeader(this.myLocalStorage.getItem('token')));
+  }
+
+
+
 
   subscribeToFlashCard(courseID: string): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/subscribe/${courseID}`, null ,makeHeader(this.myLocalStorage.getItem('token')));

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { FlashCardSet} from '../model/flashcardset';
 
-
+import { FlashCardSetService } from '../services/FlashCardSetService';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { FlashCardSet} from '../model/flashcardset';
   templateUrl: './learn.component.html',
   styleUrls: ['./learn.component.scss']
 })
-export class LearnComponent {
+export class LearnComponent  implements OnInit  {
   tabLoadTimes: Date[] = [];
 
   longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
@@ -32,6 +32,27 @@ export class LearnComponent {
     
     // add more people here
   ];
+
+
+constructor(private flashCardSetService: FlashCardSetService, ) {}
+
+ngOnInit() {
+
+  this.flashCardSetService.getListOfSubscribedFlashCardSet().subscribe(response => {
+    console.log("Card Retrieved successfully", response);
+    this.cardinfo = response;
+  }, error => {
+    
+    //console.log("Failed to retrieve card", error);
+  });
+
+
+
+
+
+
+}
+
 
 
   /*
