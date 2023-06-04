@@ -1,34 +1,28 @@
-.aligned-text {
+.aligned-text,
+.container {
   align-self: center;
 }
 
-mat-icon {
-  min-width: 24px;
-}
-
 .container {
-  height: 90vh; // Adjusted to take full viewport height
+  height: 90vh;
+  padding: 1rem;
   display: flex;
   justify-content: center;
-  padding: 1rem;
 }
 
 .inner-container {
   width: 50%;
-  height: 100%; // Added to take full height of its parent
-  display: flex; // Added to enable flex on this container
-  flex-direction: column; // Added to orient child elements vertically
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.header, .footer {
+.header, 
+.footer {
   width: 100%;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-}
-
-.column {
-  // No changes made
 }
 
 .filter-card {
@@ -39,15 +33,19 @@ mat-icon {
 
 .flashcard {
   width: 100%;
-  flex-grow: 1; // Added to make this element take all available space
-  text-align: center;
+  flex-grow: 1;
   margin: 20px;
-  overflow: auto; // Added to allow scrolling if content exceeds available space
+  text-align: center;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .filters {
   width: 100%;
-  flex-grow: 0; // Added to prevent this element from growing
+  flex-grow: 0;
 }
 
 .flashcard-question {
@@ -55,15 +53,8 @@ mat-icon {
 }
 
 @media (max-width: 767px) {
-  .container {
-    height: 90vh;
-    width: 100%;
-  }
-
-  .inner-container {
-    width: 100%;
-  }
-
+  .container,
+  .inner-container,
   .column {
     width: 100%;
   }
@@ -71,4 +62,41 @@ mat-icon {
   .filter-card {
     flex-direction: column;
   }
+}
+
+.card {
+  perspective: 1500px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.front, 
+.back, 
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateX(180deg);
+}
+
+.flashcard-answer {
+  margin-bottom: 20px;
+  transform: rotateY(180deg);
+}
+
+
+mat-card{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 5px 0px;
 }

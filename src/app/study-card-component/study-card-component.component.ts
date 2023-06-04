@@ -1,9 +1,26 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+
 
 @Component({
   selector: 'app-study-card-component',
   templateUrl: './study-card-component.component.html',
-  styleUrls: ['./study-card-component.component.scss']
+  styleUrls: ['./study-card-component.component.scss'],
+
+
+  animations: [
+    trigger('flipState', [
+      state('active', style({
+        transform: 'rotateX(180deg)'
+      })),
+      state('inactive', style({
+        transform: 'rotateX(0)'
+      })),
+      transition('active => inactive', animate('300ms ease-out')),
+      transition('inactive => active', animate('300ms ease-in'))
+    ])
+  ]
+
 })
 export class StudyCardComponentComponent {
 
@@ -27,6 +44,15 @@ export class StudyCardComponentComponent {
 
 ]
 
+
+flip: string = 'inactive';
+
+  toggleFlip() {
+    this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
+  }
+
+
+
 currentFlashCardIndex = 0;
 
 get currentFlashCard() {
@@ -40,9 +66,21 @@ goToNextCard() {
   }
 }
 
-  showHint(flashcard: any) {
-    flashcard.showHint = true;
+  showHint() {
+  //  flashcard.showHint = true;
   }
+
+  showFrontSide: boolean = true;
+
+  animationDone(event:any) {
+    if(event.toState === 'active') {
+      this.showFrontSide = false;
+    } else {
+      this.showFrontSide = true;
+    }
+  }
+
+  
 
   
 }
