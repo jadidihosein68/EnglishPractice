@@ -88,8 +88,12 @@
 }
 
 .back {
-  transform: rotateX(180deg);
+  //transform: rotateX(180deg);
+  transform: rotateX(180deg) rotateY(180deg);
+  font-size: 20px;
 }
+
+
 
 .flashcard-answer {
   margin-bottom: 20px;
