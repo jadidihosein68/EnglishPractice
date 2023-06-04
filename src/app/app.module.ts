@@ -41,6 +41,7 @@ import { AddFlashCardDialogComponent } from './flash-card-form/add-flash-card-di
 import { WorkshopCollectionComponent } from './workshop/workshop-collection/workshop-collection.component';
 import { BulkUploadFlashCardDialogComponent } from './flash-card-form/bulk-upload-flash-card-dialog/bulk-upload-flash-card-dialog.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { StudyCardComponentComponent } from './study-card-component/study-card-component.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AddFlashCardDialogComponent,
     BulkUploadFlashCardDialogComponent,
     WorkshopCollectionComponent,
+    StudyCardComponentComponent
     
   ],
   imports: [

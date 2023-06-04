@@ -1,0 +1,74 @@
+
+.aligned-text {
+  //margin: 0 0 0 10px;  // Adjust as necessary
+  align-self: center;
+}
+
+mat-icon {
+  min-width: 24px;  /* You can adjust this value as needed */
+}
+
+.container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.inner-container {
+  width: 50%;
+  //max-height:100% !important;
+}
+
+.header, .footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.column {
+  //border: 1px solid black;  // To visualize columns
+}
+
+.filter-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.flashcard {
+  width: 100%;
+  //min-height: 100%;
+  text-align: center;
+  margin: 20px;
+}
+
+.filters{
+
+  width: 100%;
+}
+
+.flashcard-question {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    height: 90vh;
+    width: 100%;
+  }
+
+  .inner-container {
+    width: 100%;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .filter-card {
+    flex-direction: column;
+  }
+}
+

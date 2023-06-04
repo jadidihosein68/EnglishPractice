@@ -14,6 +14,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FlashcardFormComponent } from './flash-card-form/flash-card-form.component';
 import { WorkshopComponent } from './workshop/workshop.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudyCardComponentComponent } from './study-card-component/study-card-component.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './services/guard/auth.guard';
@@ -35,6 +36,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]  },
+  { path: 'studycard', component: StudyCardComponentComponent },
+  
   
   { path: '', component : LandingComponent },
   { path: '**',  component: PageNotFoundComponent }
