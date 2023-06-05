@@ -1,6 +1,6 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import {StudyService} from "../services/study.service"
+import { StudyService } from "../services/study.service"
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -25,22 +25,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class StudyCardComponentComponent implements OnInit {
 
-  flashcards = [];
-  flascardset : any;
+  flascardset: any;
   cardId: any;
   currentFlashCardIndex = 0;
   flip: string = 'inactive';
   showFrontSide: boolean = true;
 
+
   get currentFlashCard() {
-    return this.flashcards[this.currentFlashCardIndex];
+    if (this.flascardset && this.flascardset.flashcards)
+      return this.flascardset.flashcards[this.currentFlashCardIndex];
+    return [];
   }
 
-  constructor( 
-    
+  constructor(
+
     private router: ActivatedRoute,
-    private studyService: StudyService) 
-  {}
+    private studyService: StudyService) { }
 
   ngOnInit() {
 
@@ -64,8 +65,15 @@ export class StudyCardComponentComponent implements OnInit {
 
   goToNextCard() {
     this.currentFlashCardIndex++;
-    if (this.currentFlashCardIndex >= this.flashcards.length) {
-      this.currentFlashCardIndex = 0; // If you want to loop back to the start when you reach the end
+    if (this.currentFlashCardIndex >= this.flascardset.flashcards.length) {
+      this.currentFlashCardIndex = 0; 
+    }
+  }
+
+  goToPrevCard() {
+    this.currentFlashCardIndex--;
+    if (this.currentFlashCardIndex < 0) {
+      this.currentFlashCardIndex = this.flascardset.flashcards.length - 1; 
     }
   }
 
