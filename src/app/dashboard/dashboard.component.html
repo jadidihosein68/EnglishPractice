@@ -4,77 +4,54 @@
     <div class="grid-container">
       <div fxLayout="column" fxLayoutGap="20px" fxFlexFill>
         <div fxFlex="100" class="dashboard-card">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title fxLayout="row" fxLayoutAlign="space-between center">
-                <span>Progress</span>
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-              </mat-card-title>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
-            </mat-card-header>
-            <mat-card-content class="dashboard-card-content">
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayout.md="row" fxLayoutGap="20px"
-                fxLayoutAlign="stretch stretch">
-                <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
-                  <mat-card-content fxLayout="row" fxLayoutAlign="start center">
-                    <mat-icon>collections_bookmark</mat-icon>
-                    <div>
-                      <h2>Subscribed Flash Card Sets</h2>
-                      <p class="highlight-number">2</p>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
-                <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
-                  <mat-card-content fxLayout="row" fxLayoutAlign="start center">
-                    <mat-icon>mark_chat_readmark_chat_read</mat-icon>
-                    <div>
-                      <h2>Flash Cards Studied Today</h2>
-                      <p class="highlight-number">2</p>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
 
-                <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
-                  <mat-card-content fxLayout="row" fxLayoutAlign="start center">
-                    <mat-icon>timer</mat-icon>
-                    <div>
-                      <h2>Today's Study Duration</h2>
-                      <p class="highlight-number">10 min</p>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayout.md="row" fxLayoutGap="20px"
+            fxLayoutAlign="stretch stretch">
+            <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
+              <mat-card-content fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon>collections_bookmark</mat-icon>
+                <div>
+                  <h2>Subscribed Flash Card Sets</h2>
+                  <p class="highlight-number">2</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
+              <mat-card-content fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon>mark_chat_readmark_chat_read</mat-icon>
+                <div>
+                  <h2>Flash Cards Studied Today</h2>
+                  <p class="highlight-number">2</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
 
-                <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
-                  <mat-card-content fxLayout="row" fxLayoutAlign="start center">
-                    <mat-icon>done_all</mat-icon>
-                    <div>
-                      <h2>Completed Flash Card Sets</h2>
-                      <p class="highlight-number">5</p>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
-              </div>
-            </mat-card-content>
-          </mat-card>
+            <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
+              <mat-card-content fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon>timer</mat-icon>
+                <div>
+                  <h2>Today's Study Duration</h2>
+                  <p class="highlight-number">10 min</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+
+            <mat-card class="KpiCard" fxFlex="25" fxFlex.lt-md="50" fxFlex.md="50" fxFlex.gt-md="25">
+              <mat-card-content fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon>done_all</mat-icon>
+                <div>
+                  <h2>Completed Flash Card Sets</h2>
+                  <p class="highlight-number">5</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
         </div>
         <div fxFlex="100%" class="dashboard-card">
           <mat-card>
             <mat-card-header>
-              <mat-card-title fxLayout="row" fxLayoutAlign="space-between center">
-                <span>Collection</span>
-                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-              </mat-card-title>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
+
             </mat-card-header>
             <mat-card-content class="dashboard-card-content">
               <learn-home></learn-home>
