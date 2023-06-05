@@ -3,7 +3,7 @@
         <div fxLayout="row wrap" fxLayoutAlign="start start" class="fixme" >
           <div fxFlex.gt-sm="20" fxFlex.md="50" fxFlex.sm="100" *ngFor="let card of paginatedFlashcards">
             <mat-card-content>
-              <app-course-card-minimal [cardInfo]="card" (onDelete)="handleCardDeletion($event)"></app-course-card-minimal>
+              <app-course-card-minimal [editable]="true" [cardInfo]="card" (onDelete)="handleCardDeletion($event)"></app-course-card-minimal>
             </mat-card-content>
           </div>
         </div>

@@ -14,6 +14,7 @@ export class CourseCardMinimalComponent {
   @Input() cardInfo: any;
   @Output() onDelete: EventEmitter<string> = new EventEmitter();
 
+  @Input() editable: boolean;
 
   constructor(private router: Router , private flashCardSetService:FlashCardSetService) {
   }

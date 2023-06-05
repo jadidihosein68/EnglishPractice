@@ -11,11 +11,11 @@
         <mat-icon>school</mat-icon>
         <span>Study</span>
       </button>
-      <button mat-menu-item (click)="editCard()">
+      <button mat-menu-item *ngIf="editable" (click)="editCard()">
         <mat-icon>edit</mat-icon>
         <span>Edit Card Set</span>
       </button>
-      <button mat-menu-item (click)="deleteCard()">
+      <button mat-menu-item *ngIf="editable" (click)="deleteCard()">
         <mat-icon>delete</mat-icon>
         <span>Delete</span>
       </button>
