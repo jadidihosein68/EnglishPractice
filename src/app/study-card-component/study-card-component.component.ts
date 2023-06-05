@@ -45,10 +45,6 @@ export class StudyCardComponentComponent implements OnInit {
   ngOnInit() {
 
     this.cardId = this.router.snapshot.paramMap.get('id');
-    console.log(this.cardId);
-
-
-
     if (this.cardId) {
       this.studyService.getFlashCardbyID(this.cardId).subscribe(response => {
         console.log("Card Retrieved successfully", response);
@@ -59,10 +55,6 @@ export class StudyCardComponentComponent implements OnInit {
     } else {
       console.log("No cardId provided. Proceeding with creation.");
     }
-
-
-
-
   }
 
 
