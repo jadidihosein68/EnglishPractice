@@ -31,54 +31,32 @@
       <mat-step>
         <ng-template matStepLabel>Review and Save !</ng-template>
         <p>Ready to publish ?</p>
-
-
-
         <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
           <div fxFlex="25%" fxFlex.xs="100%">
-
             <mat-list>
               <mat-list-item> Title: {{thecard.title}}</mat-list-item>
-              <mat-divider></mat-divider>
-              <mat-list-item>Author: {{thecard.author}}</mat-list-item>
               <mat-divider></mat-divider>
               <mat-list-item>Is Public? {{thecard.ispublic}}</mat-list-item>
               <mat-divider></mat-divider>
               <mat-list-item>Status: {{thecard.status}}</mat-list-item>
             </mat-list>
-
-
-
-
           </div>
-
-
           <div fxFlex="25%" fxFlex.xs="100%">
-
             <div class="thecard">
               <app-course-card-minimal [cardInfo]="thecard"></app-course-card-minimal>
             </div>
-
-
           </div>
-
-
           <div fxFlex="50%" fxFlex.xs="100%">
             <!-- Your content here -->
-
-
             <mat-card>
               <mat-card-content>Total No. of flash cards " {{thecard.flashcards?.length}}"</mat-card-content>
-
               <mat-card-actions align="end">
                 <button mat-raised-button color="primary" (click)="onPublish()">Publish !</button>
               </mat-card-actions>
               <mat-card-footer>
-
                 <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
               </mat-card-footer>
             </mat-card>
-
           </div>
         </div>
 
@@ -86,8 +64,6 @@
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperPrevious (click)="onCloseBtn()">Close</button>
           <!--<button mat-button (click)="stepper.reset()">Reset</button>-->
-
-
         </div>
       </mat-step>
     </mat-stepper>

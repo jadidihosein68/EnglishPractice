@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Course } from '../model/course';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -15,29 +15,7 @@ export class CoursesComponent implements OnInit {
   @ViewChild('drawer', { static: false }) drawer!: MatSidenav;
   isExpanded = true;
 
-  courses: any[] = [
-    {
-      id: 1,
-      title: 'PTE Exam Flashcard Package',
-      description :"Master PTE with concise flashcards",
-      instructor: 'Dr. John Doe',
-      imageUrl: '/assets/image/pte.png',
-      rating: 4.5,
-      author: "my self",
-      price: 49.99,
-    },
-    {
-      id: 2,
-      title: 'IELTS Flashcard Study Set',
-      description :"Achieve IELTS Success with Comprehensive Flashcards Covering All Sections",
-      instructor: 'Ikram Bin Duludin',
-      imageUrl: '/assets/image/Ielts.png',
-      rating: 4.7,
-      author: "my self",
-      price: 39.99
-    },
-    // ... add more courses as needed
-  ];
+  courses: any[] = [];
 
   constructor(private breakpointObserver: BreakpointObserver,
     private flashCardSetService: FlashCardSetService) { }
@@ -50,10 +28,10 @@ export class CoursesComponent implements OnInit {
       console.log('Card sets retrived', res);
 
       this.courses = res;
-      
+
     }, err => {
       console.log('Error retriving card sets', err);
-      
+
     });
 
 
@@ -65,5 +43,6 @@ export class CoursesComponent implements OnInit {
         } else {
           this.isExpanded = true;
         }
-      });}
+      });
+  }
 }

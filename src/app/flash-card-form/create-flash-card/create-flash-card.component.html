@@ -23,36 +23,15 @@
       <mat-icon matSuffix>subject</mat-icon>
     </mat-form-field>
   </div>
- 
-  <div class="form-row">
-    <mat-form-field class="form-field">
-      <mat-label>Author</mat-label>
-      <input matInput placeholder="PTE" [(ngModel)]="cardInfo.author" />
-      <mat-icon matSuffix>supervised_user_circle</mat-icon>
-    </mat-form-field>
-  </div>
 
   <div class="form-row">
     <label id="example-radio-group-label">Visibility</label>
-    <mat-radio-group aria-labelledby="example-radio-group-label" [(ngModel)]="cardInfo.ispublic" aria-label="Select an option">
+    <mat-radio-group aria-labelledby="example-radio-group-label" [(ngModel)]="cardInfo.ispublic"
+      aria-label="Select an option">
       <mat-radio-button [value]=true>Public</mat-radio-button>
       <mat-radio-button [value]=false>Private</mat-radio-button>
     </mat-radio-group>
   </div>
 
-  
-</div>
 
-<!--
-<div>
-  <p>Title: {{ cardInfo.title }}</p>
-  <p>Image URL: {{ cardInfo.imageUrl }}</p>
-  <p>Is Public: {{ cardInfo.ispublic }}</p>
-  <p>subject: {{ cardInfo.subject }}</p>
-  <p>author: {{ cardInfo.author }}</p>
-  <p>rating: {{ cardInfo.rating }}</p>
-  <p>progress: {{ cardInfo.progress }}</p>
-  <p>flashcards: {{ cardInfo.flashcards }}</p>
-  <p>status: {{ cardInfo.status }}</p>
 </div>
--->

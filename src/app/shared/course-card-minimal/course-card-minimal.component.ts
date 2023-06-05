@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./course-card-minimal.component.scss']
 })
 export class CourseCardMinimalComponent {
-  @Input() cardInfo: FlashCardSet;
+  @Input() cardInfo: any;
   @Output() onDelete: EventEmitter<string> = new EventEmitter();
 
 
@@ -30,8 +30,6 @@ studyCard(){
 
 
   deleteCard(){
-
-
     this.flashCardSetService.deleteFlashCardSet(this.cardInfo._id)  // Call the delete method from the service
     .subscribe(res => {
       console.log('Card deleted', res);

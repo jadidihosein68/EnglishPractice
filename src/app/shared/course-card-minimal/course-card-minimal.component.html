@@ -1,39 +1,40 @@
 <mat-card class="card">
   <div class="img-container">
-      <img mat-card-image class="card-img" [src]="cardInfo.imageUrl" alt="Card image">
-      <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu"  class="proceed-button-always" aria-label="Example icon button with a delete icon">
-          <mat-icon>more_vert</mat-icon>
-      </button>
+    <img mat-card-image class="card-img" [src]="cardInfo.imageUrl" alt="Card image">
+    <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu" class="proceed-button-always"
+      aria-label="Example icon button with a delete icon">
+      <mat-icon>more_vert</mat-icon>
+    </button>
 
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="studyCard()">
-          <mat-icon>school</mat-icon>
-          <span>Study</span>
-        </button>
-        <button mat-menu-item  (click)="editCard()">
-          <mat-icon>edit</mat-icon>
-          <span>Edit Card Set</span>
-        </button>
-        <button mat-menu-item (click)="deleteCard()">
-          <mat-icon>delete</mat-icon>
-          <span>Delete</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>share</mat-icon>
-          <span>Share card set</span>
-        </button>
-      </mat-menu>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="studyCard()">
+        <mat-icon>school</mat-icon>
+        <span>Study</span>
+      </button>
+      <button mat-menu-item (click)="editCard()">
+        <mat-icon>edit</mat-icon>
+        <span>Edit Card Set</span>
+      </button>
+      <button mat-menu-item (click)="deleteCard()">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>share</mat-icon>
+        <span>Share card set</span>
+      </button>
+    </mat-menu>
 
   </div>
   <mat-card-content class="card-body">
-      <p class="card-caption">{{ cardInfo.title }}</p>
-      <p class="card-name">{{ cardInfo.author }}</p>
-      <mat-progress-bar mode="determinate" [value]="cardInfo.progress"></mat-progress-bar>
-      <div class="rating">
-          <span>Rating : </span>
-          <span *ngFor="let r of [].constructor(5); let i = index">
-              <i class="fa" [ngClass]="{'fa-star': i < cardInfo.rating, 'fa-star-o': i >= cardInfo.rating}"></i>
-          </span>
-      </div>
+    <p class="card-caption">{{ cardInfo.title }}</p>
+    <p class="card-name">Author: {{ cardInfo.author.nickname }}</p>
+    <mat-progress-bar mode="determinate" [value]="cardInfo.progress"></mat-progress-bar>
+    <div class="rating">
+      <span>Rating : </span>
+      <span *ngFor="let r of [].constructor(5); let i = index">
+        <i class="fa" [ngClass]="{'fa-star': i < cardInfo.rating, 'fa-star-o': i >= cardInfo.rating}"></i>
+      </span>
+    </div>
   </mat-card-content>
-</mat-card> 
+</mat-card>
