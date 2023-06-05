@@ -1,14 +1,27 @@
 <div class="course-item">
   <img [src]="course.imageUrl" alt="Course Image" class="course-image" />
   <div class="course-details">
-    <h3 class="course-title">{{ course.title }}</h3>
+    <h3 class="course-title">Title : {{ course.title }}</h3>
     <p class="course-description">
-      {{ course.description }}
+      Description: {{ course.subject }}
     </p>
-    <div class="course-author">Author: {{ course.instructor }}</div>
+    <div class="course-author">Author: {{ course.author.nickname }}</div>
     <div class="course-rating">Rating: 4.5/5</div>
   </div>
-  <button mat-raised-button color="primary" (click)="onSubscribe();" class="subscribe-button">Subscribe</button>
+  
+  
+  
+  <div fxHide.lt-md>
+    <button mat-raised-button color="primary" (click)="onSubscribe();" class="subscribe-button"><mat-icon>notifications</mat-icon> Subscribe</button>
+  </div>
+
+  <div fxShow.lt-md>
+    <button mat-icon-button color="primary" aria-label="Subscribe" (click)="onSubscribe();"  fxHide.gt-sm>
+      <mat-icon>subscriptions</mat-icon>
+    </button>
+  </div>
+  
+
   
 </div>
 <!--
