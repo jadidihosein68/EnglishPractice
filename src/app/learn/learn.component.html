@@ -1,37 +1,18 @@
 <!---->
 <div class="container">
   <mat-tab-group>
-
-
     <mat-tab label="All cards">
       <ng-template matTabContent>
-
-
         <div class="card-container">
           <app-course-card-minimal *ngFor="let thecard of cardinfo" [cardInfo]="thecard"></app-course-card-minimal>
         </div>
-
       </ng-template>
     </mat-tab>
-
-
     <mat-tab label="Archive">
       <ng-template matTabContent>
-
         <div class="card-container">
-          <!-- <app-course-card-minimal *ngFor="let thecard of cardinfo" [cardInfo]="thecard"></app-course-card-minimal>-->
         </div>
-
       </ng-template>
     </mat-tab>
-
-    <!--
-    <mat-tab label="Wishllist">
-      <ng-template matTabContent>
-        Content 3 - Loaded: {{getTimeLoaded(3) | date:'medium'}}
-      </ng-template>
-    </mat-tab>
-    -->
   </mat-tab-group>
-
 </div>
