@@ -37,47 +37,48 @@
     </div>
     <mat-card class="card" class="flashcard" fxFlex="80" (click)="toggleFlip()" [@flipState]="flip"
       (@flipState.done)="animationDone($event)">
-
       <div class="front" *ngIf="flip === 'inactive'">
         <div class="content">
-
-
           <mat-card-content class="flashcard-question">
             <p>
-Question
+              Question
             </p>
           </mat-card-content>
-
-
-          
         </div>
       </div>
       <div class="back" *ngIf="flip === 'active'">
         <div class="content">
-
           <mat-card-content class="flashcard-answer">
             <p>
-            Answer
+              Answer
             </p>
           </mat-card-content>
         </div>
       </div>
+
+
     </mat-card>
+
+
+
+    
+
+
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px" class="footer">
-      <button mat-fab matTooltip="Primary" color="primary" aria-label="Example fab with a heart icon">
+      <button mat-fab matTooltip="lolo lalalal " color="primary" aria-label="Example fab with a heart icon">
         <mat-icon>navigate_before</mat-icon>
       </button>
-      <button matTooltip="Your hint text here" (click)="showHint()" matTooltipShowDelay="0" mat-fab matTooltip="Primary"
+      
+      
+      <button matTooltip="Your hint text here" #tooltip="matTooltip"  (click)="tooltip.toggle()" matTooltipPosition="above"  matTooltipShowDelay="0" mat-fab matTooltip="info about action"
         color="primary" aria-label="Example fab with a heart icon">
-        <mat-icon>light</mat-icon>
+        <mat-icon>lightbulb</mat-icon>
       </button>
+
       <button mat-fab matTooltip="Primary" color="primary" aria-label="Example fab with a heart icon">
         <mat-icon>navigate_next</mat-icon>
       </button>
     </div>
   </div>
+
 </div>
-
-
-
-

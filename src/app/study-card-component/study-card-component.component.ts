@@ -66,9 +66,7 @@ goToNextCard() {
   }
 }
 
-  showHint() {
-  //  flashcard.showHint = true;
-  }
+
 
   showFrontSide: boolean = true;
 
@@ -81,6 +79,16 @@ goToNextCard() {
   }
 
   
+
+  showHintPopup = false;
+
+  showHint(): void {
+    this.showHintPopup = true;
+  }
+
+  hideHint(): void {
+    this.showHintPopup = false;
+  }
 
   
 }

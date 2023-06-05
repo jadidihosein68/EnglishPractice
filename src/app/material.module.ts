@@ -21,6 +21,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+
+
 
 @NgModule({
   imports: [ 
@@ -45,6 +49,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatGridListModule,
     MatTreeModule,
     MatDialogModule,
+    MatTooltipModule,
 
   ],
   exports: [
@@ -69,6 +74,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatGridListModule,
     MatTreeModule,
     MatDialogModule,
+    MatTooltipModule,
   ]    
 })
 

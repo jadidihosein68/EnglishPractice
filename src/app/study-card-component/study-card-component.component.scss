@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.header, 
+.header,
 .footer {
   width: 100%;
   padding: 20px;
@@ -54,6 +54,7 @@
 }
 
 @media (max-width: 767px) {
+
   .container,
   .inner-container,
   .column {
@@ -74,8 +75,8 @@
   transition: transform 1s;
 }
 
-.front, 
-.back, 
+.front,
+.back,
 .content {
   position: absolute;
   top: 0;
@@ -94,14 +95,11 @@
   font-size: 20px;
 }
 
-
-
 .flashcard-answer {
   margin-bottom: 20px;
   transform: rotateY(180deg);
 }
 
-
-mat-card{
+mat-card {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 5px 0px;
 }
