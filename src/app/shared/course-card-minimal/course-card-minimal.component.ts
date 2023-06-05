@@ -20,8 +20,11 @@ export class CourseCardMinimalComponent {
 
 
 
+studyCard(){
+  this.router.navigate(['/studycard', this.cardInfo._id]);
+}
+
   editCard() {
-    console.log({id:this.cardInfo._id});
     this.router.navigate(['/createflashcard', this.cardInfo._id]);
   }
 

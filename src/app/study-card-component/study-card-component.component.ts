@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import {StudyService} from "../services/study.service"
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-study-card-component',
@@ -22,73 +23,66 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 
 })
-export class StudyCardComponentComponent {
+export class StudyCardComponentComponent implements OnInit {
+
+  flashcards = [];
+  flascardset : any;
+  cardId: any;
+  currentFlashCardIndex = 0;
+  flip: string = 'inactive';
+  showFrontSide: boolean = true;
+
+  get currentFlashCard() {
+    return this.flashcards[this.currentFlashCardIndex];
+  }
+
+  constructor( 
+    
+    private router: ActivatedRoute,
+    private studyService: StudyService) 
+  {}
+
+  ngOnInit() {
+
+    this.cardId = this.router.snapshot.paramMap.get('id');
+    console.log(this.cardId);
 
 
-  flashcards    = [{
-    title: "title",
-    subtitle: "subtitle",
-    front: "Front",
-    back: "back"
-  }, { title: 'Title 1', front: 'Front 1', back: 'Back 1', hint: 'Hint 1', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
-  { title: 'Title 2', front: 'Front 2', back: 'Back 2', hint: 'Hint 2', showHint: false },
+
+    if (this.cardId) {
+      this.studyService.getFlashCardbyID(this.cardId).subscribe(response => {
+        console.log("Card Retrieved successfully", response);
+        this.flascardset = response;
+      }, error => {
+        console.error("Failed to retrieve card", error);
+      });
+    } else {
+      console.log("No cardId provided. Proceeding with creation.");
+    }
 
 
-]
 
 
-flip: string = 'inactive';
+  }
+
 
   toggleFlip() {
     this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
   }
 
-
-
-currentFlashCardIndex = 0;
-
-get currentFlashCard() {
-  return this.flashcards[this.currentFlashCardIndex];
-}
-
-goToNextCard() {
-  this.currentFlashCardIndex++;
-  if (this.currentFlashCardIndex >= this.flashcards.length) {
-    this.currentFlashCardIndex = 0; // If you want to loop back to the start when you reach the end
+  goToNextCard() {
+    this.currentFlashCardIndex++;
+    if (this.currentFlashCardIndex >= this.flashcards.length) {
+      this.currentFlashCardIndex = 0; // If you want to loop back to the start when you reach the end
+    }
   }
-}
 
-
-
-  showFrontSide: boolean = true;
-
-  animationDone(event:any) {
-    if(event.toState === 'active') {
+  animationDone(event: any) {
+    if (event.toState === 'active') {
       this.showFrontSide = false;
     } else {
       this.showFrontSide = true;
     }
   }
 
-  
-
-  showHintPopup = false;
-
-  showHint(): void {
-    this.showHintPopup = true;
-  }
-
-  hideHint(): void {
-    this.showHintPopup = false;
-  }
-
-  
 }

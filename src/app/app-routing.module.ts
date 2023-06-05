@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]  },
-  { path: 'studycard', component: StudyCardComponentComponent },
+  { path: 'studycard/:id', component: StudyCardComponentComponent },
   
   
   { path: '', component : LandingComponent },
