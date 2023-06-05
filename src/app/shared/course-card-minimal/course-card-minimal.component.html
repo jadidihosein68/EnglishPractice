@@ -30,11 +30,16 @@
     <p class="card-caption">{{ cardInfo.title }}</p>
     <p class="card-name">Author: {{ cardInfo.author.nickname }}</p>
     <mat-progress-bar mode="determinate" [value]="cardInfo.progress"></mat-progress-bar>
+    
+    
+  <!--
     <div class="rating">
-      <span>Rating : </span>
+      <span>Rating : Coming soon !</span>
       <span *ngFor="let r of [].constructor(5); let i = index">
         <i class="fa" [ngClass]="{'fa-star': i < cardInfo.rating, 'fa-star-o': i >= cardInfo.rating}"></i>
       </span>
     </div>
+  -->  
+  
   </mat-card-content>
 </mat-card>
