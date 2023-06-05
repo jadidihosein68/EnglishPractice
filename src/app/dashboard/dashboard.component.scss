@@ -30,10 +30,11 @@
     //display: flex;
     //align-items: center;
     mat-icon {
-      margin-right: 20px;
+      margin: 20px;
       font-size: 24px;
       height: 24px;
       width: 24px;
+      min-width: 24px;
     }
     h2 {
       //margin: 0;
