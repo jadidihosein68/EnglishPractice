@@ -12,7 +12,7 @@ import {  UserProfile } from '../model/userProfile'; // import the UserService a
 export class ProfileComponent implements OnInit {
 
   profileData: UserProfile | null = null;
-  imageUrl = 'https://via.placeholder.com/150';
+  imageUrl = 'https://th.bing.com/th/id/OIG.EZ4GfP4I3tedkoSQZS9O?pid=ImgGn';
 
   constructor(private userService: UserService) { }
 
