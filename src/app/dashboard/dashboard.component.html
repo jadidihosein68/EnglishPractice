@@ -12,7 +12,7 @@
                 <mat-icon>collections_bookmark</mat-icon>
                 <div>
                   <h2>Subscribed Flash Card Sets</h2>
-                  <p class="highlight-number">0</p>
+                  <p class="highlight-number">{{ cardInfo.length }}</p>
                 </div>
               </mat-card-content>
             </mat-card>
@@ -54,7 +54,7 @@
 
             </mat-card-header>
             <mat-card-content class="dashboard-card-content">
-              <learn-home></learn-home>
+              <learn-home [cardinfo]="cardInfo"></learn-home>
             </mat-card-content>
           </mat-card>
         </div>

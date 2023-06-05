@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import {FormBuilder} from '@angular/forms';
-import {NestedTreeControl} from '@angular/cdk/tree';
+import { FormBuilder } from '@angular/forms';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { FlashCardSetService } from '../services/FlashCardSetService';
 
-import {MatTreeNestedDataSource} from '@angular/material/tree';
+
 
 export interface Section {
   name: string;
@@ -16,9 +18,6 @@ interface FoodNode {
   children?: FoodNode[];
 }
 
-
-
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -27,10 +26,8 @@ interface FoodNode {
 export class DashboardComponent {
 
   dataSource = new MatTreeNestedDataSource<FoodNode>();
+  cardInfo = [];
 
-
-
-  /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -50,7 +47,17 @@ export class DashboardComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, private flashCardSetService: FlashCardSetService) {
   }
+
+  ngOnInit() {
+    this.flashCardSetService.getListOfSubscribedFlashCardSet().subscribe(response => {
+      console.log("Card Retrieved successfully", response);
+      this.cardInfo = response;
+    }, error => {
+      console.log("Failed to retrieve card", error);
+    });
+  }
+
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
 }
