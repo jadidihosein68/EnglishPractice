@@ -59,7 +59,7 @@
       <button mat-fab color="primary" aria-label="Example fab with a heart icon" (click)="goToPrevCard()">
         <mat-icon>navigate_before</mat-icon>
       </button>    
-      <button matTooltip="Your hint text here" #tooltip="matTooltip"  (click)="tooltip.toggle()" matTooltipPosition="above"  matTooltipShowDelay="0" mat-fab matTooltip="info about action"
+      <button matTooltip="{{currentFlashCard.hints}}" #tooltip="matTooltip"  (click)="tooltip.toggle()" matTooltipPosition="above"  matTooltipShowDelay="0" mat-fab matTooltip="info about action"
         color="primary" aria-label="Example fab with a heart icon">
         <mat-icon>lightbulb</mat-icon>
       </button>
