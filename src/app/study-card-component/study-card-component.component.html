@@ -3,7 +3,7 @@
     <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="space-around start" fxLayoutGap="20px" fxHide.lt-md
       class="filters">
       <div fxFlex.gt-sm="25" fxFlex.lt-md="100" class="column">
-        <mat-card class="filter-card">
+        <mat-card class="filter-card" (click)="navigateToDashboard()" >
           <mat-card-content fxLayout="row" fxLayoutAlign="start center">
             <mat-icon>dashboard</mat-icon>
             <p class="aligned-text">Dashboard</p>

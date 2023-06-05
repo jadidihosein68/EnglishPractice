@@ -41,6 +41,7 @@ export class StudyCardComponentComponent implements OnInit {
   constructor(
 
     private router: ActivatedRoute,
+    private therouter: Router,
     private studyService: StudyService) { }
 
   ngOnInit() {
@@ -83,6 +84,11 @@ export class StudyCardComponentComponent implements OnInit {
     } else {
       this.showFrontSide = true;
     }
+  }
+
+
+  navigateToDashboard() {
+    this.therouter.navigate(['/dashboard']);
   }
 
 }
