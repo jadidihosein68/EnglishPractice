@@ -1,30 +1,42 @@
-
 <div class="container">
-<div class="profile-container">
-  <div class="profile-header">
-    <img [src]="imageUrl" alt="Profile Picture" class="profile-image">
-    <h2>{{ profileData?.name }}</h2>
-  </div>
-  <div class="profile-info">
-    <div class="info-item">
-      <span class="info-label">Email:</span>
-      <span>{{ profileData?.email }}</span>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img [src]="imageUrl" alt="Profile Picture" class="profile-image">
+      <h2>{{ profileData?.nickname || profileData?.name }}</h2>
     </div>
-    <div class="info-item">
-      <span class="info-label">Bio:</span>
-      <span>{{ profileData?.bio }}</span>
+
+    <div class="profile-info">
+      <!-- Edit button -->
+      <button mat-icon-button color="primary" aria-label="Edit profile" (click)="openNicknameEdit()" class="edit-button">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <!-- End of edit button -->
+
+
+      <div class="info-item">
+        <span class="info-label">Nickname:</span>
+        <span>{{ profileData?.nickname || profileData?.name }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-label">Email:</span>
+        <span>{{ profileData?.email }}</span>
+      </div>
+
+
+      <div class="info-item">
+        <span class="info-label">Bio:</span>
+        <span>{{ profileData?.bio }}</span>
+      </div>
+      <!-- Nickname -->
     </div>
   </div>
-</div>
 
-
-
-<div class="subscription-container">
-  <h3>Subscribed Plan</h3>
-  <div class="subscription-card">
-    <h4>English Learning Plan - Premium</h4>
-    <p>Access to all PTE and IELTS resources</p>
+  <div class="subscription-container">
+    <h3>Subscribed Plan</h3>
+    <div class="subscription-card">
+      <h4>English Learning Plan - Premium</h4>
+      <p>Access to all PTE and IELTS resources</p>
+    </div>
   </div>
-</div>
-
 </div>

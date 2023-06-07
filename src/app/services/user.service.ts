@@ -11,11 +11,20 @@ import { UserProfile } from '../model/userProfile';
   providedIn: 'root',
 })
 export class UserService {
-  private readonly apiUrl = environment.apiUrl + '/api/user/getmyprofile';
+  private readonly apiUrl = environment.apiUrl + '/api/user';
 
   constructor(private http: HttpClient, private myLocalStorage : LocalStorageService) {}
 
   getMyUserProfile(): Observable<UserProfile> {
-    return this.http.get<any>(`${this.apiUrl}`, makeHeader(this.myLocalStorage.getItem('token'))).pipe();
+    return this.http.get<any>(`${this.apiUrl}/getmyprofile`, makeHeader(this.myLocalStorage.getItem('token'))).pipe();
   }
+
+
+
+
+  updateProfile(nickname: string, bio: string): Observable<any> {
+    const body = { nickname, bio };
+    return this.http.put<any>(`${this.apiUrl}/updateprofile`, body, makeHeader(this.myLocalStorage.getItem('token'))).pipe();
+  }
+
 }
