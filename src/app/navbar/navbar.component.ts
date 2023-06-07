@@ -55,7 +55,12 @@ export class NavbarComponent {
 
 
 
-
+  closeSidenav(sidenav: any) {
+    sidenav.close();
+    this.isCollapsed = false; 
+    this.renderer.removeStyle(document.body, 'overflow');
+    this.renderer.removeStyle(document.documentElement, 'overflow');
+  }
 
 
 
