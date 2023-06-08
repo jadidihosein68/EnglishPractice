@@ -43,6 +43,7 @@ import { BulkUploadFlashCardDialogComponent } from './flash-card-form/bulk-uploa
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { StudyCardComponentComponent } from './study-card-component/study-card-component.component';
 import { ProfileEditModalComponent } from './profile/profile-edit-modal/profile-edit-modal.component';
+import { Angulartics2Module } from 'angulartics2';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { ProfileEditModalComponent } from './profile/profile-edit-modal/profile-
     ReactiveFormsModule, // add ReactiveFormsModule to the NgModule imports
     FlexLayoutModule,
     DragDropModule,
+    Angulartics2Module.forRoot(),
   ],
   providers: [
     ProductPlanService,

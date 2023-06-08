@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Angulartics2GoogleTagManager } from 'angulartics2';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'english_Practice';
   isCollapsed = true;
+
+  constructor(angulartics2GoogleTagManager: Angulartics2GoogleTagManager) {
+    angulartics2GoogleTagManager.startTracking();
+  }
+
 }
